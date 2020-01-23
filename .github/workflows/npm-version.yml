@@ -9,9 +9,11 @@ jobs:
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
-        run: npm version patch -m "release"
         with:
           node-version: ${{ matrix.node-version }}
         env:
           CI: true
+      - name: Update package.json version
+        run: npm i
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
