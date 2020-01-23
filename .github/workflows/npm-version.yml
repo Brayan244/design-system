@@ -1,0 +1,17 @@
+name: Update Release
+
+on:
+  push:
+  
+jobs:
+  update: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Update package.json version
+        run: npm version patch -m "release"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
