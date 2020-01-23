@@ -14,7 +14,9 @@ jobs:
         env:
           CI: true
       - name: Update package.json version
-        run: npm version patch 
+        run: | 
+          echo ${{ github.ref }}
+          npm version patch 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CI: true
