@@ -13,6 +13,9 @@ jobs:
     if: github.event.pull_request.merged
     steps:
       - uses: actions/checkout@master
+      - uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Tag and prepare release
         id: tag_and_prepare_release
         uses: K-Phoen/semver-release-action@master
@@ -26,10 +29,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Update package.json version
-        run: npm version ${{ created_tag }} -m "release ${{ created_tag }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-          created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
+        run: npm version ${{ steps.tag_and_prepare_release.outputs.tag }} -m "release ${{ steps.tag_and_prepare_release.outputs.tag }}"
       - name: Upload release notes
         if: steps.tag_and_prepare_release.outputs.tag
         uses: Roang-zero1/github-create-release-action@master
