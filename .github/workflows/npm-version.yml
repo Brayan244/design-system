@@ -14,6 +14,6 @@ jobs:
         env:
           CI: true
       - name: Update package.json version
-        run: npm install
+        run: yarn 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
