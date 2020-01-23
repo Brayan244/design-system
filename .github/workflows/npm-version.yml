@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+        env:
+          CI: true
       - name: Update package.json version
         run: npm version patch -m "release"
         env:
