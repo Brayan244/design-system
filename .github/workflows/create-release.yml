@@ -26,7 +26,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Update package.json version
-        run: npm version ${{ steps.tag_and_prepare_release.outputs.tag }} -m "release ${{ steps.tag_and_prepare_release.outputs.tag }}"
+        run: npm version ${{ created_tag }} -m "release ${{ created_tag }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
       - name: Upload release notes
         if: steps.tag_and_prepare_release.outputs.tag
         uses: Roang-zero1/github-create-release-action@master
