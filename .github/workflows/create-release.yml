@@ -24,7 +24,16 @@ jobs:
         if: steps.tag_and_prepare_release.outputs.tag
         uses: Roang-zero1/github-create-release-action@master
         with:
-          create_draft: true
+          update_existing: true
           created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Update package.json version
+        run: npm version ${{ tag }} -m "release ${{ tag }}"
+        env:
+          tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
+      
