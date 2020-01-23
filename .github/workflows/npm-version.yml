@@ -7,6 +7,7 @@ jobs:
   update: 
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -14,8 +15,7 @@ jobs:
         env:
           CI: true
       - name: Update package.json version
-        run: | 
-          echo ${{ github.ref }}
+        run:
           npm version patch 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
