@@ -23,11 +23,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Bump package.json version
+      - name: Bump package.json patch
         if: contains(github.event.pull_request.labels.*.name, 'patch')
         run: echo "::set-env name=tag::npm version patch -no-git-tag-version
+      - name: Bump package.json minor
         if: contains(github.event.pull_request.labels.*.name, 'minor')
         run: echo "::set-env name=tag::npm version minor -no-git-tag-version
+      - name: Bump package.json major
         if: contains(github.event.pull_request.labels.*.name, 'major')
         run: echo "::set-env name=tag::npm version major -no-git-tag-version
 
