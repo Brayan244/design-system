@@ -1,66 +1,13 @@
 name: Create Release
 
 on:
-  pull_request:
+  push:
     branches:
       - master
-    types:
-      - closed
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged
     steps:
-      - uses: actions/checkout@master
-      - uses: fregante/setup-git-token@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Bump package.json patch
-        if: contains(github.event.pull_request.labels.*.name, 'patch')
-        run: echo ::set-env name=tag::$(npm version patch -no-git-tag-version)
-      - name: Bump package.json minor
-        if: contains(github.event.pull_request.labels.*.name, 'minor')
-        run: echo ::set-env name=tag::$(npm version minor -no-git-tag-version)
-      - name: Bump package.json major
-        if: contains(github.event.pull_request.labels.*.name, 'major')
-        run: echo ::set-env name=tag::$(npm version major -no-git-tag-version)
-
-      - name: Identify as Github Actions and commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "release ${{ env.tag }}"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          force: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: actions/checkout@master
-      - name: Tag and prepare release
-        id: tag_and_prepare_release
-        uses: K-Phoen/semver-release-action@master
-        with:
-          release_branch: master
-          tag: ${{ env.tag }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload release notes
-        if: steps.tag_and_prepare_release.outputs.tag
-        uses: Roang-zero1/github-create-release-action@master
-        with:
-          update_existing: true
-          created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: log event
+        run: echo ${{ github.event }}
