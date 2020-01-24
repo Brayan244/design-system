@@ -34,11 +34,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add . 
+          git add package.json
           git commit --amend -m "release ${{ steps.tag_and_prepare_release.outputs.tag }}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          force: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload release notes
         if: steps.tag_and_prepare_release.outputs.tag
