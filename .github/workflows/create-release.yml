@@ -29,11 +29,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Bump package.json version
-        run: npm version ${{ steps.tag_and_prepare_release.outputs.tag }} -m "release ${{ steps.tag_and_prepare_release.outputs.tag }}"
-      - name: Identify as Github Actions
+        run: npm version ${{ steps.tag_and_prepare_release.outputs.tag }} --no-git-tag-version
+      - name: Identify as Github Actions and commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git add . 
+          git commit --amend -m "release ${{ steps.tag_and_prepare_release.outputs.tag }}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
@@ -46,4 +48,3 @@ jobs:
           created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
