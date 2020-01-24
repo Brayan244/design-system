@@ -60,4 +60,4 @@ jobs:
           created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
