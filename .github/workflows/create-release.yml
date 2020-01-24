@@ -38,7 +38,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "release ${{ env.tag }}"
-          git pull ${{ github.repository }}
+          git pull https://github.com/${{ github.repository }}.git
 
       - name: Push changes
         uses: ad-m/github-push-action@master
