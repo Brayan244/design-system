@@ -17,12 +17,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-        
       - name: Use Node.js ${{ matrix.node-version }}
-        if: steps.tag_and_prepare_release.outputs.tag
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Bump package.json patch
         if: contains(github.event.pull_request.labels.*.name, 'patch')
         run: echo ::set-env name=tag::npm version patch -no-git-tag-version
@@ -37,7 +36,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add package.json
+          git add .
           git commit -m "release ${{ env.tag }}"
 
       - name: Push changes
