@@ -38,7 +38,7 @@ jobs:
         run: git push origin master
 
       - name: Upload release notes
-        if: steps.tag_and_prepare_release.outputs.tag
+        if: env.tag
         uses: Roang-zero1/github-create-release-action@master
         with:
           update_existing: true
