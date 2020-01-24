@@ -38,14 +38,13 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "release ${{ env.tag }}"
+          git pull https://github.com/${{ GITHUB_ACTOR }}/${{ GITHUB_REPOSITORY }}
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          force: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/checkout@master
       - name: Tag and prepare release
         id: tag_and_prepare_release
         uses: K-Phoen/semver-release-action@master
