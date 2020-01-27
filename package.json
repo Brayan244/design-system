@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "BABEL_ENV=production babel src -d dist",
+    "build": "BABEL_ENV=production webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
@@ -50,8 +50,11 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
     "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
     "stylelint": "^10.1.0",
-    "stylelint-config-standard": "^18.3.0"
+    "stylelint-config-standard": "^18.3.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "description": "design system for reservamos",
   "repository": "https://github.com/reservamos/reservamos-elements.git",
