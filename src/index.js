@@ -1,3 +1,3 @@
-import Test from './ui/test';
+import Test from './atoms/test';
 
 export { Test };
