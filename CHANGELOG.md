@@ -1,5 +1,6 @@
 # Changelog
 
-## v1.0.0
+## v0.1.1
 
-Initial Release
+- Basic configuration
+- Storybook
