@@ -1,6 +1,6 @@
 import React from 'react';
-import './test.scss';
+import testStyle from './test.styles';
 
-const Test = () => <div className="test" />;
+const Test = () => <div className={testStyle} />;
 
 export default Test;
