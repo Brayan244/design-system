@@ -1,3 +1,1 @@
-import Test from './atoms/test';
-
-export default Test;
+export { default as Test } from './atoms/test';

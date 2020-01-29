@@ -1,9 +1,12 @@
 import { css } from 'emotion';
 
-const testStyle = css({
-  height: 100,
-  width: 100,
-  backgroundColor: '#ff0000',
-});
+export default css`
+  background-color: #ff0000;
+  margin: auto;
+  text-align: center;
+  color: #0000ff;
 
-export default testStyle;
+  :hover {
+    color: #ffffff;
+  }
+`;
