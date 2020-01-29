@@ -1,6 +1,9 @@
 {
-  "extends": "stylelint-config-standard",
-  "ignoreFiles": ["**/*.js"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components"
+  ],
+  "processors": ["stylelint-processor-styled-components"],
   "rules": {
     "at-rule-empty-line-before": [
       "always",
@@ -32,7 +35,6 @@
     "declaration-no-important": true,
     "font-weight-notation": "numeric",
     "no-descending-specificity": [true, { "severity": "warning" }],
-    "selector-class-pattern": "^([a-z][a-z]*)([A-Z]{1,2}[a-z]+)*$",
     "selector-max-id": 0,
     "shorthand-property-no-redundant-values": true,
     "string-quotes": "single",
