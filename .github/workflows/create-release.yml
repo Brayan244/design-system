@@ -23,6 +23,14 @@ jobs:
           email: action@github.com
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: yarn and build
+        run: yarn && yarn build
+
+      - name: Commit build bundle
+        run: | 
+          git add .
+          git commit -m "adds build files"
+
       - name: Bump package.json patch
         if: contains(github.event.pull_request.labels.*.name, 'patch')
         run: echo ::set-env name=tag::$(npm version patch)
