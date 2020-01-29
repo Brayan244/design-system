@@ -19,10 +19,9 @@ jobs:
       - uses: actions/checkout@master
       - uses: fregante/setup-git-token@v1
         with:
-          name: Github Actions
+          name: reservamosrobot
           email: action@github.com
           token: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Bump package.json patch
         if: contains(github.event.pull_request.labels.*.name, 'patch')

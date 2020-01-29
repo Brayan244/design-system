@@ -1,5 +1,12 @@
 # Changelog
 
-## v1.0.0
+## v0.1.2
 
-Initial Release
+- adds storybook knobs
+- adds emotion 
+- adds stylelint
+
+## v0.1.1
+
+- Basic configuration
+- Storybook
