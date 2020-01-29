@@ -1,16 +1,36 @@
 import React from 'react';
-import testStyle from './test.styles';
+import { css } from 'emotion';
+import PropTypes from 'prop-types';
+import hover from './test.styles';
 
-const Test = () => (
-  <div className={testStyle}>
-    <p>hola, soy un componente de prueba</p>
-    <p>
-      pon tu mouse sobre mi
-      <span role="img" aria-label="eyes">
-        &nbsp;👀
-      </span>
-    </p>
-  </div>
-);
+const propTypes = {
+  important: PropTypes.bool.isRequired,
+};
+
+const Test = ({ important = true }) => {
+  const testStyle = css`
+    height: 100px;
+    width: 100px;
+    border: 5px solid black;
+    ${hover};
+    background-color: #0000ff;
+    border-color: ${important ? 'red' : 'white'};
+  `;
+
+  const overwrite = css`
+    ${testStyle};
+    margin-left: 50px;
+    color: white;
+  `;
+
+  return (
+    <div className={testStyle}>
+      hola, cómo estás?
+      <p className={overwrite}>overwritten</p>
+    </div>
+  );
+};
+
+Test.propTypes = propTypes;
 
 export default Test;

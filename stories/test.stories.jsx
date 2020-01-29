@@ -1,4 +1,5 @@
 import React from 'react';
+import { boolean } from '@storybook/addon-knobs';
 import Test from '../src/atoms/test';
 
 export default {
@@ -6,4 +7,6 @@ export default {
   component: Test,
 };
 
-export const TestStory = () => <Test />;
+export const TestStory = () => (
+  <Test important={boolean('Is Important', false)} />
+);
