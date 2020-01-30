@@ -2,7 +2,7 @@ import { css } from '@emotion/core';
 
 const hover = css`
   :hover {
-    color: blue;
+    color: #ff0000;
   }
 `;
 

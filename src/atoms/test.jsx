@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, jsx } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import hover from './test.styles';
 
@@ -11,22 +11,21 @@ const Test = ({ important = true }) => {
   const testStyle = css`
     height: 100px;
     width: 100px;
-    border: 5px solid black;
+    border: 5px solid #000000;
     ${hover};
     background-color: #0000ff;
     border-color: ${important ? 'red' : 'white'};
   `;
 
   const overwrite = css`
-    ${testStyle};
     margin-left: 50px;
-    color: white;
+    color: #ffffff;
   `;
 
   return (
     <div css={testStyle}>
       hola, cómo estás?
-      <p css={overwrite}>overwritten</p>
+      <p css={[testStyle, overwrite]}>overwritten</p>
     </div>
   );
 };

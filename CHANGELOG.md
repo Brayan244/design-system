@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.5
+
+## 🔧 Fixes
+
+- Adds emotion plugin and rules to eslint config
+- Fixes conflicts with stylelint rules
+
 ## v0.1.4
 
 - adds rollup step to create-release actions
@@ -8,7 +15,7 @@
 ## v0.1.3
 
 - adds storybook knobs
-- adds emotion 
+- adds emotion
 - adds stylelint
 
 ## v0.1.1
