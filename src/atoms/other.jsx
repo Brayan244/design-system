@@ -1,11 +1,11 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import { hover } from './test.styles';
+import { hover, red } from './test.styles';
 import * as colors from '../tokens/colors';
-import '../globals/reset';
+import globalStyles from '../globals/reset';
 
-const userPhoto =
+const emotionLogo =
   'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png';
 
 const propTypes = {
@@ -16,18 +16,18 @@ const Test = ({ important = true }) => {
   const testStyle = css`
     height: 100px;
     width: 100px;
-    border: 5px solid #000000;
+    border: 5px solid gold;
     ${hover};
-    background-color: ${colors.gray100};
-    border-color: ${important ? colors.error : colors.gray200};
+    background-color: ${colors.gray500};
+    border-color: ${important ? red : 'blue'};
     font-family: 'Open Sans', sans-serif;
   `;
 
   const overwrite = css`
     margin-left: 50px;
-    color: ${colors.primary};
-    border-color: ${colors.accent};
-    background-image: url(${userPhoto});
+    color: ${red};
+    background-color: #00ffff;
+    background-image: url(${emotionLogo});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -35,9 +35,11 @@ const Test = ({ important = true }) => {
 
   return (
     <>
+      <Global styles={globalStyles} />
+
       <div css={testStyle}>
         hola, cómo estás?
-        <p css={overwrite}>overwritten</p>
+        <p css={[testStyle, overwrite]}>overwritten</p>
       </div>
       <p css="some-class">overwritten</p>
     </>

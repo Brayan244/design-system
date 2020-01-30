@@ -1,9 +1,9 @@
 import { css } from '@emotion/core';
 
-const hover = css`
+export const hover = css`
   :hover {
     color: #ff0000;
   }
 `;
 
-export default hover;
+export const red = '#FF0000';

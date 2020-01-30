@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.6
+
+- Adds reset styles
+- Adds color system
+- Adds OpenSans font family
+- Adds font sizes and font weights constants
+
 ## v0.1.5
 
 ## 🔧 Fixes
