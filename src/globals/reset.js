@@ -39,6 +39,7 @@ export default css`
 
   a {
     cursor: pointer;
+    text-decoration: none;
   }
 
   button {
