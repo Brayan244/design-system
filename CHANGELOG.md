@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.7
+
+### 🔀 Changes
+
+- Adds storybook docs addon with MDX for docs
+
 ## v0.1.6
 
 - Adds reset styles
