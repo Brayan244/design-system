@@ -42,6 +42,15 @@ export default css`
     text-decoration: none;
   }
 
+  input {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
   button {
     border: 0;
     cursor: pointer;

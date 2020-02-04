@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.10
+
+- Adds inputText component
+- Updates fontsizes constants
+
 ## v0.1.9
 
 - Adds User Photo Component
