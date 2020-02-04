@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.8
+
+-adds transport icon
+
 ## v0.1.7
 
 ### 🔀 Changes

@@ -1,0 +1,27 @@
+import { select } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Transport from '../src/atoms/Transport';
+
+<Meta title="Transport" component={Transport} />
+
+## Props
+
+<Props of={Transport} />
+
+## Preview
+
+<Preview>
+  <Story name="Transport">
+    <Transport
+      type={select(
+        'type',
+        {
+          Bus: 'iconBus',
+          Flight: 'iconFlight',
+          Dot: 'iconDot',
+        },
+        'iconBus'
+      )}
+    />
+  </Story>
+</Preview>
