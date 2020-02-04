@@ -1755,10 +1755,26 @@
     magic-string "^0.25.2"
     rollup-pluginutils "^2.6.0"
 
+"@rollup/plugin-url@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-url/-/plugin-url-4.0.2.tgz#af9e6ce8b26153843567bfb04e48843e72fc2dc4"
+  integrity sha512-jm0VbkSphTmfyCgbmkLpvz56Q6KYdLLQKOuMvfBEYDK5zUU7F13JQrv5D6xEU8DlDi/nOi6MSyGaloo9vfYZuQ==
+  dependencies:
+    "@rollup/pluginutils" "^3.0.4"
+    make-dir "^3.0.0"
+    mime "^2.4.4"
+
 "@rollup/pluginutils@^3.0.0":
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.0.6.tgz#3ae0bbbce2eed53bf46b7fba8c393557c6c7f705"
   integrity sha512-Nb6U7sg11v8D+E4mxRxwT+UumUL7MSnwI8V1SJB3THyW2MOGD/Q6GyxLtpnjrbT3zTRPSozzDMyVZwemgldO3w==
+  dependencies:
+    estree-walker "^1.0.1"
+
+"@rollup/pluginutils@^3.0.4":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.0.8.tgz#4e94d128d94b90699e517ef045422960d18c8fde"
+  integrity sha512-rYGeAc4sxcZ+kPG/Tw4/fwJODC3IXHYDH4qusdN/b6aLw5LPUbzpecYbEJh4sVQGPFJxd2dBU4kc1H3oy9/bnw==
   dependencies:
     estree-walker "^1.0.1"
 

@@ -5,6 +5,7 @@
 ### 🔀 Changes
 
 - Adds storybook docs addon with MDX for docs
+- Adds url loader for images
 
 ## v0.1.6
 

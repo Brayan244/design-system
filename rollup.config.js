@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
 import babel from 'rollup-plugin-babel';
 import cleanup from 'rollup-plugin-cleanup';
@@ -43,6 +44,8 @@ const rollupPlugins = [
   commonjs({
     include: path.join(__dirname, '/node_modules/**'),
   }),
+  // Include images urls or base64 depending on size
+  url(),
   // To convert JSON files to ES6
   json(),
   // To remove comments, trim trailing spaces, compact empty lines,
