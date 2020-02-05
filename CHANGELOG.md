@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.12
+
+- Adds link component
+
 ## v0.1.11
 
 - Adds mediaQueries constants

@@ -5,3 +5,4 @@ export { default as SocialIcon } from './atoms/SocialIcon';
 export { default as UserPhoto } from './atoms/UserPhoto';
 export { default as Input } from './atoms/Input';
 export { default as Button } from './atoms/Button';
+export { default as Link } from './atoms/Link';
