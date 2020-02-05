@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.11
+
+- Adds mediaQueries constants
+
 ## v0.1.10
 
 - Adds inputText component

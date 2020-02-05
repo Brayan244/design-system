@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import { hover } from './test.styles';
+import * as mq from '../globals/mediaqueries';
 import * as colors from '../tokens/colors';
 import '../globals/reset';
 
@@ -21,6 +22,10 @@ const Test = ({ important = true }) => {
     background-color: ${colors.gray100};
     border-color: ${important ? colors.error : colors.gray200};
     font-family: 'Open Sans', sans-serif;
+
+    ${mq.small} {
+      background-color: #ff0000;
+    }
   `;
 
   const overwrite = css`
