@@ -47,7 +47,7 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
     transition: transform 0.2s ease-out, color 0.2s ease-out;
     transform-origin: 0% 100%;
     text-align: initial;
-    transform: translateY(12px);
+    transform: translateY(15px);
     font-family: 'Open Sans', sans-serif;
     ${value.length > 0 || isFocused ? labelActive : ''}
   `;
@@ -74,7 +74,7 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
 Input.propTypes = {
   /** The id attribute specifies a unique `id` */
   id: PropTypes.string.isRequired,
-  /** The id of the `<input>` */
+  /** The label of the `<input>` */
   label: PropTypes.string.isRequired,
   /** Specifies the type `<input>` element to display */
   type: PropTypes.oneOf(['text', 'tel', 'email']),

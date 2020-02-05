@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.13
+
+- Adds select component
+
 ## v0.1.12
 
 - Adds link component
