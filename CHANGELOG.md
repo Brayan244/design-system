@@ -11,12 +11,16 @@
 
 ## v0.1.9
 
+- Adds Button
+
+## v0.1.9
+
 - Adds User Photo Component
 - Adds Social Icons Component
 
 ## v0.1.8
 
--adds transport icon
+-Adds transport icon
 
 ## v0.1.7
 

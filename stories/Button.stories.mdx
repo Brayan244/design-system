@@ -1,0 +1,18 @@
+import { text, boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Button from '../src/atoms/Button';
+
+<Meta title="Button" component={Button} />
+
+## Props
+
+<Props of={Button} />
+
+## Preview
+
+<Preview>
+  <Story name="Button">
+    <Button noFill={boolean('No fill', false)} text={text('Text', 'Guardar')} />
+  </Story>
+</Preview>
