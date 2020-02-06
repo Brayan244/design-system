@@ -49,7 +49,7 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
     text-align: initial;
     transform: translateY(15px);
     font-family: 'Open Sans', sans-serif;
-    ${value.length > 0 || isFocused ? labelActive : ''}
+    ${Boolean(value) || isFocused ? labelActive : ''}
   `;
 
   return (
@@ -60,7 +60,7 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
         type={type}
         css={inputStyles}
         value={value}
-        onChange={e => onChange(e.target.value)}
+        onChange={onChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />

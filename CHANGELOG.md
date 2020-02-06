@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.15
+
+- Fixes Input issues
+
 ## v0.1.13
 
 - Adds select component
