@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.16
+
+- Adds onClick event to `Button` component
+
 ## v0.1.15
 
 - Fixes Input issues

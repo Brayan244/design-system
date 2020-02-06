@@ -5,7 +5,7 @@ import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
-const Button = ({ noFill, text }) => {
+const Button = ({ noFill, text, onClick }) => {
   const ButtonStyle = css`
     background-color: ${noFill ? '#ffffff' : `${colors.accent}`};
     border-radius: 4px;
@@ -28,7 +28,7 @@ const Button = ({ noFill, text }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <button type="button" css={ButtonStyle}>
+      <button type="button" css={ButtonStyle} onClick={onClick}>
         {text}
       </button>
     </>
@@ -40,6 +40,8 @@ Button.propTypes = {
   noFill: PropTypes.bool,
   /** Texto del botón */
   text: PropTypes.string.isRequired,
+  /** Callback onClick */
+  onClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
