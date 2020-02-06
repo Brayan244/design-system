@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.17
+
+- Adds Icon component
+- Updates TransportIcon component
+- Updates SocialIcon component
+
 ## v0.1.16
 
 - Adds onClick event to `Button` component

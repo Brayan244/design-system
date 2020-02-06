@@ -2,39 +2,28 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import globalStyles from '../globals/reset';
-import iconFacebook from '../../images/icons/social-facebook.svg';
-import iconInstagram from '../../images/icons/social-instagram.svg';
-import iconTwitter from '../../images/icons/social-twitter.svg';
+import Icon from '../atoms/Icon';
 
 const iconTypes = {
   facebook: {
-    icon: iconFacebook,
+    icon: 'facebook',
     url: 'https://www.facebook.com',
     title: 'Facebook',
   },
   instagram: {
-    icon: iconInstagram,
+    icon: 'instagram',
     url: 'https://www.instagram.com',
     title: 'Instagram',
   },
   twitter: {
-    icon: iconTwitter,
+    icon: 'twitter',
     url: 'https://www.twitter.com',
     title: 'Twitter',
   },
 };
 
-const SocialIcon = ({ type }) => {
+const SocialLink = ({ type }) => {
   const iconStyle = css`
-    display: inline-block;
-  `;
-  const icons = css`
-    height: 45px;
-    width: 45px;
-    background-image: url(${iconTypes[type].icon});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: inline-block;
   `;
 
@@ -48,15 +37,15 @@ const SocialIcon = ({ type }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i css={icons} />
+        <Icon size="XL" type={iconTypes[type].icon} />
       </a>
     </>
   );
 };
 
-SocialIcon.propTypes = {
+SocialLink.propTypes = {
   /** Available types: facebook, instagram, twitter */
   type: PropTypes.oneOf(['facebook', 'instagram', 'twitter']).isRequired,
 };
 
-export default SocialIcon;
+export default SocialLink;

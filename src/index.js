@@ -1,9 +1,9 @@
 export { default as Test } from './atoms/test';
 export { default as MyLife } from './atoms/MyLife';
-export { default as Transport } from './atoms/Transport';
-export { default as SocialIcon } from './atoms/SocialIcon';
+export { default as SocialLink } from './molecules/SocialLink';
 export { default as UserPhoto } from './atoms/UserPhoto';
 export { default as Input } from './atoms/Input';
 export { default as Button } from './atoms/Button';
 export { default as Link } from './atoms/Link';
 export { default as Select } from './atoms/Select';
+export { default as Icon } from './atoms/Icon';

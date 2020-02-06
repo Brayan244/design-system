@@ -1,0 +1,31 @@
+import { text, boolean, select, number } from '@storybook/addon-knobs';
+import Icon from '../src/atoms/Icon';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Icon" component={Icon} />
+
+# Icon component
+
+<Preview>
+  <Story name="Icon Story">
+    <Icon
+      size={select(
+        'Size',
+        {
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+        },
+        'L'
+      )}
+      hasMargin={boolean('Has magin?', false)}
+      type={text('Type', 'twitter')}
+      margin={number('Margin - px', 30)}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Icon} />
