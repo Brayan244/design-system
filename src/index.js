@@ -1,3 +1,11 @@
+import * as mediaQueries from './globals/mediaqueries';
+import * as screenSizes from './globals/screenSizes';
+import * as colors from './tokens/colors';
+
+export { mediaQueries };
+export { screenSizes };
+export { colors };
+
 export { default as Test } from './atoms/test';
 export { default as MyLife } from './atoms/MyLife';
 export { default as SocialLink } from './molecules/SocialLink';
