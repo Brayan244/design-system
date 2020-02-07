@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.19
+
+- Add value prop to Select component
+
 ## v0.1.18
 
 - Adds Text component

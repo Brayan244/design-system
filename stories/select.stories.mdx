@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Select from '../src/atoms/Select';
@@ -8,27 +9,33 @@ import Select from '../src/atoms/Select';
 
 <Preview>
   <Story name="Select Story">
-    <Select
-      isActive={boolean('Is Active?', false)}
-      label={text('Label', 'Nacionalidad')}
-      id={text('ID', 'nacionalidad')}
-      placeholder={text('placeholder', 'Correo electrónico')}
-      options={[
-        {
-          value: '1',
-          label: 'Option 1',
-        },
-        {
-          value: '2',
-          label: 'Option 2',
-        },
-        {
-          value: '3',
-          label: 'Option 3',
-        },
-      ]}
-      onChange={value => console.log(value)}
-    />
+    {() => {
+      const [value, setValue] = useState('');
+      return (
+        <Select
+          isActive={boolean('Is Active?', false)}
+          label={text('Label', 'Nacionalidad')}
+          id={text('ID', 'nacionalidad')}
+          placeholder={text('placeholder', 'Correo electrónico')}
+          options={[
+            {
+              value: '1',
+              label: 'Option 1',
+            },
+            {
+              value: '2',
+              label: 'Option 2',
+            },
+            {
+              value: '3',
+              label: 'Option 3',
+            },
+          ]}
+          onChange={e => setValue(e.target.value)}
+          value={value}
+        />
+      );
+    }}
   </Story>
 </Preview>
 

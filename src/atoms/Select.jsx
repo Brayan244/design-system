@@ -13,10 +13,11 @@ const defaultOption = {
   label: '',
 };
 
-const Select = ({ id, label, placeholder, options, onChange }) => {
+const Select = ({ id, label, placeholder, options, onChange, value }) => {
   const selectRef = useRef();
   const [isActive, setIsActive] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(defaultOption);
+  const selectedOption =
+    options.find(option => option.value === value) || defaultOption;
 
   const wrapper = css`
     position: relative;
@@ -106,7 +107,6 @@ const Select = ({ id, label, placeholder, options, onChange }) => {
   `;
 
   const onOptionClick = option => {
-    setSelectedOption(option);
     triggerOnChange(selectRef, option.value);
     setIsActive(false);
   };
@@ -184,7 +184,10 @@ Select.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
+  /** Callback that handle select changes */
   onChange: PropTypes.func.isRequired,
+  /** Current value */
+  value: PropTypes.string.isRequired,
 };
 
 export default Select;
