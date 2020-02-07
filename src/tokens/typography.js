@@ -5,6 +5,6 @@ export const sizeM = '15px';
 export const sizeS = '13px';
 export const sizeXS = '11px';
 
-export const bold = 'bold';
-export const semibold = 'semibold';
-export const regular = 'regular';
+export const bold = 700;
+export const semibold = 600;
+export const regular = 400;

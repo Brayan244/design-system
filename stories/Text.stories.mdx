@@ -1,0 +1,43 @@
+import { text, select } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Text from '../src/atoms/Text';
+
+<Meta title="Text" component={Text} />
+
+## Preview
+
+<Preview>
+  <Story name="Text story">
+    <Text
+      elementType={select('Element type', ['p', 'span'], 'p')}
+      children={text('Text', `Hola Reservamos!`)}
+      color={select(
+        'Color',
+        ['primary', 'accent', 'grayStrong', 'grayLight', 'info'],
+        'grayStrong'
+      )}
+      weight={select('Weight', ['regular', 'semibold', 'bold'], 'regular')}
+      size={select('Size', ['XS', 'S', 'M', 'L', 'XL', 'XXL'], 'M')}
+    />
+  </Story>
+</Preview>
+
+## Text inside text
+
+<Preview>
+  <Story name="Text inside text">
+    <Text>
+      Hola&nbsp;
+      <Text
+        elementType={select('Element type', ['p', 'span'], 'span')}
+        weight={select('Weight', ['regular', 'semibold', 'bold'], 'bold')}
+      >
+        Reservamos!
+      </Text>
+    </Text>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Text} />

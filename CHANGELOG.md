@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.18
+
+- Adds Text component
+
 ## v0.1.17
 
 - Adds Icon component
@@ -20,7 +24,7 @@
 
 ## v0.1.12
 
-- Adds link component
+- Adds Link component
 
 ## v0.1.11
 
