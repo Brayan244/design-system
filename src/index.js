@@ -16,3 +16,4 @@ export { default as Link } from './atoms/Link';
 export { default as Select } from './atoms/Select';
 export { default as Icon } from './atoms/Icon';
 export { default as Text } from './atoms/Text';
+export { default as SidebarLink } from './atoms/SidebarLink';

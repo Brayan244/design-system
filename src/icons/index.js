@@ -7,3 +7,4 @@ export { default as twitter } from '../../images/icons/social/twitter.svg';
 export { default as guarantee } from '../../images/icons/guarantee.svg';
 export { default as wallet } from '../../images/icons/wallet.svg';
 export { default as badgeQuestion } from '../../images/icons/badge-question.svg';
+export { default as rightPrimary } from '../../images/icons/arrows/right-primary.svg';
