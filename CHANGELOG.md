@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.22
+
+- Add Sidebar Link component
+- Add Card Item component
+- Add Card Icon
+
 ## v0.1.21
 
 - Adds margin for input and select labels

@@ -21,3 +21,5 @@ export { default as WalletInfo } from './molecules/WalletInfo';
 export { default as UserInfo } from './molecules/UserInfo';
 export { default as UserInfoLarge } from './molecules/UserInfoLarge';
 export { default as Header } from './molecules/Header';
+export { default as CardIcon } from './atoms/CardIcon';
+export { default as CardItem } from './molecules/CardItem';
