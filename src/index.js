@@ -20,3 +20,4 @@ export { default as SidebarLink } from './atoms/SidebarLink';
 export { default as WalletInfo } from './molecules/WalletInfo';
 export { default as UserInfo } from './molecules/UserInfo';
 export { default as UserInfoLarge } from './molecules/UserInfoLarge';
+export { default as Header } from './molecules/Header';

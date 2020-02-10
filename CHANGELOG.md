@@ -12,6 +12,11 @@
 
 ## v0.1.18
 
+- Adds Header component
+- Adds Logo
+
+## v0.1.18
+
 - Adds Text component
 
 ## v0.1.17

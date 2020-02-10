@@ -1,0 +1,21 @@
+import { boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Logo from '../src/atoms/Logo';
+
+<Meta title="Logo" component={Logo} />
+
+## Preview
+
+<Preview>
+  <Story name="Logo">
+    <Logo
+      isLarge={boolean('Is Large', false)}
+      grayLogo={boolean('Gray Logo', false)}
+      hideOnMobile={boolean('Hide On Mobile', false)}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Logo} />

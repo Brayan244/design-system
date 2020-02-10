@@ -1,0 +1,20 @@
+import { text } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Header from '../src/molecules/Header';
+
+<Meta title="Header" component={Header} />
+
+## Preview
+
+<Preview>
+  <Story name="Header">
+    <Header
+      text={text('Text', 'Mi cuenta')}
+      url={text('URL', 'https://www.reservamos.mx/')}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Header} />
