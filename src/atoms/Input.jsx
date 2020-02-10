@@ -9,8 +9,8 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const container = css`
+    margin-top: 15px;
     position: relative;
-    margin-bottom: 10px;
   `;
 
   const labelActive = css`
@@ -20,16 +20,17 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
 
   const inputStyles = css`
     border-bottom: 1px solid ${hasError ? colors.error : colors.gray200};
-    height: 50px;
+    box-shadow: ${hasError ? `0 1px 0 0 ${colors.error}` : 'inherit'};
     color: ${hasError ? colors.error : colors.gray600};
-    width: 100%;
+    height: 50px;
     font-size: 16px;
-    margin-bottom: 8px;
     transition: border 0.3s, -webkit-box-shadow 0.3s;
     padding: 0 15px;
+    width: 100%;
 
     &:focus {
       border-color: ${hasError ? colors.error : colors.accent};
+      box-shadow: 0 1px 0 0 ${hasError ? colors.error : colors.accent};
 
       & + label {
         color: ${hasError ? colors.error : colors.accent};

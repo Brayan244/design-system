@@ -20,6 +20,7 @@ const Select = ({ id, label, placeholder, options, onChange, value }) => {
     options.find(option => option.value === value) || defaultOption;
 
   const wrapper = css`
+    margin-top: 15px;
     position: relative;
   `;
 
@@ -42,6 +43,7 @@ const Select = ({ id, label, placeholder, options, onChange, value }) => {
 
     &:focus {
       border-color: ${colors.accent};
+      box-shadow: 0 1px 0 0 ${colors.accent};
     }
   `;
 

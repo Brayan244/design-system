@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.21
+
+- Adds margin for input and select labels
+
 ## v0.1.20
 
 - Adds Wallet info component
