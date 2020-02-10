@@ -1,0 +1,16 @@
+import { number, boolean, text } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import WalletInfo from '../src/molecules/WalletInfo';
+
+<Meta title="Wallet info story" component={WalletInfo} />
+
+## Preview
+
+<Preview>
+  <Story name="Wallet info">
+    <WalletInfo
+      price={number('Price', '1, 990')}
+      text={text('Text', 'Monedero Reservamos')}
+    />
+  </Story>
+</Preview>

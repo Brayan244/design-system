@@ -8,6 +8,7 @@ const UserPhoto = ({ large, photoUrl }) => {
     border-radius: 50%;
     height: ${large ? '120px' : '70px'};
     width: ${large ? '120px' : '70px'};
+    min-width: ${large ? '120px' : '70px'};
     background-image: url(${photoUrl});
     background-size: cover;
     background-position: center;
