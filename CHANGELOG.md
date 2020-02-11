@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.23
+
+- UserInfoLarge - Adds isCentered prop
+
 ## v0.1.22
 
 - Add Sidebar Link component

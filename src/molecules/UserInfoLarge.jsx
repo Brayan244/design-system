@@ -7,11 +7,19 @@ import UserPhoto from '../atoms/UserPhoto';
 import Text from '../atoms/Text';
 import * as mq from '../globals/mediaqueries';
 
-const UserInfoLarge = ({ text, photoUrl, name, hideOnMobile, price }) => {
+const UserInfoLarge = ({
+  text,
+  photoUrl,
+  name,
+  hideOnMobile,
+  price,
+  isCentered,
+}) => {
   const container = css`
     display: flex;
     align-items: center;
     max-width: 460px;
+    margin: ${isCentered ? '0 auto' : 'inherit'};
 
     ${mq.small} {
       display: ${hideOnMobile ? 'none' : 'flex'};
@@ -48,6 +56,8 @@ UserInfoLarge.propTypes = {
   name: PropTypes.string.isRequired,
   /** Hide component on mobile */
   hideOnMobile: PropTypes.bool,
+  /** Center the component */
+  isCentered: PropTypes.bool,
   /** Price */
   price: PropTypes.number.isRequired,
   /** Text message */
@@ -56,6 +66,7 @@ UserInfoLarge.propTypes = {
 
 UserInfoLarge.defaultProps = {
   hideOnMobile: true,
+  isCentered: true,
 };
 
 export default UserInfoLarge;
