@@ -23,3 +23,4 @@ export { default as UserInfoLarge } from './molecules/UserInfoLarge';
 export { default as Header } from './molecules/Header';
 export { default as CardIcon } from './atoms/CardIcon';
 export { default as CardItem } from './molecules/CardItem';
+export { default as Guarantee } from './molecules/Guarantee';

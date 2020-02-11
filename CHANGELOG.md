@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.24
+
+- Adds Guarantee component
+
 ## v0.1.23
 
 - UserInfoLarge - Adds isCentered prop
