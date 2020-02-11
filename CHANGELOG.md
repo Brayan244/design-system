@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.25
+
+- Adds disabled styles for Input and Select components
+
 ## v0.1.24
 
 - Adds Guarantee component

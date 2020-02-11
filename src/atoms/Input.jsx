@@ -5,7 +5,7 @@ import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 import globalStyles from '../globals/reset';
 
-const Input = ({ id, label, type, value, onChange, hasError }) => {
+const Input = ({ id, label, type, value, onChange, hasError, isDisabled }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const container = css`
@@ -19,7 +19,8 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
   `;
 
   const inputStyles = css`
-    border-bottom: 1px solid ${hasError ? colors.error : colors.gray200};
+    border-bottom: ${isDisabled ? '0' : '1px'} solid
+      ${hasError ? colors.error : colors.gray200};
     box-shadow: ${hasError ? `0 1px 0 0 ${colors.error}` : 'inherit'};
     color: ${hasError ? colors.error : colors.gray600};
     height: 50px;
@@ -64,6 +65,7 @@ const Input = ({ id, label, type, value, onChange, hasError }) => {
         onChange={onChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        disabled={isDisabled}
       />
       <label htmlFor={id} css={labelStyle}>
         {label}
@@ -85,11 +87,14 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Indicates the `<input>` field has an error */
   hasError: PropTypes.bool,
+  /** Indicates the `<input>` field is disabled */
+  isDisabled: PropTypes.bool,
 };
 
 Input.defaultProps = {
   type: 'text',
   hasError: false,
+  isDisabled: false,
 };
 
 export default Input;

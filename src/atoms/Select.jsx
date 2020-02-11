@@ -13,7 +13,15 @@ const defaultOption = {
   label: '',
 };
 
-const Select = ({ id, label, placeholder, options, onChange, value }) => {
+const Select = ({
+  id,
+  label,
+  placeholder,
+  options,
+  onChange,
+  value,
+  isDisabled,
+}) => {
   const selectRef = useRef();
   const [isActive, setIsActive] = useState(false);
   const selectedOption =
@@ -31,7 +39,7 @@ const Select = ({ id, label, placeholder, options, onChange, value }) => {
   const inputText = css`
     font-family: 'Open Sans', sans-serif;
     cursor: pointer;
-    border-bottom: 1px solid ${colors.gray200};
+    border-bottom: ${isDisabled ? '0' : '1px'} solid ${colors.gray200};
     width: 100%;
     color: ${colors.gray400};
     font-size: ${typography.sizeM};
@@ -125,6 +133,7 @@ const Select = ({ id, label, placeholder, options, onChange, value }) => {
           onFocus={() => setIsActive(true)}
           onBlur={() => setIsActive(false)}
           value={selectedOption.label}
+          disabled={isDisabled}
         />
         {isActive && (
           <ul css={listItems}>
@@ -153,6 +162,7 @@ const Select = ({ id, label, placeholder, options, onChange, value }) => {
           onChange={onChange}
           defaultValue=""
           value={selectedOption.value}
+          disabled={isDisabled}
         >
           <option value="" disabled>
             {placeholder}
@@ -163,7 +173,7 @@ const Select = ({ id, label, placeholder, options, onChange, value }) => {
             </option>
           ))}
         </select>
-        <div css={iconStyle} />
+        {!isDisabled && <div css={iconStyle} />}
         <label htmlFor={id} css={labelStyle}>
           {label}
         </label>
@@ -190,6 +200,12 @@ Select.propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Current value */
   value: PropTypes.string.isRequired,
+  /** Indicates the `<input>` field is disabled */
+  isDisabled: PropTypes.bool,
+};
+
+Select.defaultProps = {
+  isDisabled: false,
 };
 
 export default Select;
