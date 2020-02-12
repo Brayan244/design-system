@@ -1,6 +1,10 @@
 # Changelog
 
-## v0.1.25
+## v0.1.27
+
+- Adds Splash component
+
+## v0.1.26
 
 - Adds prop to header and logo elements for image source
 
