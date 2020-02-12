@@ -24,4 +24,5 @@ export { default as Header } from './molecules/Header';
 export { default as CardIcon } from './atoms/CardIcon';
 export { default as CardItem } from './molecules/CardItem';
 export { default as Guarantee } from './molecules/Guarantee';
-export { default as DatePicker } from './molecules/DatePicker';
+// TODO: to fix this, we need to be able to export css with rollup
+// export { default as DatePicker } from './molecules/DatePicker';

@@ -2,6 +2,7 @@
 
 ## v0.1.30
 
+- Adds build check on pull requests to master
 - New DatePicker component
 - New FieldLabel component used in Select, Input & DatePicker
 - Refactors form field styles to reuse them
