@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.32
+
+- Adds responsive styles for UserInfoLarge component
+
 ## v0.1.31
 
 - Removes Header back button if no URL prop is passed

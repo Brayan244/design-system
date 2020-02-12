@@ -2,6 +2,7 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import globalStyles from '../globals/reset';
+import * as mq from '../globals/mediaqueries';
 
 const UserPhoto = ({ large, photoUrl }) => {
   const photoStyle = css`
@@ -14,6 +15,18 @@ const UserPhoto = ({ large, photoUrl }) => {
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    ${mq.small} {
+      height: 80px;
+      width: 80px;
+      min-width: 80px;
+    }
+
+    ${mq.xsmall} {
+      height: 50px;
+      width: 50px;
+      min-width: 50px;
+    }
   `;
 
   return (

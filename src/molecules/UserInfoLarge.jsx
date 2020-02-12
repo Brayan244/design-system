@@ -30,8 +30,16 @@ const UserInfoLarge = ({
     margin-left: 30px;
     flex: 1;
 
+    ${mq.small} {
+      margin-left: 15px;
+    }
+
     p:first-child {
       margin-bottom: 10px;
+
+      ${mq.small} {
+        font-size: 18px;
+      }
     }
   `;
 
@@ -65,7 +73,7 @@ UserInfoLarge.propTypes = {
 };
 
 UserInfoLarge.defaultProps = {
-  hideOnMobile: true,
+  hideOnMobile: false,
   isCentered: true,
 };
 
