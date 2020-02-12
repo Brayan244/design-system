@@ -9,6 +9,7 @@ const tones = {
   primary: colors.primary,
   accent: colors.accent,
   grayStrong: colors.gray600,
+  gray500: colors.gray500,
   grayLight: colors.gray400,
   info: colors.info,
 };

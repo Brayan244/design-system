@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.33
+
+- Add List Item Component
+
 ## v0.1.32
 
 - Adds responsive styles for UserInfoLarge component
