@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.31
+
+- Removes Header back button if no URL prop is passed
+- Exports Splash component
+
 ## v0.1.30
 
 - Adds build check on pull requests to master

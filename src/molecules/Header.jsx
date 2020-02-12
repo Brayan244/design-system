@@ -50,9 +50,11 @@ const Header = ({ logoSrc, text, url }) => {
     <>
       <Global styles={globalStyles} />
       <div css={headerStyle}>
-        <a href={url} css={arrowBack}>
-          <Icon type="arrowBack" size="S" />
-        </a>
+        {Boolean(url) && (
+          <a href={url} css={arrowBack}>
+            <Icon type="arrowBack" size="S" />
+          </a>
+        )}
         <div css={headerContainer}>
           <Logo imgSrc={logoSrc} hideOnMobile />
           <Text size="M">{text}</Text>
@@ -67,12 +69,13 @@ Header.propTypes = {
   logoSrc: PropTypes.string,
   /** Título del header */
   text: PropTypes.string.isRequired,
-  /** URL del link back */
-  url: PropTypes.string.isRequired,
+  /** Back link URL */
+  url: PropTypes.string,
 };
 
 Header.defaultProps = {
   logoSrc: null,
+  url: null,
 };
 
 export default Header;
