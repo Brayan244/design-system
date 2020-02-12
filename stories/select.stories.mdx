@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import Select from '../src/atoms/Select';
+import Select from '../src/molecules/Select';
 
 <Meta title="Forms|Select" component={Select} />
 
@@ -14,9 +15,9 @@ import Select from '../src/atoms/Select';
       return (
         <Select
           isActive={boolean('Is Active?', false)}
-          label={text('Label', 'Nacionalidad')}
+          label={text('Label', 'Select Label')}
           id={text('ID', 'nacionalidad')}
-          placeholder={text('placeholder', 'Correo electrónico')}
+          placeholder={text('placeholder', 'Select Placeholder')}
           options={[
             {
               value: '1',

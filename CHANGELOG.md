@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.30
+
+- New DatePicker component
+- New FieldLabel component used in Select, Input & DatePicker
+- Refactors form field styles to reuse them
+- Moves Select, Input to molecules
+
 ## v0.1.27
 
 - Adds Splash component

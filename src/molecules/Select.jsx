@@ -4,9 +4,11 @@ import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
+import inputBaseStyles from '../base/input.styles';
 import globalStyles from '../globals/reset';
 import iconDropDown from '../../images/icons/arrow-dropdown.svg';
 import triggerOnChange from '../utils/triggerOnChange';
+import FieldLabel from '../atoms/FieldLabel';
 
 const defaultOption = {
   value: '',
@@ -14,56 +16,34 @@ const defaultOption = {
 };
 
 const Select = ({
+  hasError,
   id,
-  label,
-  placeholder,
-  options,
-  onChange,
-  value,
   isDisabled,
+  label,
+  onChange,
+  options,
+  placeholder,
+  value,
 }) => {
   const selectRef = useRef();
   const [isActive, setIsActive] = useState(false);
   const selectedOption =
     options.find(option => option.value === value) || defaultOption;
 
-  const wrapper = css`
+  const onOptionClick = option => {
+    triggerOnChange(selectRef, option.value);
+    setIsActive(false);
+  };
+
+  const inputStyles = inputBaseStyles(isDisabled, hasError);
+
+  const container = css`
     margin-top: 15px;
     position: relative;
   `;
 
   const select = css`
     display: none;
-  `;
-
-  const inputText = css`
-    font-family: 'Open Sans', sans-serif;
-    cursor: pointer;
-    border-bottom: ${isDisabled ? '0' : '1px'} solid ${colors.gray200};
-    width: 100%;
-    color: ${colors.gray400};
-    font-size: ${typography.sizeM};
-    padding: 0 15px;
-    display: block;
-    user-select: none;
-    z-index: 1;
-    height: 50px;
-
-    &:focus {
-      border-color: ${colors.accent};
-      box-shadow: 0 1px 0 0 ${colors.accent};
-    }
-  `;
-
-  const labelStyle = css`
-    color: ${colors.gray400};
-    cursor: text;
-    position: absolute;
-    font-family: 'Open Sans', sans-serif;
-    top: 0;
-    left: 15px;
-    font-size: ${typography.sizeS};
-    transform: translateY(-17px);
   `;
 
   const listItems = css`
@@ -116,79 +96,80 @@ const Select = ({
     margin: auto 0;
   `;
 
-  const onOptionClick = option => {
-    triggerOnChange(selectRef, option.value);
-    setIsActive(false);
-  };
-
   return (
-    <>
+    <div css={container}>
       <Global styles={globalStyles} />
-      <div css={wrapper}>
-        <input
-          css={inputText}
-          type="text"
-          readOnly
-          placeholder={placeholder}
-          onFocus={() => setIsActive(true)}
-          onBlur={() => setIsActive(false)}
-          value={selectedOption.label}
-          disabled={isDisabled}
-        />
-        {isActive && (
-          <ul css={listItems}>
-            <li
-              css={[listItem, disabled, selected]}
-              onMouseDown={() => onOptionClick(defaultOption)}
-            >
-              {placeholder}
-            </li>
-            {options.map(option => (
-              <li
-                css={listItem}
-                key={option.value}
-                onMouseDown={() => onOptionClick(option)}
-              >
-                {option.label}
-              </li>
-            ))}
-          </ul>
-        )}
-        <select
-          tabIndex="-1"
-          id={id}
-          css={select}
-          ref={selectRef}
-          onChange={onChange}
-          defaultValue=""
-          value={selectedOption.value}
-          disabled={isDisabled}
-        >
-          <option value="" disabled>
+
+      <input
+        css={inputStyles}
+        type="text"
+        readOnly
+        placeholder={placeholder}
+        onFocus={() => setIsActive(true)}
+        onBlur={() => setIsActive(false)}
+        value={selectedOption.label}
+        disabled={isDisabled}
+      />
+
+      {isActive && (
+        <ul css={listItems}>
+          <li
+            css={[listItem, disabled, selected]}
+            onMouseDown={() => onOptionClick(defaultOption)}
+          >
             {placeholder}
-          </option>
+          </li>
+
           {options.map(option => (
-            <option key={option.value} value={option.value}>
+            <li
+              css={listItem}
+              key={option.value}
+              onMouseDown={() => onOptionClick(option)}
+            >
               {option.label}
-            </option>
+            </li>
           ))}
-        </select>
-        {!isDisabled && <div css={iconStyle} />}
-        <label htmlFor={id} css={labelStyle}>
-          {label}
-        </label>
-      </div>
-    </>
+        </ul>
+      )}
+
+      {!isDisabled && <div css={iconStyle} />}
+
+      <select
+        tabIndex="-1"
+        id={id}
+        css={select}
+        ref={selectRef}
+        onChange={onChange}
+        value={selectedOption.value}
+        disabled={isDisabled}
+      >
+        <option value={null} disabled>
+          {placeholder}
+        </option>
+
+        {options.map(option => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+
+      <FieldLabel inputId={id} text={label} />
+    </div>
   );
 };
 
 Select.propTypes = {
+  /** Indicates the `<input>` field has an error */
+  hasError: PropTypes.bool,
   /** The id attribute specifies a unique `id` */
   id: PropTypes.string.isRequired,
+  /** Indicates the `<input>` field is disabled */
+  isDisabled: PropTypes.bool,
   /** The label of the `<input>` */
   label: PropTypes.string.isRequired,
-  /** The placeholder of the `<input>` */
-  placeholder: PropTypes.string.isRequired,
+  /** Callback that handle select changes */
+  onChange: PropTypes.func.isRequired,
   /** Array of options that populate the select menu */
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -196,15 +177,14 @@ Select.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
-  /** Callback that handle select changes */
-  onChange: PropTypes.func.isRequired,
+  /** The placeholder of the `<input>` */
+  placeholder: PropTypes.string.isRequired,
   /** Current value */
   value: PropTypes.string.isRequired,
-  /** Indicates the `<input>` field is disabled */
-  isDisabled: PropTypes.bool,
 };
 
 Select.defaultProps = {
+  hasError: false,
   isDisabled: false,
 };
 
