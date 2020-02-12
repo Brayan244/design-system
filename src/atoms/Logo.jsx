@@ -6,11 +6,13 @@ import logo from '../../images/logo.svg';
 import logoGray from '../../images/logo-gray.svg';
 import * as mq from '../globals/mediaqueries';
 
-const Logo = ({ isLarge, hideOnMobile, grayLogo }) => {
+const Logo = ({ imgSrc, isLarge, hideOnMobile, grayLogo }) => {
   const logoStyle = css`
     height: ${isLarge ? '77px' : ' 28px'};
     width: ${isLarge ? '400px' : '145px'};
-    background-image: url(${grayLogo ? logoGray : logo});
+    ${imgSrc
+      ? `background-image: url(${imgSrc});`
+      : `background-image: url(${grayLogo ? logoGray : logo});`}
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,6 +32,8 @@ const Logo = ({ isLarge, hideOnMobile, grayLogo }) => {
 };
 
 Logo.propTypes = {
+  /** Logo url or base64 img. If this prop is used, `grayLogo` is ignored */
+  imgSrc: PropTypes.string,
   /** Muestra el logo en gris a 400px */
   isLarge: PropTypes.bool,
   /** Muestra el logo en gris a 400px */
@@ -39,6 +43,7 @@ Logo.propTypes = {
 };
 
 Logo.defaultProps = {
+  imgSrc: null,
   isLarge: false,
   grayLogo: false,
   hideOnMobile: false,

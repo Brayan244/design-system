@@ -8,7 +8,7 @@ import Icon from '../atoms/Icon';
 import * as mq from '../globals/mediaqueries';
 import Text from '../atoms/Text';
 
-const Header = ({ text, url }) => {
+const Header = ({ logoSrc, text, url }) => {
   const headerStyle = css`
     align-items: center;
     background-color: ${colors.primary};
@@ -54,7 +54,7 @@ const Header = ({ text, url }) => {
           <Icon type="arrowBack" size="S" />
         </a>
         <div css={headerContainer}>
-          <Logo hideOnMobile />
+          <Logo imgSrc={logoSrc} hideOnMobile />
           <Text size="M">{text}</Text>
         </div>
       </div>
@@ -63,10 +63,16 @@ const Header = ({ text, url }) => {
 };
 
 Header.propTypes = {
+  /** Logo url or base64 img to show in the header */
+  logoSrc: PropTypes.string,
   /** Título del header */
   text: PropTypes.string.isRequired,
   /** URL del link back */
   url: PropTypes.string.isRequired,
+};
+
+Header.defaultProps = {
+  logoSrc: null,
 };
 
 export default Header;

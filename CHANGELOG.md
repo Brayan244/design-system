@@ -2,6 +2,10 @@
 
 ## v0.1.25
 
+- Adds prop to header and logo elements for image source
+
+## v0.1.25
+
 - Adds disabled styles for Input and Select components
 
 ## v0.1.24

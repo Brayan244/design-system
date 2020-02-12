@@ -1,10 +1,13 @@
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Logo from '../src/atoms/Logo';
+import happyFace from '../images/happy-face.svg';
 
 <Meta title="Logo" component={Logo} />
 
 ## Preview
+
+Use the default logo (Reservamos)
 
 <Preview>
   <Story name="Logo">
@@ -13,6 +16,27 @@ import Logo from '../src/atoms/Logo';
       grayLogo={boolean('Gray Logo', false)}
       hideOnMobile={boolean('Hide On Mobile', false)}
     />
+  </Story>
+</Preview>
+
+Passing an URL as the src attribute
+
+<Preview>
+  <Story name="Logo from URL">
+    <Logo
+      imgSrc="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bass_logo.svg"
+      isLarge
+    />
+  </Story>
+</Preview>
+
+Passing an imported image as the src attribute
+
+`import happyFace from '../images/happy-face.svg';`
+
+<Preview>
+  <Story name="Logo with imported image">
+    <Logo imgSrc={happyFace} isLarge />
   </Story>
 </Preview>
 
