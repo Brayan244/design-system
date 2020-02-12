@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.34
+
+- Adds FlatButton component
+
 ## v0.1.33
 
 - Add List Item Component
