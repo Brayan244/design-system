@@ -6,17 +6,17 @@ import logo from '../../images/logo.svg';
 import logoGray from '../../images/logo-gray.svg';
 import * as mq from '../globals/mediaqueries';
 
-const Logo = ({ imgSrc, isLarge, hideOnMobile, grayLogo }) => {
-  const logoStyle = css`
+const Logo = ({ alt, imgSrc, isLarge, hideOnMobile, grayLogo }) => {
+  let src = grayLogo ? logoGray : logo;
+  if (imgSrc) {
+    src = imgSrc;
+  }
+
+  const image = css`
     height: ${isLarge ? '77px' : ' 28px'};
     width: ${isLarge ? '400px' : '145px'};
-    ${imgSrc
-      ? `background-image: url(${imgSrc});`
-      : `background-image: url(${grayLogo ? logoGray : logo});`}
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     display: inline-block;
+    object-fit: contain;
 
     ${mq.small} {
       display: ${hideOnMobile ? 'none' : 'inline-block'};
@@ -26,12 +26,14 @@ const Logo = ({ imgSrc, isLarge, hideOnMobile, grayLogo }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <div css={logoStyle} />
+      <img src={src} css={image} alt={alt} />
     </>
   );
 };
 
 Logo.propTypes = {
+  /** Alt text for image */
+  alt: PropTypes.string.isRequired,
   /** Logo url or base64 img. If this prop is used, `grayLogo` is ignored */
   imgSrc: PropTypes.string,
   /** Muestra el logo en gris a 400px */

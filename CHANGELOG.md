@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.38
+
+- Logo component - Changes background-image for img html element
+
 ## v0.1.36
 
 - Adds SpinLoader component

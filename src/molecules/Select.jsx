@@ -6,11 +6,6 @@ import globalStyles from '../globals/reset';
 import iconDropDown from '../../images/icons/arrow-dropdown.svg';
 import FieldLabel from '../atoms/FieldLabel';
 
-const defaultOption = {
-  value: '',
-  label: '',
-};
-
 const Select = ({
   hasError,
   id,
@@ -21,9 +16,6 @@ const Select = ({
   placeholder,
   value,
 }) => {
-  const selectedOption =
-    options.find(option => option.value === value) || defaultOption;
-
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
   const selectWrapper = css`

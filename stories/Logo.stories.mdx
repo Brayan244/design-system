@@ -12,6 +12,7 @@ Use the default logo (Reservamos)
 <Preview>
   <Story name="Logo">
     <Logo
+      alt={('Alt', 'My image')}
       isLarge={boolean('Is Large', false)}
       grayLogo={boolean('Gray Logo', false)}
       hideOnMobile={boolean('Hide On Mobile', false)}
@@ -24,6 +25,7 @@ Passing an URL as the src attribute
 <Preview>
   <Story name="Logo from URL">
     <Logo
+      alt="My Image"
       imgSrc="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bass_logo.svg"
       isLarge
     />
@@ -36,7 +38,7 @@ Passing an imported image as the src attribute
 
 <Preview>
   <Story name="Logo with imported image">
-    <Logo imgSrc={happyFace} isLarge />
+    <Logo alt="My Image" imgSrc={happyFace} isLarge />
   </Story>
 </Preview>
 
