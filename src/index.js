@@ -27,5 +27,6 @@ export { default as Guarantee } from './molecules/Guarantee';
 export { default as SplashScreen } from './molecules/Splash';
 export { default as ListItem } from './molecules/ListItem';
 export { default as FlatButton } from './atoms/FlatButton';
+export { default as SpinLoader } from './molecules/SpinLoader';
 // TODO: to fix this, we need to be able to export css with rollup
 // export { default as DatePicker } from './molecules/DatePicker';

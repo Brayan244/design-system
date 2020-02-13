@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.36
+
+- Adds SpinLoader component
+
 ## v0.1.35
 
 - Uses a native select for the Select component
