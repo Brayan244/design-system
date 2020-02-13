@@ -42,13 +42,27 @@ export default css`
     text-decoration: none;
   }
 
-  input {
+  input,
+  select {
+    appearance: none;
+    border-radius: 0;
     border: none;
     background-image: none;
     background-color: transparent;
     box-shadow: none;
     padding: 0;
     margin: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input::-ms-clear {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  select::-ms-expand {
+    display: none;
   }
 
   button {

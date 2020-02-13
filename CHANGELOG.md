@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.35
+
+- Uses a native select for the Select component
+
 ## v0.1.34
 
 - Adds FlatButton component

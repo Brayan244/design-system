@@ -24,5 +24,9 @@ export default function inputStyles(isDisabled, hasError) {
         color: ${errorColor || colors.accent};
       }
     }
+
+    &:disabled {
+      color: ${colors.gray600};
+    }
   `;
 }
