@@ -20,7 +20,7 @@ function selectLink(type) {
   }
 }
 
-const Link = ({ large, text, url, type }) => {
+const Link = ({ large, text, href, type }) => {
   const linkStyle = css`
     font-size: ${large ? `${typography.sizeL}` : `${typography.sizeS}`};
     font-weight: ${typography.semibold};
@@ -32,7 +32,7 @@ const Link = ({ large, text, url, type }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <a css={linkStyle} href={url}>
+      <a css={linkStyle} href={href}>
         {text}
       </a>
     </>
@@ -45,7 +45,7 @@ Link.propTypes = {
   /** Texto que tendrá el link */
   text: PropTypes.string.isRequired,
   /** URL del link */
-  url: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   /** Tipo de color del link */
   type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']).isRequired,
 };

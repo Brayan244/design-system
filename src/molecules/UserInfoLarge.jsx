@@ -34,7 +34,7 @@ const UserInfoLarge = ({
       margin-left: 15px;
     }
 
-    p:first-child {
+    p:first-of-type {
       margin-bottom: 10px;
 
       ${mq.small} {

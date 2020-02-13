@@ -27,6 +27,8 @@ export default function inputStyles(isDisabled, hasError) {
 
     &:disabled {
       color: ${colors.gray600};
+      opacity: 1;
+      -webkit-text-fill-color: ${colors.gray600};
     }
   `;
 }
