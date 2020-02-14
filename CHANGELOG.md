@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.39
+
+- Adds decorator to add the css reset to all stories
+
 ## v0.1.38
 
 - Logo component - Changes background-image for img html element

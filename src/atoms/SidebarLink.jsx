@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as mq from '../globals/mediaqueries';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
@@ -39,15 +38,12 @@ const SidebarLink = ({ text, active, linkUrl }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <a href={linkUrl} css={ButtonStyle}>
-        {text}
-        <div href="#" css={rightPrimary}>
-          <Icon type="rightPrimary" size="S" />
-        </div>
-      </a>
-    </>
+    <a href={linkUrl} css={ButtonStyle}>
+      {text}
+      <div href="#" css={rightPrimary}>
+        <Icon type="rightPrimary" size="S" />
+      </div>
+    </a>
   );
 };
 

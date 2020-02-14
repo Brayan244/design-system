@@ -9,6 +9,7 @@ export default css`
 
   * {
     box-sizing: inherit;
+
     &::after,
     &::before {
       box-sizing: inherit;
@@ -71,15 +72,5 @@ export default css`
     margin: 0;
     padding: 0;
     background-color: transparent;
-  }
-
-  select::-ms-expand {
-    display: none;
-  }
-
-  input::-ms-clear {
-    display: none;
-    height: 0;
-    width: 0;
   }
 `;

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import mastercard from '../../images/master.svg';
 import visa from '../../images/visa.svg';
 import amex from '../../images/amex.png';
@@ -44,12 +43,9 @@ const CardIcon = ({ cardBrand, hasMargin }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <div css={cardIconStyle}>
-        <i css={logo} />
-      </div>
-    </>
+    <div css={cardIconStyle}>
+      <i css={logo} />
+    </div>
   );
 };
 

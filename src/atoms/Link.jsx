@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
@@ -30,12 +29,9 @@ const Link = ({ large, text, href, type }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <a css={linkStyle} href={href}>
-        {text}
-      </a>
-    </>
+    <a css={linkStyle} href={href}>
+      {text}
+    </a>
   );
 };
 

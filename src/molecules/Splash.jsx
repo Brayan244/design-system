@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
 import Logo from '../atoms/Logo';
@@ -22,7 +21,6 @@ const Splash = ({ imgSrc }) => {
 
   return (
     <div css={splashContainer}>
-      <Global styles={globalStyles} />
       <Logo imgSrc={imgSrc} isLarge grayLogo />
     </div>
   );

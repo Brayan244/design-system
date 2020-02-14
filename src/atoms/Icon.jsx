@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Global, css } from '@emotion/core';
-import globalStyles from '../globals/reset';
+import { css } from '@emotion/core';
 import * as icons from '../icons/index';
 
 const iconSizes = {
@@ -23,12 +22,7 @@ const Icon = ({ size, hasMargin, type, margin }) => {
     width: ${iconSizes[size]}px;
   `;
 
-  return (
-    <>
-      <Global styles={globalStyles} />
-      <div css={styles} />
-    </>
-  );
+  return <div css={styles} />;
 };
 
 Icon.propTypes = {

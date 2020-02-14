@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
@@ -26,12 +25,9 @@ const Button = ({ noFill, text, onClick }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <button type="button" css={ButtonStyle} onClick={onClick}>
-        {text}
-      </button>
-    </>
+    <button type="button" css={ButtonStyle} onClick={onClick}>
+      {text}
+    </button>
   );
 };
 

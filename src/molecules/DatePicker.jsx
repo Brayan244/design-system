@@ -5,7 +5,6 @@ import { SingleDatePicker } from 'react-dates';
 import moment from 'moment';
 import FieldLabel from '../atoms/FieldLabel';
 import globalDatePicker from '../globals/datepicker.styles';
-import globalStyles from '../globals/reset';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import triggerOnChange from '../utils/triggerOnChange';
@@ -38,7 +37,6 @@ const DatePicker = ({ isDisabled, hasError, id, label, onChange, value }) => {
 
   return (
     <div css={container}>
-      <Global styles={globalStyles} />
       <Global styles={globalDatePicker(isDisabled, hasError)} />
 
       <SingleDatePicker

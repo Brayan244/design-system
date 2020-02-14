@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import UserPhoto from '../atoms/UserPhoto';
 import Text from '../atoms/Text';
 
@@ -18,8 +17,8 @@ const UserInfo = ({ photoUrl, name }) => {
 
   return (
     <div css={container}>
-      <Global styles={globalStyles} />
       <UserPhoto photoUrl={photoUrl} />
+
       <Text weight="semibold" size="XL">
         {name}
       </Text>

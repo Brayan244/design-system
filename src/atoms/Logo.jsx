@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import logo from '../../images/logo.svg';
 import logoGray from '../../images/logo-gray.svg';
 import * as mq from '../globals/mediaqueries';
@@ -23,12 +22,7 @@ const Logo = ({ alt, imgSrc, isLarge, hideOnMobile, grayLogo }) => {
     }
   `;
 
-  return (
-    <>
-      <Global styles={globalStyles} />
-      <img src={src} css={image} alt={alt} />
-    </>
-  );
+  return <img src={src} css={image} alt={alt} />;
 };
 
 Logo.propTypes = {

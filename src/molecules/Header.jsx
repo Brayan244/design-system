@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import Logo from '../atoms/Logo';
 import Icon from '../atoms/Icon';
@@ -47,20 +46,17 @@ const Header = ({ alt, logoSrc, text, url }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <div css={headerStyle}>
-        {Boolean(url) && (
-          <a href={url} css={arrowBack}>
-            <Icon type="arrowBack" size="S" />
-          </a>
-        )}
-        <div css={headerContainer}>
-          <Logo imgSrc={logoSrc} alt={alt} hideOnMobile />
-          <Text size="M">{text}</Text>
-        </div>
+    <div css={headerStyle}>
+      {Boolean(url) && (
+        <a href={url} css={arrowBack}>
+          <Icon type="arrowBack" size="S" />
+        </a>
+      )}
+      <div css={headerContainer}>
+        <Logo imgSrc={logoSrc} alt={alt} hideOnMobile />
+        <Text size="M">{text}</Text>
       </div>
-    </>
+    </div>
   );
 };
 

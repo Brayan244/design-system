@@ -1,8 +1,7 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import inputBaseStyles from '../base/input.styles';
-import globalStyles from '../globals/reset';
 import iconDropDown from '../../images/icons/arrow-dropdown.svg';
 import FieldLabel from '../atoms/FieldLabel';
 
@@ -39,7 +38,6 @@ const Select = ({
 
   return (
     <div css={selectWrapper}>
-      <Global styles={globalStyles} />
       {!isDisabled && <div css={iconStyle} />}
 
       <select

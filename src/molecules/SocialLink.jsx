@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import Icon from '../atoms/Icon';
 
 const iconTypes = {
@@ -28,18 +27,15 @@ const SocialLink = ({ type }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <a
-        css={iconStyle}
-        href={iconTypes[type].url}
-        title={iconTypes[type].title}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon size="XL" type={iconTypes[type].icon} />
-      </a>
-    </>
+    <a
+      css={iconStyle}
+      href={iconTypes[type].url}
+      title={iconTypes[type].title}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon size="XL" type={iconTypes[type].icon} />
+    </a>
   );
 };
 

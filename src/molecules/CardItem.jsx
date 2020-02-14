@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import Text from '../atoms/Text';
 import Link from '../atoms/Link';
@@ -32,11 +31,11 @@ const CardItem = ({ text, cardBrand }) => {
 
   return (
     <div css={cardContainer}>
-      <Global styles={globalStyles} />
       <div css={cardStyle}>
         <CardIcon cardBrand={cardBrand} />
         <Text size="M">{text}</Text>
       </div>
+
       <div css={cardLink}>
         <Link text="Eliminar" href="https://www.reservamos.mx/" type="error" />
       </div>

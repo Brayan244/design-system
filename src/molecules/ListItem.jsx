@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import Text from '../atoms/Text';
 import Icon from '../atoms/Icon';
 
@@ -44,30 +43,27 @@ const ListItem = ({ type, text, price, currency, hasNotice }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <div css={listItemStyle}>
-        <div css={listItemContent}>
-          <Text
-            size={iconTypes[type].size}
-            color={iconTypes[type].color}
-            weight={iconTypes[type].weight}
-          >
-            {text}
-          </Text>
-          <div css={listItemIcon}>
-            <Icon size="S" type="badgeQuestion" />
-          </div>
-        </div>
+    <div css={listItemStyle}>
+      <div css={listItemContent}>
         <Text
           size={iconTypes[type].size}
           color={iconTypes[type].color}
           weight={iconTypes[type].weight}
         >
-          {`$${price}${currency}`}
+          {text}
         </Text>
+        <div css={listItemIcon}>
+          <Icon size="S" type="badgeQuestion" />
+        </div>
       </div>
-    </>
+      <Text
+        size={iconTypes[type].size}
+        color={iconTypes[type].color}
+        weight={iconTypes[type].weight}
+      >
+        {`$${price}${currency}`}
+      </Text>
+    </div>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as mq from '../globals/mediaqueries';
 
 const UserPhoto = ({ large, photoUrl }) => {
@@ -29,12 +28,7 @@ const UserPhoto = ({ large, photoUrl }) => {
     }
   `;
 
-  return (
-    <>
-      <Global styles={globalStyles} />
-      <div css={photoStyle} />
-    </>
-  );
+  return <div css={photoStyle} />;
 };
 
 UserPhoto.propTypes = {

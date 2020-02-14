@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import InputLabel from '../atoms/FieldLabel';
 import inputBaseStyles from '../base/input.styles';
 
@@ -17,8 +16,6 @@ const Input = ({ isDisabled, id, label, type, value, onChange, hasError }) => {
 
   return (
     <div css={container}>
-      <Global styles={globalStyles} />
-
       <input
         id={id}
         type={type}

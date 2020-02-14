@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as mq from '../globals/mediaqueries';
 import Text from '../atoms/Text';
 import Icon from '../atoms/Icon';
@@ -24,16 +23,13 @@ const Guarantee = ({ text, mainText }) => {
   `;
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <div css={guaranteeStyle}>
-        <Icon size="L" type="guarantee" hasMargin />
-        <Text size="S">
-          {text}
-          <b>{mainText}</b>
-        </Text>
-      </div>
-    </>
+    <div css={guaranteeStyle}>
+      <Icon size="L" type="guarantee" hasMargin />
+      <Text size="S">
+        {text}
+        <b>{mainText}</b>
+      </Text>
+    </div>
   );
 };
 

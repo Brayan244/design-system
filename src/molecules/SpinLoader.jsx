@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css, keyframes } from '@emotion/core';
+import { css, keyframes } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import Text from '../atoms/Text';
 
 const SpinLoader = ({ text }) => {
@@ -40,7 +39,6 @@ const SpinLoader = ({ text }) => {
 
   return (
     <div css={container}>
-      <Global styles={globalStyles} />
       {text && (
         <Text weight="semibold" color="grayLight" size="M">
           {text}

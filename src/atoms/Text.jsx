@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
@@ -39,12 +38,7 @@ const Text = ({ children, size, weight, color, elementType }) => {
     font-weight: ${weights[weight]};
   `;
 
-  return (
-    <>
-      <Global styles={globalStyles} />
-      <BodyElement css={textStyle}>{children}</BodyElement>
-    </>
-  );
+  return <BodyElement css={textStyle}>{children}</BodyElement>;
 };
 
 Text.propTypes = {

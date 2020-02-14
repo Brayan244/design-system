@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import globalStyles from '../globals/reset';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
@@ -26,7 +25,6 @@ const FlatButton = ({ text, onClick, isDisabled }) => {
       onClick={onClick}
       disabled={isDisabled}
     >
-      <Global styles={globalStyles} />
       {text}
     </button>
   );
