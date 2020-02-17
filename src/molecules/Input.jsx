@@ -29,7 +29,7 @@ const Input = ({ isDisabled, id, label, type, value, onChange, hasError }) => {
 
       <InputLabel
         inputId={id}
-        isPlaceholder={!value && !isFocused}
+        isPlaceholder={!isDisabled && !value && !isFocused}
         text={label}
       />
     </div>

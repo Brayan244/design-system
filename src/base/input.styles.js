@@ -5,6 +5,7 @@ export default function inputStyles(isDisabled, hasError) {
   const errorColor = hasError ? colors.error : null;
 
   return css`
+    background-color: ${colors.gray100};
     border-bottom-color: ${hasError ? errorColor : colors.gray200};
     border-bottom-style: solid;
     border-bottom-width: ${isDisabled ? 0 : '1px'};
@@ -13,7 +14,7 @@ export default function inputStyles(isDisabled, hasError) {
     font-size: 16px;
     height: 50px;
     padding: 0 15px;
-    transition: border 0.3s, -webkit-box-shadow 0.3s;
+    transition: border 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
     width: 100%;
 
     &:focus {
@@ -26,6 +27,7 @@ export default function inputStyles(isDisabled, hasError) {
     }
 
     &:disabled {
+      background: none;
       color: ${colors.gray600};
       opacity: 1;
       -webkit-text-fill-color: ${colors.gray600};

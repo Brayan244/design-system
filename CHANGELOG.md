@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.40
+
+- Don't use placeholder label when Input is disabled
+- Adds background to Fields when editable
+- Makes select arrow darker and adds visibility transition
+
 ## v0.1.39
 
 - Adds decorator to add the css reset to all stories

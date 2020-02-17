@@ -34,11 +34,13 @@ const Select = ({
     top: 0;
     bottom: 0;
     margin: auto 0;
+    transition: visibility 0.3s;
+    visibility: ${isDisabled ? 'hidden' : 'visible'};
   `;
 
   return (
     <div css={selectWrapper}>
-      {!isDisabled && <div css={iconStyle} />}
+      <div css={iconStyle} />
 
       <select
         id={id}
