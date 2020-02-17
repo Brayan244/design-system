@@ -18,12 +18,9 @@ const Header = ({ alt, logoSrc, text, url }) => {
   `;
 
   const headerContainer = css`
-    margin: 0 auto;
-    max-width: 1220px;
-    width: 100%;
-
     ${mq.small} {
       padding: 0 15px;
+      width: 100%;
     }
 
     p {

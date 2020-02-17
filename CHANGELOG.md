@@ -2,6 +2,10 @@
 
 ## v0.1.40
 
+- Se borraron los estilos de max-width y margin del header container
+
+## v0.1.40
+
 - Don't use placeholder label when Input is disabled
 - Adds background to Fields when editable
 - Makes select arrow darker and adds visibility transition
