@@ -19,11 +19,11 @@ function brands(type) {
   }
 }
 
-const CardIcon = ({ cardBrand, hasMargin }) => {
+const CreditCardIcon = ({ cardBrand, hasMargin, hideBorder }) => {
   const cardIconStyle = css`
     margin-right: ${hasMargin ? '15px' : '0'};
     background-color: #ffffff;
-    border: 1px solid #ebebeb;
+    border: ${hideBorder ? '0' : '1px'} solid #ebebeb;
     border-radius: 2px;
     width: 40px;
     height: 25px;
@@ -49,18 +49,22 @@ const CardIcon = ({ cardBrand, hasMargin }) => {
   );
 };
 
-CardIcon.propTypes = {
+CreditCardIcon.propTypes = {
   /** Cambia a mastercard, visa, y amex */
 
   cardBrand: PropTypes.string,
 
   /** Agrega un margen left: 10px y right: 15px */
   hasMargin: PropTypes.bool,
+
+  /** Ocultar el logo en mobile */
+  hideBorder: PropTypes.bool,
 };
 
-CardIcon.defaultProps = {
+CreditCardIcon.defaultProps = {
   cardBrand: '',
   hasMargin: true,
+  hideBorder: false,
 };
 
-export default CardIcon;
+export default CreditCardIcon;

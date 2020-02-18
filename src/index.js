@@ -21,8 +21,8 @@ export { default as WalletInfo } from './molecules/WalletInfo';
 export { default as UserInfo } from './molecules/UserInfo';
 export { default as UserInfoLarge } from './molecules/UserInfoLarge';
 export { default as Header } from './molecules/Header';
-export { default as CardIcon } from './atoms/CardIcon';
-export { default as CardItem } from './molecules/CardItem';
+export { default as CreditCardIcon } from './atoms/CreditCardIcon';
+export { default as CreditCardItem } from './molecules/CreditCardItem';
 export { default as Guarantee } from './molecules/Guarantee';
 export { default as SplashScreen } from './molecules/Splash';
 export { default as ListItem } from './molecules/ListItem';
@@ -30,3 +30,5 @@ export { default as FlatButton } from './atoms/FlatButton';
 export { default as SpinLoader } from './molecules/SpinLoader';
 // TODO: to fix this, we need to be able to export css with rollup
 // export { default as DatePicker } from './molecules/DatePicker';
+export { default as RadioItem } from './molecules/RadioItem';
+export { default as Card } from './molecules/Card';

@@ -16,6 +16,7 @@ const Button = ({ noFill, text, onClick }) => {
     height: 35px;
     min-width: 100px;
     padding: 9px 24px;
+    line-height: 15px;
 
     &:hover {
       background-color: ${noFill

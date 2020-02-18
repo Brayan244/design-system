@@ -1,20 +1,21 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import CardIcon from '../src/atoms/CardIcon';
+import CreditCardIcon from '../src/atoms/CreditCardIcon';
 
-<Meta title="CardIcon" component={CardIcon} />
+<Meta title="CreditCardIcon" component={CreditCardIcon} />
 
 ## Props
 
-<Props of={CardIcon} />
+<Props of={CreditCardIcon} />
 
 ## Preview
 
 <Preview>
-  <Story name="CardIcon">
-    <CardIcon
+  <Story name="CreditCardIcon">
+    <CreditCardIcon
       cardBrand={select('type', ['visa', 'mastercard', 'amex'], 'default')}
       hasMargin={boolean('Has Margin', false)}
+      hideBorder={boolean('Hide Border', false)}
     />
   </Story>
 </Preview>

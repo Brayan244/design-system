@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import Text from '../atoms/Text';
 import Link from '../atoms/Link';
-import CardIcon from '../atoms/CardIcon';
+import CreditCardIcon from '../atoms/CreditCardIcon';
 
-const CardItem = ({ text, cardBrand }) => {
+const CreditCardItem = ({ text, cardBrand }) => {
   const cardStyle = css`
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ const CardItem = ({ text, cardBrand }) => {
   return (
     <div css={cardContainer}>
       <div css={cardStyle}>
-        <CardIcon cardBrand={cardBrand} />
+        <CreditCardIcon cardBrand={cardBrand} />
         <Text size="M">{text}</Text>
       </div>
 
@@ -43,7 +43,7 @@ const CardItem = ({ text, cardBrand }) => {
   );
 };
 
-CardItem.propTypes = {
+CreditCardItem.propTypes = {
   /** Texto del Card Item */
   text: PropTypes.string.isRequired,
 
@@ -51,8 +51,8 @@ CardItem.propTypes = {
   cardBrand: PropTypes.string,
 };
 
-CardItem.defaultProps = {
+CreditCardItem.defaultProps = {
   cardBrand: '',
 };
 
-export default CardItem;
+export default CreditCardItem;
