@@ -25,20 +25,16 @@ const UserInfoLarge = ({
     }
   `;
 
+  const spacing = css`
+    height: 5px;
+  `;
+
   const wrapper = css`
     margin-left: 30px;
     flex: 1;
 
     ${mq.small} {
       margin-left: 15px;
-    }
-
-    p:first-of-type {
-      margin-bottom: 10px;
-
-      ${mq.small} {
-        font-size: 18px;
-      }
     }
   `;
 
@@ -50,8 +46,9 @@ const UserInfoLarge = ({
         <Text weight="semibold" size="XXL">
           {name}
         </Text>
+        <div css={spacing} />
 
-        <WalletInfo price={price} text={text} />
+        <WalletInfo balance={price} text={text} />
       </div>
     </div>
   );

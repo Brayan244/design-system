@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Text from '../atoms/Text';
 import Icon from '../atoms/Icon';
 
-const WalletInfo = ({ text, price }) => {
+const WalletInfo = ({ text, balance }) => {
   const container = css`
     display: flex;
     justify-content: space-between;
@@ -20,10 +20,12 @@ const WalletInfo = ({ text, price }) => {
     <div css={container}>
       <div css={wrapper}>
         <Icon size="M" type="wallet" hasMargin />
-        <Text weight="semibold">{text}</Text>
+        <Text weight="semibold" size="S">
+          {text}
+        </Text>
       </div>
       <Text weight="semibold" size="L">
-        {`$${price}`}
+        {`$${balance}`}
       </Text>
     </div>
   );
@@ -31,7 +33,7 @@ const WalletInfo = ({ text, price }) => {
 
 WalletInfo.propTypes = {
   /** Price */
-  price: PropTypes.number.isRequired,
+  balance: PropTypes.number.isRequired,
   /** Text message */
   text: PropTypes.string.isRequired,
 };

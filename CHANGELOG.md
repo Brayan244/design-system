@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.42
+
+- Removes first-of-type from UserInfoLarge component
+- Adds empty div for spacing
+- Updates font-size on WalletInfo Component
+- Renames price prop for balance
+
 ## v0.1.40
 
 - Se borraron los estilos de max-width y margin del header container
