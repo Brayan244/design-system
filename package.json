@@ -1,6 +1,6 @@
 {
   "name": "reservamos-elements",
-  "version": "0.1.41",
+  "version": "0.1.42",
   "private": true,
   "main": "dist/index.js",
   "module": "lib/index.js",
