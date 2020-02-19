@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.47
+
+- A horizontal and vertical margin was added in Spinloader
+
 ## v0.1.46
 
 - Button: transition added

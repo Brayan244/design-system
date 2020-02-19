@@ -3,7 +3,7 @@ import { css, keyframes } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Text from '../atoms/Text';
 
-const SpinLoader = ({ text }) => {
+const SpinLoader = ({ text, verticalMargin, horizontalMargin }) => {
   const size = 35;
 
   const bounce = keyframes`
@@ -19,6 +19,7 @@ const SpinLoader = ({ text }) => {
   const container = css`
     display: flex;
     align-items: center;
+    margin: ${verticalMargin ? `20px` : 0} ${horizontalMargin ? `15px` : 0};
 
     p {
       margin-right: 15px;
@@ -52,10 +53,18 @@ const SpinLoader = ({ text }) => {
 SpinLoader.propTypes = {
   /** Load message */
   text: PropTypes.string,
+
+  /** Agrega margen vertical */
+  verticalMargin: PropTypes.bool,
+
+  /** Agrega margen horizontal */
+  horizontalMargin: PropTypes.bool,
 };
 
 SpinLoader.defaultProps = {
   text: '',
+  verticalMargin: false,
+  horizontalMargin: false,
 };
 
 export default SpinLoader;
