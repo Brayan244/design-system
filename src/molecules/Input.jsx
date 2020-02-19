@@ -4,7 +4,16 @@ import PropTypes from 'prop-types';
 import InputLabel from '../atoms/FieldLabel';
 import inputBaseStyles from '../base/input.styles';
 
-const Input = ({ isDisabled, id, label, type, value, onChange, hasError }) => {
+const Input = ({
+  isDisabled,
+  id,
+  label,
+  type,
+  value,
+  onChange,
+  hasError,
+  maxLength,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const container = css`
@@ -25,6 +34,7 @@ const Input = ({ isDisabled, id, label, type, value, onChange, hasError }) => {
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         disabled={isDisabled}
+        maxLength={maxLength}
       />
 
       <InputLabel
@@ -51,12 +61,15 @@ Input.propTypes = {
   type: PropTypes.oneOf(['text', 'tel', 'email']),
   /** Defines a value for the `<input>` */
   value: PropTypes.string.isRequired,
+  /** Defines the input max length */
+  maxLength: PropTypes.number,
 };
 
 Input.defaultProps = {
   hasError: false,
   isDisabled: false,
   type: 'text',
+  maxLength: null,
 };
 
 export default Input;
