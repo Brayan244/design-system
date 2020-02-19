@@ -1,10 +1,13 @@
 # Changelog
 
+## v0.1.44
+
+- Adds Alert Message Component
+
 ## v0.1.43
 
 - Adds Radio item
 - Adds Card
-
 
 ## v0.1.42
 
