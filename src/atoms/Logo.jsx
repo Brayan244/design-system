@@ -5,7 +5,14 @@ import logo from '../../images/logo.svg';
 import logoGray from '../../images/logo-gray.svg';
 import * as mq from '../globals/mediaqueries';
 
-const Logo = ({ alt, imgSrc, isLarge, hideOnMobile, grayLogo }) => {
+const Logo = ({
+  alt,
+  imgSrc,
+  isLarge,
+  hideOnMobile,
+  grayLogo,
+  hideOnDesktop,
+}) => {
   let src = grayLogo ? logoGray : logo;
   if (imgSrc) {
     src = imgSrc;
@@ -14,7 +21,7 @@ const Logo = ({ alt, imgSrc, isLarge, hideOnMobile, grayLogo }) => {
   const image = css`
     height: ${isLarge ? '77px' : ' 28px'};
     width: ${isLarge ? '400px' : '145px'};
-    display: inline-block;
+    display: ${hideOnDesktop ? 'none' : 'inline-block'};
     object-fit: contain;
 
     ${mq.small} {
@@ -36,6 +43,8 @@ Logo.propTypes = {
   grayLogo: PropTypes.bool,
   /** Ocultar el logo en mobile */
   hideOnMobile: PropTypes.bool,
+  /** Ocultar el logo en mobile */
+  hideOnDesktop: PropTypes.bool,
 };
 
 Logo.defaultProps = {
@@ -43,6 +52,7 @@ Logo.defaultProps = {
   isLarge: false,
   grayLogo: false,
   hideOnMobile: false,
+  hideOnDesktop: false,
 };
 
 export default Logo;

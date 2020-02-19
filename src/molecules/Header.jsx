@@ -6,21 +6,24 @@ import Logo from '../atoms/Logo';
 import Icon from '../atoms/Icon';
 import * as mq from '../globals/mediaqueries';
 import Text from '../atoms/Text';
+import UserPhoto from '../atoms/UserPhoto';
 
-const Header = ({ alt, logoSrc, text, url }) => {
+const Header = ({ alt, logoSrc, title, url, photoUrl }) => {
   const headerStyle = css`
     align-items: center;
     background-color: ${colors.primary};
     display: flex;
     height: 50px;
-    padding: 15px;
+    padding: 0 15px;
     width: 100%;
   `;
 
   const headerContainer = css`
     ${mq.small} {
-      padding: 0 15px;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
     }
 
     p {
@@ -29,7 +32,6 @@ const Header = ({ alt, logoSrc, text, url }) => {
       ${mq.small} {
         color: #ffffff;
         display: block;
-        text-align: center;
       }
     }
   `;
@@ -39,19 +41,35 @@ const Header = ({ alt, logoSrc, text, url }) => {
 
     ${mq.small} {
       display: block;
+      position: absolute;
+      left: 15px;
+    }
+  `;
+
+  const photoProfile = css`
+    display: none;
+
+    ${mq.small} {
+      display: block;
+      position: absolute;
+      right: 15px;
     }
   `;
 
   return (
     <div css={headerStyle}>
+      <Logo imgSrc={logoSrc} alt={alt} hideOnMobile />
       {Boolean(url) && (
         <a href={url} css={arrowBack}>
           <Icon type="arrowBack" size="S" />
         </a>
       )}
       <div css={headerContainer}>
-        <Logo imgSrc={logoSrc} alt={alt} hideOnMobile />
-        <Text size="M">{text}</Text>
+        {Boolean(!title) && <Logo imgSrc={logoSrc} alt={alt} hideOnDesktop />}
+        <Text size="M">{title}</Text>
+      </div>
+      <div css={photoProfile}>
+        <UserPhoto size="S" photoUrl={photoUrl} />
       </div>
     </div>
   );
@@ -60,12 +78,18 @@ const Header = ({ alt, logoSrc, text, url }) => {
 Header.propTypes = {
   /** Logo url or base64 img to show in the header */
   logoSrc: PropTypes.string,
+
   /** Alt text for image */
   alt: PropTypes.string.isRequired,
+
   /** Título del header */
-  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+
   /** Back link URL */
   url: PropTypes.string,
+
+  /** Profile picture URL */
+  photoUrl: PropTypes.string.isRequired,
 };
 
 Header.defaultProps = {

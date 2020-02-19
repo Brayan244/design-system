@@ -3,18 +3,14 @@ import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as mq from '../globals/mediaqueries';
 
-const UserPhoto = ({ large, photoUrl }) => {
-  const photoStyle = css`
-    border-radius: 50%;
-    height: ${large ? '120px' : '70px'};
-    width: ${large ? '120px' : '70px'};
-    min-width: ${large ? '120px' : '70px'};
-    background-image: url(${photoUrl});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+const sizes = {
+  S: 25,
+  M: 70,
+  L: 120,
+};
 
+const UserPhoto = ({ size, photoUrl }) => {
+  const mediaQueries = css`
     ${mq.small} {
       height: 80px;
       width: 80px;
@@ -28,18 +24,31 @@ const UserPhoto = ({ large, photoUrl }) => {
     }
   `;
 
+  const photoStyle = css`
+    border-radius: 50%;
+    height: ${sizes[size]}px;
+    width: ${sizes[size]}px;
+    min-width: ${sizes[size]}px;
+    background-image: url(${photoUrl});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    ${size === 'L' && mediaQueries}
+  `;
+
   return <div css={photoStyle} />;
 };
 
 UserPhoto.propTypes = {
-  /** Muestra la imagen en 120px x 120px */
-  large: PropTypes.bool,
+  /** Available sizes: S, M, L */
+  size: PropTypes.oneOf(['S', 'M', 'L']),
   /** URL de la imagen */
   photoUrl: PropTypes.string.isRequired,
 };
 
 UserPhoto.defaultProps = {
-  large: false,
+  size: 'M',
 };
 
 export default UserPhoto;

@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.45
+
+- Adds user photo on mobile header
+- Adds sizes prop for user photo
+
 ## v0.1.44
 
 - Adds Alert Message Component

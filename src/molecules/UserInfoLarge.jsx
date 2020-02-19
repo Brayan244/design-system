@@ -40,7 +40,7 @@ const UserInfoLarge = ({
 
   return (
     <div css={container}>
-      <UserPhoto large photoUrl={photoUrl} />
+      <UserPhoto size="L" photoUrl={photoUrl} />
 
       <div css={wrapper}>
         <Text weight="semibold" size="XXL">

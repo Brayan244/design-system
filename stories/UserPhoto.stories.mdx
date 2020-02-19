@@ -1,4 +1,4 @@
-import { text, boolean } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import UserPhoto from '../src/atoms/UserPhoto';
 
@@ -13,7 +13,7 @@ import UserPhoto from '../src/atoms/UserPhoto';
 <Preview>
   <Story name="User Photo">
     <UserPhoto
-      large={boolean('Is Large', false)}
+      size={select('Size', ['S', 'M', 'L'], 'M')}
       photoUrl={text(
         'URL',
         'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'

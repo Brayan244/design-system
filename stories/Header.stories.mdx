@@ -10,8 +10,12 @@ import Header from '../src/molecules/Header';
   <Story name="Header">
     <Header
       alt={text('Alt', 'Logo')}
-      text={text('Text', 'Mi cuenta')}
+      title={text('Title', 'Mi cuenta')}
       url={text('URL', 'https://www.reservamos.mx/')}
+      photoUrl={text(
+        'Photo URL',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'
+      )}
     />
   </Story>
 </Preview>
@@ -21,6 +25,14 @@ If no url prop is passed, the back button won't show up (small screens only)
 <Preview>
   <Story name="Header without back button">
     <Header text="Sin botón" />
+  </Story>
+</Preview>
+
+If no title prop is passed, the logo show up (small screens only)
+
+<Preview>
+  <Story name="Header without title">
+    <Header />
   </Story>
 </Preview>
 
