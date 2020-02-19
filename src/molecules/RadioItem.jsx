@@ -21,6 +21,11 @@ const RadioItem = ({
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    &:hover {
+      background-color: ${colors.gray100};
+      transition: background-color 200ms ease-out;
+    }
   `;
 
   const wrapper = css`

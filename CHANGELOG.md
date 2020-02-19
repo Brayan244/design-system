@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.1.46
+
+- Button: transition added
+- RadioItem: hover and transition added
+- Link: hover added
+- FlatButton: hover, color info and color error added
+- SidebarLink: hover added
+
 ## v0.1.45
 
 - Adds user photo on mobile header

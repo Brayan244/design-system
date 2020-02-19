@@ -17,10 +17,11 @@ const Button = ({ noFill, text, onClick }) => {
     min-width: 100px;
     padding: 9px 24px;
     line-height: 15px;
+    transition: background-color 200ms ease-out;
 
     &:hover {
       background-color: ${noFill
-        ? `${colors.gray200}`
+        ? `${colors.gray100}`
         : `${colors.accentStrong}`};
     }
   `;

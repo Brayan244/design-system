@@ -4,9 +4,28 @@ import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
-const FlatButton = ({ text, onClick, isDisabled }) => {
+const colorTypes = {
+  accent: {
+    color: colors.accent,
+    hover: colors.accentStrong,
+  },
+  disabled: {
+    color: colors.gray400,
+    hover: colors.gray400,
+  },
+  info: {
+    color: colors.info,
+    hover: colors.infoStrong,
+  },
+  error: {
+    color: colors.error,
+    hover: colors.errorStrong,
+  },
+};
+
+const FlatButton = ({ text, onClick, isDisabled, type }) => {
   const container = css`
-    color: ${isDisabled ? colors.gray400 : colors.accent};
+    color: ${colorTypes[type].color};
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
     font-size: ${typography.sizeM};
@@ -14,7 +33,7 @@ const FlatButton = ({ text, onClick, isDisabled }) => {
     cursor: ${isDisabled ? 'default' : 'pointer'};
 
     &:hover {
-      color: ${isDisabled ? colors.gray400 : colors.accentStrong};
+      color: ${colorTypes[type].hover};
     }
   `;
 
@@ -37,6 +56,8 @@ FlatButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   /** Indicates the `<button>` is disabled */
   isDisabled: PropTypes.bool,
+  /** Tipo de color del `<button>` */
+  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']).isRequired,
 };
 
 FlatButton.defaultProps = {

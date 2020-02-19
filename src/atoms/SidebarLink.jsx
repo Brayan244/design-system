@@ -20,6 +20,11 @@ const SidebarLink = ({ text, active, linkUrl }) => {
     height: 50px;
     padding: 0 15px;
     width: 100%;
+    background-color: #ffffff;
+
+    &:hover {
+      background-color: ${colors.gray100};
+    }
 
     ${mq.small} {
       border-right: 0;
