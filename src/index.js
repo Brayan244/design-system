@@ -17,6 +17,7 @@ export { default as Select } from './molecules/Select';
 export { default as Icon } from './atoms/Icon';
 export { default as Text } from './atoms/Text';
 export { default as SidebarLink } from './atoms/SidebarLink';
+export { default as NavLink } from './atoms/NavLink';
 export { default as WalletInfo } from './molecules/WalletInfo';
 export { default as UserInfo } from './molecules/UserInfo';
 export { default as UserInfoLarge } from './molecules/UserInfoLarge';

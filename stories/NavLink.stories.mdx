@@ -1,0 +1,19 @@
+import { boolean } from '@storybook/addon-knobs';
+import NavLink from '../src/atoms/NavLink';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="NavLink" component={NavLink} />
+
+## Props
+
+<Props of={NavLink} />
+
+## Preview
+
+<Preview>
+  <Story name="NavLink">
+    <NavLink active={boolean('Is Active', false)}>
+      <a href="#">Navigation Link</a>
+    </NavLink>
+  </Story>
+</Preview>
