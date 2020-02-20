@@ -1,0 +1,24 @@
+name: Publishing Storybook
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+
+jobs:
+  build_stories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN_BOT }}
+      - name: Install Dependencies
+        run: yarn
+      - name: Build Story Book Static Files
+        run: yarn build-storybook
+      - name: Build Story Book Static Files
+        run: yarn build-storybook
