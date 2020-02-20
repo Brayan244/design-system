@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.53
+
+- Se quito el background color blanco y se agrego una transition
+
 ## v0.1.52
 
 - Changes `<a>` for `<button>` on `<Header>` component

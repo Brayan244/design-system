@@ -7,7 +7,6 @@ import * as typography from '../tokens/typography';
 import Icon from './Icon';
 
 const NavLink = ({ active, children }) => {
-  const defaultBackgroundColor = '#FFFFFF';
   const icon = css`
     display: none;
 
@@ -24,7 +23,6 @@ const NavLink = ({ active, children }) => {
 
     a {
       align-items: center;
-      background-color: ${defaultBackgroundColor};
       border-bottom: 1px solid ${colors.gray200};
       border-right: ${active ? `5px solid ${colors.accent}` : 0};
       color: ${colors.gray600};
@@ -38,9 +36,10 @@ const NavLink = ({ active, children }) => {
       height: 50px;
       padding: 0 15px;
       width: 100%;
+      transition: background-color 200ms ease-out;
 
       &:hover {
-        background-color: ${active ? defaultBackgroundColor : colors.gray100};
+        background-color: ${colors.gray200};
       }
 
       ${mq.small} {
