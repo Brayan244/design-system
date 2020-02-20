@@ -16,6 +16,12 @@ module.exports = {
       },
     });
 
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+      include: path.resolve(__dirname, '../'),
+    });
+
     return config;
   },
 };
