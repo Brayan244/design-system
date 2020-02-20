@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.52
+
+- Changes `<a>` for `<button>` on `<Header>` component
+- Adds close and menu icons
+
 ## v0.1.51
 
 - Se agruparon las moléculas y los átomos

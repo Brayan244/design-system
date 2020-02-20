@@ -13,3 +13,5 @@ export { default as error } from '../../images/icons/alert/notification-error.sv
 export { default as success } from '../../images/icons/alert/notification-success.svg';
 export { default as warning } from '../../images/icons/alert/notification-warning.svg';
 export { default as info } from '../../images/icons/alert/notification-info.svg';
+export { default as close } from '../../images/icons/close.svg';
+export { default as menu } from '../../images/icons/menu.svg';

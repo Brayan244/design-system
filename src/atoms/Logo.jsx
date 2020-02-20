@@ -9,7 +9,7 @@ const Logo = ({
   alt,
   imgSrc,
   isLarge,
-  hideOnMobile,
+  hideOnMedium,
   grayLogo,
   hideOnDesktop,
 }) => {
@@ -24,8 +24,8 @@ const Logo = ({
     display: ${hideOnDesktop ? 'none' : 'inline-block'};
     object-fit: contain;
 
-    ${mq.small} {
-      display: ${hideOnMobile ? 'none' : 'inline-block'};
+    ${mq.medium} {
+      display: ${hideOnMedium ? 'none' : 'inline-block'};
     }
   `;
 
@@ -42,7 +42,7 @@ Logo.propTypes = {
   /** Muestra el logo en gris a 400px */
   grayLogo: PropTypes.bool,
   /** Ocultar el logo en mobile */
-  hideOnMobile: PropTypes.bool,
+  hideOnMedium: PropTypes.bool,
   /** Ocultar el logo en mobile */
   hideOnDesktop: PropTypes.bool,
 };
@@ -51,7 +51,7 @@ Logo.defaultProps = {
   imgSrc: null,
   isLarge: false,
   grayLogo: false,
-  hideOnMobile: false,
+  hideOnMedium: false,
   hideOnDesktop: false,
 };
 

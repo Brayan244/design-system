@@ -8,7 +8,7 @@ import * as mq from '../globals/mediaqueries';
 import Text from '../atoms/Text';
 import UserPhoto from '../atoms/UserPhoto';
 
-const Header = ({ alt, logoSrc, title, url, photoUrl }) => {
+const Header = ({ alt, logoSrc, title, onClick, photoUrl }) => {
   const headerStyle = css`
     align-items: center;
     background-color: ${colors.primary};
@@ -19,7 +19,7 @@ const Header = ({ alt, logoSrc, title, url, photoUrl }) => {
   `;
 
   const headerContainer = css`
-    ${mq.small} {
+    ${mq.medium} {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -29,17 +29,17 @@ const Header = ({ alt, logoSrc, title, url, photoUrl }) => {
     p {
       display: none;
 
-      ${mq.small} {
+      ${mq.medium} {
         color: #ffffff;
         display: block;
       }
     }
   `;
 
-  const arrowBack = css`
+  const button = css`
     display: none;
 
-    ${mq.small} {
+    ${mq.medium} {
       display: block;
       position: absolute;
       left: 15px;
@@ -49,7 +49,7 @@ const Header = ({ alt, logoSrc, title, url, photoUrl }) => {
   const photoProfile = css`
     display: none;
 
-    ${mq.small} {
+    ${mq.medium} {
       display: block;
       position: absolute;
       right: 15px;
@@ -58,11 +58,11 @@ const Header = ({ alt, logoSrc, title, url, photoUrl }) => {
 
   return (
     <div css={headerStyle}>
-      <Logo imgSrc={logoSrc} alt={alt} hideOnMobile />
-      {Boolean(url) && (
-        <a href={url} css={arrowBack}>
-          <Icon type="arrowBack" size="S" />
-        </a>
+      <Logo imgSrc={logoSrc} alt={alt} hideOnMedium />
+      {Boolean(onClick) && (
+        <button css={button} onClick={onClick} type="button">
+          <Icon type="menu" size="M" />
+        </button>
       )}
       <div css={headerContainer}>
         {Boolean(!title) && <Logo imgSrc={logoSrc} alt={alt} hideOnDesktop />}
@@ -85,8 +85,8 @@ Header.propTypes = {
   /** Título del header */
   title: PropTypes.string,
 
-  /** Back link URL */
-  url: PropTypes.string,
+  /** onClick for `<button>` */
+  onClick: PropTypes.func,
 
   /** Profile picture URL */
   photoUrl: PropTypes.string.isRequired,
@@ -94,7 +94,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   logoSrc: null,
-  url: null,
+  onClick: null,
   title: '',
 };
 

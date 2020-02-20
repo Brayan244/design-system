@@ -1,4 +1,5 @@
 import { text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Header from '../src/molecules/Header';
 
@@ -11,7 +12,7 @@ import Header from '../src/molecules/Header';
     <Header
       alt={text('Alt', 'Logo')}
       title={text('Title', 'Mi cuenta')}
-      url={text('URL', 'https://www.reservamos.mx/')}
+      onClick={action('onClick')}
       photoUrl={text(
         'Photo URL',
         'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'
@@ -20,10 +21,10 @@ import Header from '../src/molecules/Header';
   </Story>
 </Preview>
 
-If no url prop is passed, the back button won't show up (small screens only)
+If no url prop is passed, the button won't show up (small screens only)
 
 <Preview>
-  <Story name="Header without back button">
+  <Story name="Header without button">
     <Header
       text="Sin botón"
       alt="logo"
