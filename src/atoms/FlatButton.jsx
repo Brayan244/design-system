@@ -50,17 +50,18 @@ const FlatButton = ({ text, onClick, isDisabled, type }) => {
 };
 
 FlatButton.propTypes = {
-  /** Texto del botón */
-  text: PropTypes.string.isRequired,
-  /** Callback onClick */
-  onClick: PropTypes.func.isRequired,
   /** Indicates the `<button>` is disabled */
   isDisabled: PropTypes.bool,
+  /** Callback onClick */
+  onClick: PropTypes.func.isRequired,
+  /** Texto del botón */
+  text: PropTypes.string.isRequired,
   /** Tipo de color del `<button>` */
-  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']).isRequired,
+  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']),
 };
 
 FlatButton.defaultProps = {
+  type: 'accent',
   isDisabled: false,
 };
 
