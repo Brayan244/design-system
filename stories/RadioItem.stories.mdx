@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import RadioItem from '../src/molecules/RadioItem';
 
-<Meta title="Radio Item" component={RadioItem} />
+<Meta title="Molecules|Radio Item" component={RadioItem} />
 
 ## Preview
 
@@ -26,7 +26,13 @@ import RadioItem from '../src/molecules/RadioItem';
 
 <Preview>
   <Story name="Radio Item - Add Card">
-    <RadioItem textLeft="Agregar tarjeta" hasIcon={false} />
+    <RadioItem
+      textLeft="Agregar tarjeta"
+      hasIcon={false}
+      value="value"
+      name="name"
+      onChange={() => {}}
+    />
   </Story>
 </Preview>
 

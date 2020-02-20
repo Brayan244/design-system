@@ -5,7 +5,7 @@ import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
 import Logo from '../atoms/Logo';
 
-const Splash = ({ imgSrc }) => {
+const Splash = ({ imgSrc, alt }) => {
   const splashContainer = css`
     align-items: center;
     background-color: ${colors.gray100};
@@ -21,7 +21,7 @@ const Splash = ({ imgSrc }) => {
 
   return (
     <div css={splashContainer}>
-      <Logo imgSrc={imgSrc} isLarge grayLogo />
+      <Logo imgSrc={imgSrc} alt={alt} isLarge grayLogo />
     </div>
   );
 };
@@ -29,6 +29,8 @@ const Splash = ({ imgSrc }) => {
 Splash.propTypes = {
   /** Logo url or base64 img. If this prop is used, `grayLogo` is ignored */
   imgSrc: PropTypes.string,
+  /** Alt text for image */
+  alt: PropTypes.string.isRequired,
 };
 
 Splash.defaultProps = {

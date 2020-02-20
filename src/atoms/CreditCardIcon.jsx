@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import mastercard from '../../images/master.svg';
-import visa from '../../images/visa.svg';
-import amex from '../../images/amex.png';
+import mastercard from '../../images/cardTypes/master.svg';
+import visa from '../../images/cardTypes/visa.svg';
+import amex from '../../images/cardTypes/amex.png';
 import card from '../../images/icons/credit-card.svg';
 
 function brands(type) {

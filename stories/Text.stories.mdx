@@ -2,7 +2,7 @@ import { text, select } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Text from '../src/atoms/Text';
 
-<Meta title="Text" component={Text} />
+<Meta title="Atoms|Text" component={Text} />
 
 ## Preview
 
@@ -13,7 +13,7 @@ import Text from '../src/atoms/Text';
       children={text('Text', `Hola Reservamos!`)}
       color={select(
         'Color',
-        ['primary', 'accent', 'grayStrong', 'grayLight', 'info'],
+        ['primary', 'accent', 'grayStrong', 'grayMedium', 'grayLight', 'info'],
         'grayStrong'
       )}
       weight={select('Weight', ['regular', 'semibold', 'bold'], 'regular')}

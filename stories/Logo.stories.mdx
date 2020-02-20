@@ -1,9 +1,9 @@
 import { boolean, text } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Logo from '../src/atoms/Logo';
-import happyFace from '../images/happy-face.svg';
+import amex from '../images/cardTypes/amex.png';
 
-<Meta title="Logo" component={Logo} />
+<Meta title="Atoms|Logo" component={Logo} />
 
 ## Preview
 
@@ -35,11 +35,11 @@ Passing an URL as the src attribute
 
 Passing an imported image as the src attribute
 
-`import happyFace from '../images/happy-face.svg';`
+`import amex from '../images/amex.png';`
 
 <Preview>
   <Story name="Logo with imported image">
-    <Logo alt="My Image" imgSrc={happyFace} isLarge />
+    <Logo alt="My Image" imgSrc={amex} isLarge />
   </Story>
 </Preview>
 

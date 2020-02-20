@@ -50,6 +50,7 @@ Text.propTypes = {
     'primary',
     'accent',
     'grayStrong',
+    'grayMedium',
     'grayLight',
     'info',
   ]),

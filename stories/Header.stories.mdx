@@ -2,7 +2,7 @@ import { text } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Header from '../src/molecules/Header';
 
-<Meta title="Header" component={Header} />
+<Meta title="Molecules|Header" component={Header} />
 
 ## Preview
 
@@ -24,7 +24,11 @@ If no url prop is passed, the back button won't show up (small screens only)
 
 <Preview>
   <Story name="Header without back button">
-    <Header text="Sin botón" />
+    <Header
+      text="Sin botón"
+      alt="logo"
+      photoUrl="https://i.blogs.es/d9095a/lily-collins/650_1200.jpg"
+    />
   </Story>
 </Preview>
 
@@ -32,7 +36,10 @@ If no title prop is passed, the logo show up (small screens only)
 
 <Preview>
   <Story name="Header without title">
-    <Header />
+    <Header
+      alt="logo"
+      photoUrl="https://i.blogs.es/d9095a/lily-collins/650_1200.jpg"
+    />
   </Story>
 </Preview>
 

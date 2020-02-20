@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.51
+
+- Se agruparon las moléculas y los átomos
+- Se elimino test y my life
+- Se cambio el directorio de las tarjetas
+
 ## v0.1.47
 
 - A horizontal and vertical margin was added in Spinloader

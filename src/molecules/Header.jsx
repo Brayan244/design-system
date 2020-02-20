@@ -83,7 +83,7 @@ Header.propTypes = {
   alt: PropTypes.string.isRequired,
 
   /** Título del header */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 
   /** Back link URL */
   url: PropTypes.string,
@@ -95,6 +95,7 @@ Header.propTypes = {
 Header.defaultProps = {
   logoSrc: null,
   url: null,
+  title: '',
 };
 
 export default Header;

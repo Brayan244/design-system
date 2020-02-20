@@ -6,8 +6,6 @@ export { mediaQueries };
 export { screenSizes };
 export { colors };
 
-export { default as Test } from './atoms/test';
-export { default as MyLife } from './atoms/MyLife';
 export { default as SocialLink } from './molecules/SocialLink';
 export { default as UserPhoto } from './atoms/UserPhoto';
 export { default as Input } from './molecules/Input';
