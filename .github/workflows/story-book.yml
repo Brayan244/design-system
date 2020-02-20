@@ -18,7 +18,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN_BOT }}
       - name: Install Dependencies
         run: yarn
-      - name: Build Story Book Static Files
-        run: yarn build-storybook
-      - name: Build Story Book Static Files
-        run: yarn build-storybook
+      - name: Deploying Stories
+        run: yarn deploy-storybook
