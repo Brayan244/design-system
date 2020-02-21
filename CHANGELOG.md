@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.1.57
+- Adds `isDisabled` button prop
+
 ## v0.1.56
 - Adds AlertMessage to index.js
 - Refactors AlertMessage props

@@ -1,5 +1,4 @@
-import { text, boolean } from '@storybook/addon-knobs';
-import { select } from '@storybook/addon-knobs';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Button from '../src/atoms/Button';
@@ -15,9 +14,17 @@ import Button from '../src/atoms/Button';
 <Preview>
   <Story name="Button">
     <Button
-      noFill={boolean('No fill', false)}
       text={text('Text', 'Guardar')}
       onClick={action('onClick')}
+      isDisabled={boolean('Is Disabled', false)}
+      variant={select(
+        'Variant',
+        {
+          Accent: 'accent',
+          NoFill: 'noFill',
+        },
+        'accent'
+      )}
     />
   </Story>
 </Preview>
