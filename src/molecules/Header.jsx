@@ -59,15 +59,15 @@ const Header = ({ alt, logoSrc, title, onClick, photoUrl }) => {
   return (
     <div css={headerStyle}>
       <Logo imgSrc={logoSrc} alt={alt} hideOnMedium />
+      <div css={headerContainer}>
+        {Boolean(!title) && <Logo imgSrc={logoSrc} alt={alt} hideOnDesktop />}
+        <Text size="M">{title}</Text>
+      </div>
       {Boolean(onClick) && (
         <button css={button} onClick={onClick} type="button">
           <Icon type="menu" size="M" />
         </button>
       )}
-      <div css={headerContainer}>
-        {Boolean(!title) && <Logo imgSrc={logoSrc} alt={alt} hideOnDesktop />}
-        <Text size="M">{title}</Text>
-      </div>
       <div css={photoProfile}>
         <UserPhoto size="S" photoUrl={photoUrl} />
       </div>

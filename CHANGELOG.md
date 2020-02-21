@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.54
+
+- Fix button clickeable on header
+
 ## v0.1.53
 
 - Se quito el background color blanco y se agrego una transition
