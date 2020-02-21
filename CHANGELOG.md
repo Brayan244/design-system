@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.56
+- Adds AlertMessage to index.js
+- Refactors AlertMessage props
+
 ## v0.1.55
 
 - Fixes disabled FlatButton behaviour

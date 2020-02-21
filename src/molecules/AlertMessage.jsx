@@ -26,7 +26,7 @@ const variantTypes = {
   },
 };
 
-const AlertMessage = ({ text, type, title, hasTitle }) => {
+const AlertMessage = ({ text, type, title }) => {
   const alertContainer = css`
     position: fixed;
     top: 30px;
@@ -67,7 +67,7 @@ const AlertMessage = ({ text, type, title, hasTitle }) => {
           <Icon size="M" type={variantTypes[type].icon} />
         </div>
         <div>
-          {hasTitle && (
+          {Boolean(title) && (
             <Text size="M" weight="semibold">
               {title}
             </Text>
@@ -83,20 +83,18 @@ const AlertMessage = ({ text, type, title, hasTitle }) => {
 
 AlertMessage.propTypes = {
   /** Título de la alerta */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 
   /** Texto de la alerta */
   text: PropTypes.string.isRequired,
 
-  /** Esconde el titulo de la alerta */
-  hasTitle: PropTypes.bool,
-
   /** Available types: error, success, warning, info */
-  type: PropTypes.oneOf(['error', 'success', 'warning', 'info']).isRequired,
+  type: PropTypes.oneOf(['error', 'success', 'warning', 'info']),
 };
 
 AlertMessage.defaultProps = {
-  hasTitle: false,
+  title: '',
+  type: 'info',
 };
 
 export default AlertMessage;
