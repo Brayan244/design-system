@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.59
+
+- Adds DialogMessage on export index
+
 ## v0.1.58
 
 - Adds dialogMessage component

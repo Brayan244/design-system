@@ -32,3 +32,4 @@ export { default as SpinLoader } from './molecules/SpinLoader';
 export { default as RadioItem } from './molecules/RadioItem';
 export { default as Card } from './molecules/Card';
 export { default as AlertMessage } from './molecules/AlertMessage';
+export { default as DialogMessage } from './molecules/DialogMessage';
