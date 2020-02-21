@@ -19,6 +19,20 @@ const varianStyles = {
     colorDisabled: colors.gray400,
     backgroundHover: colors.gray100,
   },
+  danger: {
+    background: '#ffffff',
+    color: colors.error,
+    backgroundDisabled: '#ffffff',
+    colorDisabled: colors.gray400,
+    backgroundHover: colors.gray100,
+  },
+  default: {
+    background: '#ffffff',
+    color: colors.gray500,
+    backgroundDisabled: '#ffffff',
+    colorDisabled: colors.gray400,
+    backgroundHover: colors.gray100,
+  },
 };
 
 const Button = ({ variant, isDisabled, onClick, text }) => {
@@ -63,7 +77,7 @@ const Button = ({ variant, isDisabled, onClick, text }) => {
 
 Button.propTypes = {
   /** Set the button variant */
-  variant: PropTypes.oneOf(['accent', 'noFill']),
+  variant: PropTypes.oneOf(['accent', 'noFill', 'danger', 'default']),
   /** Indicates that is disabled */
   isDisabled: PropTypes.bool,
   /** Callback onClick */

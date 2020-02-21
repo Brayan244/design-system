@@ -1,0 +1,29 @@
+import { text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import DialogMessage from '../src/molecules/DialogMessage';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules|Dialog Message" component={DialogMessage} />
+
+## Props
+
+<Props of={DialogMessage} />
+
+## Preview
+
+<Preview>
+  <Story name="Dialog Message">
+    <DialogMessage
+      title={text('Title', '¿Estás seguro de eliminar tu tarjeta?')}
+      message={text(
+        'Message',
+        'Los datos de la tarjeta serán borrados permanentemente'
+      )}
+      primaryButton={text('Text Primary Button', 'Eliminar')}
+      secondaryButton={text('Text Secondary Button', 'Cancelar')}
+      onClickPrimary={action('onClick')}
+      onClickSecundary={action('onClick')}
+      showFade={boolean('Show fade?', false)}
+    />
+  </Story>
+</Preview>
