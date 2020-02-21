@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.55
+
+- Fixes disabled FlatButton behaviour
+
 ## v0.1.54
 
 - Fix button clickeable on header

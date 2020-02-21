@@ -24,8 +24,10 @@ const colorTypes = {
 };
 
 const FlatButton = ({ text, onClick, isDisabled, type }) => {
+  const colorType = isDisabled ? colorTypes.disabled : colorTypes[type];
+
   const container = css`
-    color: ${colorTypes[type].color};
+    color: ${colorType.color};
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
     font-size: ${typography.sizeM};
@@ -33,7 +35,7 @@ const FlatButton = ({ text, onClick, isDisabled, type }) => {
     cursor: ${isDisabled ? 'default' : 'pointer'};
 
     &:hover {
-      color: ${colorTypes[type].hover};
+      color: ${colorType.hover};
     }
   `;
 
