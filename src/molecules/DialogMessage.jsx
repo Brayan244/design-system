@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
+import * as mq from '../globals/mediaqueries';
 import Text from '../atoms/Text';
 import Button from '../atoms/Button';
 
@@ -40,10 +41,16 @@ const DialogMessage = ({
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
+
+    ${mq.small} {
+      min-height: inherit;
+      width: 90%;
+    }
   `;
 
   const buttonsContainer = css`
     align-self: flex-end;
+    margin-top: 10px;
 
     > button {
       margin-right: 10px;
@@ -51,6 +58,14 @@ const DialogMessage = ({
       &:last-child {
         margin-right: 0;
       }
+    }
+
+    ${mq.small} {
+      margin-top: 30px;
+    }
+
+    ${mq.xsmall} {
+      display: flex;
     }
   `;
   const spacing = css`

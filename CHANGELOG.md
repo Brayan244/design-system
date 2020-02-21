@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.61
+
+- Adds responsive styles for DialogMessage
+- Fixes border-top for NavLink
+
 ## v0.1.60
 
 - Se agrego un border-top en navLink con first-of-type

@@ -8,7 +8,7 @@ const NavLink = ({ active, children }) => {
   const container = css`
     position: relative;
 
-    > :first-of-type {
+    &:first-of-type a {
       border-top: 1px solid ${colors.gray200};
     }
 
