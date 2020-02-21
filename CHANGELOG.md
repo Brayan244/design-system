@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.60
+
+- Se agrego un border-top en navLink con first-of-type
+- Se quito la flecha en mobile del navLink
+
 ## v0.1.59
 
 - Adds DialogMessage on export index

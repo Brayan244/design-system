@@ -1,25 +1,16 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import * as mq from '../globals/mediaqueries';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
-import Icon from './Icon';
 
 const NavLink = ({ active, children }) => {
-  const icon = css`
-    display: none;
-
-    ${mq.small} {
-      display: block;
-      position: absolute;
-      right: 14px;
-      top: 17.5px;
-    }
-  `;
-
   const container = css`
     position: relative;
+
+    > :first-of-type {
+      border-top: 1px solid ${colors.gray200};
+    }
 
     a {
       align-items: center;
@@ -41,23 +32,10 @@ const NavLink = ({ active, children }) => {
       &:hover {
         background-color: ${colors.gray200};
       }
-
-      ${mq.small} {
-        border-right: 0;
-        font-weight: ${typography.regular};
-      }
     }
   `;
 
-  return (
-    <div css={container}>
-      {children}
-
-      <div css={icon}>
-        <Icon type="rightPrimary" size="S" />
-      </div>
-    </div>
-  );
+  return <div css={container}>{children}</div>;
 };
 
 NavLink.propTypes = {
