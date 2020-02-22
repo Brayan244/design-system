@@ -2,17 +2,17 @@
 
 ## v0.1.61
 
-- Adds responsive styles for DialogMessage
-- Fixes border-top for NavLink
+- Updates Social Media URLs
 
 ## v0.1.60
 
-- Se agrego un border-top en navLink con first-of-type
-- Se quito la flecha en mobile del navLink
+- Adds responsive styles for DialogMessage
+- Fixes border-top for NavLink
 
 ## v0.1.59
 
-- Adds DialogMessage on export index
+- Se agrego un border-top en navLink con first-of-type
+- Se quito la flecha en mobile del navLink
 
 ## v0.1.58
 

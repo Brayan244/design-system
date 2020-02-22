@@ -6,17 +6,17 @@ import Icon from '../atoms/Icon';
 const iconTypes = {
   facebook: {
     icon: 'facebook',
-    url: 'https://www.facebook.com',
+    url: 'https://www.facebook.com/ReservamosMx/',
     title: 'Facebook',
   },
   instagram: {
     icon: 'instagram',
-    url: 'https://www.instagram.com',
+    url: 'https://www.instagram.com/reservamos.mx/',
     title: 'Instagram',
   },
   twitter: {
     icon: 'twitter',
-    url: 'https://www.twitter.com',
+    url: 'https://twitter.com/reservamosmx',
     title: 'Twitter',
   },
 };
