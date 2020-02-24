@@ -2,10 +2,11 @@
 
 ## v0.1.63
 
-- Adds zIndexes constants for AlertMessage and DialogMessage components
+- Adds storybook's a11y addon
 
 ## v0.1.62
 
+- Adds zIndexes constants for AlertMessage and DialogMessage components
 - Adds storybook's viewport addon
 
 ## v0.1.61
