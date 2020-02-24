@@ -2,6 +2,10 @@
 
 ## v0.1.63
 
+- Adds Spacing component
+
+## v0.1.63
+
 - Adds storybook's a11y addon
 
 ## v0.1.62

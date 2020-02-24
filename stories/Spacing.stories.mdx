@@ -1,0 +1,55 @@
+import { text, boolean, select, number } from '@storybook/addon-knobs';
+import Spacing from '../src/atoms/Spacing';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Spacing|Spacing" component={Spacing} />
+
+# Spacing component
+
+<Preview>
+  <Story name="Spacing Story">
+    <Spacing
+      sizeVertical={select(
+        'Size Vertical',
+        {
+          Empty: '',
+          XSmall: 'XS',
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+        },
+        ''
+      )}
+      sizeHorizontal={select(
+        'Size Horizontal',
+        {
+          Empty: '',
+          XSmall: 'XS',
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+        },
+        'M'
+      )}
+      direction={select(
+        'Direction',
+        {
+          Ambos: 'both',
+          Horizontal: 'horizontal',
+          Vertical: 'vertical',
+        },
+        'vertical'
+      )}
+    >
+    <span>Some</span>
+    <span>Some</span>
+    <span>Some</span>
+    </Spacing>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Spacing} />
