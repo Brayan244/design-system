@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
+import * as zIndexes from '../tokens/zIndexes';
 import Text from '../atoms/Text';
 import Button from '../atoms/Button';
 
@@ -14,6 +15,7 @@ const DialogMessage = ({
   onClickPrimary,
   onClickSecundary,
   showFade,
+  zIndex,
 }) => {
   const fade = css`
     background-color: #000000;
@@ -24,6 +26,7 @@ const DialogMessage = ({
     right: 0;
     bottom: 0;
     transition: all 0.2s ease-in-out;
+    z-index: ${zIndex};
   `;
 
   const container = css`
@@ -41,6 +44,7 @@ const DialogMessage = ({
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
+    z-index: ${zIndex};
 
     ${mq.small} {
       min-height: inherit;
@@ -117,6 +121,8 @@ DialogMessage.propTypes = {
   onClickSecundary: PropTypes.func,
   /** Shows fade screen */
   showFade: PropTypes.bool.isRequired,
+  /** `z-index` value - Default `900` */
+  zIndex: PropTypes.string,
 };
 
 DialogMessage.defaultProps = {
@@ -124,6 +130,7 @@ DialogMessage.defaultProps = {
   message: '',
   secondaryButton: '',
   onClickSecundary: null,
+  zIndex: zIndexes.dialogMessage,
 };
 
 export default DialogMessage;

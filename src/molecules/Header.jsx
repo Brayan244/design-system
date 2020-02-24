@@ -16,6 +16,7 @@ const Header = ({ alt, logoSrc, title, onClick, photoUrl }) => {
     height: 50px;
     padding: 0 15px;
     width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
   `;
 
   const headerContainer = css`

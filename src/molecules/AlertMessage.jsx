@@ -6,6 +6,7 @@ import Text from '../atoms/Text';
 import slideInDown from '../base/keyframes.styles';
 import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
+import * as zIndexes from '../tokens/zIndexes';
 
 const variantTypes = {
   success: {
@@ -26,12 +27,12 @@ const variantTypes = {
   },
 };
 
-const AlertMessage = ({ text, type, title }) => {
+const AlertMessage = ({ text, type, title, zIndex }) => {
   const alertContainer = css`
     position: fixed;
     top: 30px;
     width: 100%;
-    z-index: 18;
+    z-index: ${zIndex};
     animation: ${slideInDown} 0.5s;
   `;
 
@@ -90,11 +91,15 @@ AlertMessage.propTypes = {
 
   /** Available types: error, success, warning, info */
   type: PropTypes.oneOf(['error', 'success', 'warning', 'info']),
+
+  /** `z-index` value - Default `901` */
+  zIndex: PropTypes.string,
 };
 
 AlertMessage.defaultProps = {
   title: '',
   type: 'info',
+  zIndex: zIndexes.alertMessage,
 };
 
 export default AlertMessage;

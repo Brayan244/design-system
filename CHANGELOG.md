@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.63
+
+- Adds zIndexes constants for AlertMessage and DialogMessage components
+
 ## v0.1.62
 
 - Adds storybook's viewport addon
