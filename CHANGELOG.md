@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.62
+
+- Adds storybook's viewport addon
+
 ## v0.1.61
 
 - Updates Social Media URLs
