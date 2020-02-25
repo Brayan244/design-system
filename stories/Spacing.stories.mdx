@@ -42,10 +42,31 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
         },
         'vertical'
       )}
+      alignItems={select(
+        'Align Items',
+        {
+          Stretch: 'stretch',
+          FlexStart: 'flex-start',
+          FlexEnd: 'flex-end',
+          Center: 'center',
+        },
+        'flex-start'
+      )}
+      justifyContent={select(
+        'Justify Content',
+        {
+          FlexStart: 'flex-start',
+          FlexEnd: 'flex-end',
+          Center: 'center',
+          SpaceBetween: 'space-between',
+          SpaceArround: 'space-arround',
+        },
+        'flex-start'
+      )}
     >
-    <span>Some</span>
-    <span>Some</span>
-    <span>Some</span>
+    <p>Some</p>
+    <p>Some</p>
+    <p>Some</p>
     </Spacing>
   </Story>
 </Preview>

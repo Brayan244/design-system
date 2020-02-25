@@ -10,11 +10,23 @@ const spacingSizes = {
   XL: 40,
 };
 
-const Spacing = ({ sizeVertical, sizeHorizontal, children, direction }) => {
+const Spacing = ({
+  sizeVertical,
+  sizeHorizontal,
+  children,
+  direction,
+  alignItems,
+  justifyContent,
+}) => {
   const marginLeft = `${spacingSizes[sizeHorizontal || sizeVertical]}px;`;
   const marginTop = `${spacingSizes[sizeVertical || sizeHorizontal]}px;`;
 
   const wrapper = css`
+    display: flex;
+    flex-direction: ${direction === 'vertical' ? 'column' : 'row'};
+    align-items: ${alignItems};
+    justify-content: ${justifyContent};
+
     > * + * {
       margin-top: ${direction === 'vertical' || direction === 'both'
         ? marginTop
@@ -35,12 +47,24 @@ Spacing.propTypes = {
   sizeHorizontal: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
   /** Select direction for spacing */
   direction: PropTypes.oneOf(['both', 'vertical', 'horizontal']).isRequired,
-  /** Element that will have margin */
+  /** Specifies the alignment for items inside the flexible container */
+  alignItems: PropTypes.oneOf(['stretch', 'flex-start', 'flex-end', 'center']),
+  /** Aligns the flexible container's items when the items do not use all available space on the main-axis */
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+  ]),
+  /** Displays the element or elements you include between the opening and closing tags */
   children: PropTypes.node.isRequired,
 };
 
 Spacing.defaultProps = {
   sizeHorizontal: 'M',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
   sizeVertical: null,
 };
 

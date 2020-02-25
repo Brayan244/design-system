@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.65
+
+- Adds flex alignment on Spacing component
+
 ## v0.1.64
 
 - Adds Visibility component
