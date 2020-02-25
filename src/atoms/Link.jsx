@@ -23,7 +23,7 @@ const colorTypes = {
   },
 };
 
-const Link = ({ large, text, href, type }) => {
+const Link = ({ large, text, href, type, newTab }) => {
   const linkStyle = css`
     font-size: ${large ? `${typography.sizeL}` : `${typography.sizeS}`};
     font-weight: ${typography.semibold};
@@ -37,7 +37,12 @@ const Link = ({ large, text, href, type }) => {
   `;
 
   return (
-    <a css={linkStyle} href={href}>
+    <a
+      css={linkStyle}
+      href={href}
+      target={newTab ? '_blank' : '_self'}
+      rel="noopener noreferrer"
+    >
       {text}
     </a>
   );
@@ -52,10 +57,13 @@ Link.propTypes = {
   href: PropTypes.string.isRequired,
   /** Tipo de color del link */
   type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']).isRequired,
+  /** Opens the linked document in the same windown or new tab */
+  newTab: PropTypes.bool,
 };
 
 Link.defaultProps = {
   large: false,
+  newTab: false,
 };
 
 export default Link;

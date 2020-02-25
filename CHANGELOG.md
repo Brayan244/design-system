@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.66
+
+- Adds newTab prop on Link component
+
 ## v0.1.65
 
 - Adds flex alignment on Spacing component
