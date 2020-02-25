@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.64
+
+- Adds Visibility component
+
 ## v0.1.63
 
 - Adds Spacing component
