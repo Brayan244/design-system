@@ -17,6 +17,7 @@ const Spacing = ({
   direction,
   alignItems,
   justifyContent,
+  flex,
 }) => {
   const marginLeft = `${spacingSizes[sizeHorizontal || sizeVertical]}px;`;
   const marginTop = `${spacingSizes[sizeVertical || sizeHorizontal]}px;`;
@@ -27,13 +28,17 @@ const Spacing = ({
     align-items: ${alignItems};
     justify-content: ${justifyContent};
 
-    > * + * {
-      margin-top: ${direction === 'vertical' || direction === 'both'
-        ? marginTop
-        : 0};
-      margin-left: ${direction === 'horizontal' || direction === 'both'
-        ? marginLeft
-        : 0};
+    > * {
+      flex: ${flex};
+
+      & + * {
+        margin-top: ${direction === 'vertical' || direction === 'both'
+          ? marginTop
+          : 0};
+        margin-left: ${direction === 'horizontal' || direction === 'both'
+          ? marginLeft
+          : 0};
+      }
     }
   `;
 
@@ -59,6 +64,8 @@ Spacing.propTypes = {
   ]),
   /** Displays the element or elements you include between the opening and closing tags */
   children: PropTypes.node.isRequired,
+  /** Let all the flexible items be the same length */
+  flex: PropTypes.string,
 };
 
 Spacing.defaultProps = {
@@ -66,6 +73,7 @@ Spacing.defaultProps = {
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   sizeVertical: null,
+  flex: '0 1 auto',
 };
 
 export default Spacing;

@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.67
+
+- Adds flex prop on Spacing component
+- Adds Logo component on export
+
 ## v0.1.66
 
 - Adds newTab prop on Link component

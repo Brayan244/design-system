@@ -35,3 +35,4 @@ export { default as AlertMessage } from './molecules/AlertMessage';
 export { default as DialogMessage } from './molecules/DialogMessage';
 export { default as Spacing } from './atoms/Spacing';
 export { default as Visibility } from './atoms/Visibility';
+export { default as Logo } from './atoms/Logo';
