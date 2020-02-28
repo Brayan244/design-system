@@ -1,0 +1,77 @@
+import { text, boolean, select, number } from '@storybook/addon-knobs';
+import Spacing from '../src/atoms/Spacing';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Spacing|Spacing" component={Spacing} />
+
+# Spacing component
+
+<Preview>
+  <Story name="Spacing Story">
+    <Spacing
+      sizeVertical={select(
+        'Size Vertical',
+        {
+          Empty: '',
+          XSmall: 'XS',
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+        },
+        ''
+      )}
+      sizeHorizontal={select(
+        'Size Horizontal',
+        {
+          Empty: '',
+          XSmall: 'XS',
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+        },
+        'M'
+      )}
+      direction={select(
+        'Direction',
+        {
+          Ambos: 'both',
+          Horizontal: 'horizontal',
+          Vertical: 'vertical',
+        },
+        'vertical'
+      )}
+      alignItems={select(
+        'Align Items',
+        {
+          Stretch: 'stretch',
+          FlexStart: 'flex-start',
+          FlexEnd: 'flex-end',
+          Center: 'center',
+        },
+        'flex-start'
+      )}
+      justifyContent={select(
+        'Justify Content',
+        {
+          FlexStart: 'flex-start',
+          FlexEnd: 'flex-end',
+          Center: 'center',
+          SpaceBetween: 'space-between',
+          SpaceArround: 'space-arround',
+        },
+        'flex-start'
+      )}
+      flex={text('Flex', '0 1 auto')}
+    >
+    <p>Some</p>
+    <p>Some</p>
+    <p>Some</p>
+    </Spacing>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Spacing} />

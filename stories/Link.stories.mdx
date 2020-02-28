@@ -1,0 +1,23 @@
+import { text, boolean, select } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Link from '../src/atoms/Link';
+
+<Meta title="Atoms|Link" component={Link} />
+
+## Props
+
+<Props of={Link} />
+
+## Preview
+
+<Preview>
+  <Story name="Link">
+    <Link
+      large={boolean('Is Large', false)}
+      text={text('Text', 'Editar')}
+      href={text('href', 'https://www.reservamos.mx/')}
+      type={select('type', ['accent', 'disabled', 'info', 'error'], 'accent')}
+      newTab={boolean('New Tab', false)}
+    />
+  </Story>
+</Preview>

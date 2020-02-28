@@ -1,0 +1,24 @@
+import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import DatePicker from '../src/molecules/DatePicker';
+
+<Meta title="Forms|Date Picker" component={DatePicker} />
+
+## Preview
+
+<Preview>
+  <Story name="Date Picker" height="350px">
+    <DatePicker
+      isDisabled={boolean('Is Disabled?', false)}
+      hasError={boolean('Has Error?', false)}
+      label={text('Label', 'El date picker')}
+      onChange={action('onChange')}
+      id={text('ID', 'el-date-picker')}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={DatePicker} />

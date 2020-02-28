@@ -6,12 +6,20 @@
     "node": true
   },
 
+  "plugins": ["emotion"],
+
+  "ignorePatterns": ["lib/", "dist/"],
+
   "rules": {
     "function-paren-newline": [2, "consistent"],
     "lines-between-class-members": [2, "always"],
     "no-return-assign": [2, "except-parens"],
     "no-console": 0,
     "object-curly-newline": [2, { "consistent": true }],
+    "emotion/no-vanilla": "error",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error",
+    "emotion/syntax-preference": [2, "string"],
     "jsx-a11y/label-has-for": [
       2,
       {

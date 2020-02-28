@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="23px" viewBox="0 0 12 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>icons/back</title>
+    <desc>Created with Sketch.</desc>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Icons" transform="translate(-67.000000, -763.000000)" stroke="#FFFFFF">
+            <g id="Group" transform="translate(58.000000, 754.000000)">
+                <g id="icons/back" transform="translate(10.000000, 10.000000)">
+                    <g id="back" transform="translate(-0.000000, 0.000000)">
+                        <line x1="9.60606019" y1="0.835556714" x2="1.44433688" y2="10.0645819" id="Line" stroke-width="1.55174818"></line>
+                        <line x1="9.60606019" y1="10.8622373" x2="1.44433688" y2="20.0912625" id="Line-Copy" stroke-width="1.55174818" transform="translate(5.172494, 15.875578) scale(-1, 1) translate(-5.172494, -15.875578) "></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

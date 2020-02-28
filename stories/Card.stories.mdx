@@ -1,0 +1,29 @@
+import { text, select, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Card from '../src/molecules/Card';
+import RadioItem from '../src/molecules/RadioItem';
+
+<Meta title="Molecules|Radio Item" component={RadioItem} />
+
+## Preview
+
+<Preview>
+  <Story name="Card">
+    <Card isActive={boolean('Is Active', false)}>
+      <RadioItem
+        textRight="**** **** **** 0182"
+        textLeft="Banamex"
+        value=""
+        name=""
+        cardBrand={"default"}
+        isActive={false}
+        onChange={action('onChange')}
+      />
+    </Card>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Card} />

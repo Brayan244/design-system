@@ -1,0 +1,27 @@
+import { text, boolean, number } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UserInfoLarge from '../src/molecules/UserInfoLarge';
+
+<Meta title="Molecules|User Info Large" component={UserInfoLarge} />
+
+## Preview
+
+<Preview>
+  <Story name="User info large">
+    <UserInfoLarge
+      isCentered={boolean('Is centered', true)}
+      hideOnMobile={boolean('Hide on mobile', false)}
+      photoUrl={text(
+        'Photo URL',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'
+      )}
+      name={text('Name', 'Lilly Collins')}
+      price={number('Price', 1990)}
+      text={text('Text', 'Monedero Reservamos')}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={UserInfoLarge} />

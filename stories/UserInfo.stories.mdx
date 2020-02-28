@@ -1,0 +1,23 @@
+import { text, boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UserInfo from '../src/molecules/UserInfo';
+
+<Meta title="Molecules|User Info" component={UserInfo} />
+
+## Preview
+
+<Preview>
+  <Story name="User info">
+    <UserInfo
+      photoUrl={text(
+        'Photo URL',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'
+      )}
+      name={text('Name', 'Lilly Collins')}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={UserInfo} />

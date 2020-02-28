@@ -1,0 +1,20 @@
+import { text } from '@storybook/addon-knobs';
+import Guarantee from '../src/molecules/Guarantee';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules|Guarantee" component={Guarantee} />
+
+## Props
+
+<Props of={Guarantee} />
+
+## Preview
+
+<Preview>
+  <Story name="Guarantee">
+    <Guarantee
+      text={text('Text', 'Todas tus compras tienen')}
+      mainText={text('Main Text', 'Garantía Reservamos')}
+    />
+  </Story>
+</Preview>

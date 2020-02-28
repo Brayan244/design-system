@@ -1,9 +1,12 @@
 {
+  "processors": ["stylelint-processor-styled-components"],
+
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-styled-components"
+    "stylelint-config-styled-components",
+    "./node_modules/prettier-stylelint/config.js"
   ],
-  "processors": ["stylelint-processor-styled-components"],
+
   "rules": {
     "at-rule-empty-line-before": [
       "always",
@@ -28,7 +31,6 @@
       }
     ],
     "at-rule-no-vendor-prefix": true,
-    "color-hex-case": "upper",
     "color-hex-length": "long",
     "color-named": "never",
     "declaration-empty-line-before": "never",

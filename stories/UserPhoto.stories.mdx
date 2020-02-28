@@ -1,0 +1,23 @@
+import { text, select } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UserPhoto from '../src/atoms/UserPhoto';
+
+<Meta title="Atoms|User Photo" component={UserPhoto} />
+
+## Props
+
+<Props of={UserPhoto} />
+
+## Preview
+
+<Preview>
+  <Story name="User Photo">
+    <UserPhoto
+      size={select('Size', ['S', 'M', 'L'], 'M')}
+      photoUrl={text(
+        'URL',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'
+      )}
+    />
+  </Story>
+</Preview>

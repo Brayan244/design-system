@@ -1,0 +1,48 @@
+import { boolean, text } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Logo from '../src/atoms/Logo';
+import amex from '../images/cardTypes/amex.png';
+
+<Meta title="Atoms|Logo" component={Logo} />
+
+## Preview
+
+Use the default logo (Reservamos)
+
+<Preview>
+  <Story name="Logo">
+    <Logo
+      alt={('Alt', 'My image')}
+      isLarge={boolean('Is Large', false)}
+      grayLogo={boolean('Gray Logo', false)}
+      hideOnMedium={boolean('Hide On Medium', false)}
+      hideOnDesktop={boolean('Hide On Desktop', false)}
+    />
+  </Story>
+</Preview>
+
+Passing an URL as the src attribute
+
+<Preview>
+  <Story name="Logo from URL">
+    <Logo
+      alt="My Image"
+      imgSrc="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bass_logo.svg"
+      isLarge
+    />
+  </Story>
+</Preview>
+
+Passing an imported image as the src attribute
+
+`import amex from '../images/amex.png';`
+
+<Preview>
+  <Story name="Logo with imported image">
+    <Logo alt="My Image" imgSrc={amex} isLarge />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Logo} />

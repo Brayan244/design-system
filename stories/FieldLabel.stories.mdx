@@ -1,0 +1,21 @@
+import { boolean, text } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FieldLabel from '../src/atoms/FieldLabel';
+
+<Meta title="Forms|Field Label" component={FieldLabel} />
+
+## Preview
+
+<Preview>
+  <Story name="Field Label">
+    <FieldLabel
+      inputId={text('Input ID', 'la-label')}
+      isPlaceholder={boolean('Is Placeholder?', true)}
+      text={text('Text', 'La label')}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={FieldLabel} />

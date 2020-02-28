@@ -1,0 +1,45 @@
+import { useState } from 'react';
+import { text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Select from '../src/molecules/Select';
+
+<Meta title="Forms|Select" component={Select} />
+
+## Preview
+
+<Preview>
+  <Story name="Select Story" height="200px">
+    {() => {
+      const [value, setValue] = useState('');
+      return (
+        <Select
+          label={text('Label', 'Select Label')}
+          id={text('ID', 'nacionalidad')}
+          placeholder={text('placeholder', 'Select Placeholder')}
+          options={[
+            {
+              value: '1',
+              label: 'Option 1',
+            },
+            {
+              value: '2',
+              label: 'Option 2',
+            },
+            {
+              value: '3',
+              label: 'Option 3',
+            },
+          ]}
+          onChange={e => setValue(e.target.value)}
+          value={value}
+          isDisabled={boolean('Is disabled?', false)}
+        />
+      );
+    }}
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Select} />

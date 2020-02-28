@@ -1,0 +1,23 @@
+import { text } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Splash from '../src/molecules/Splash';
+
+<Meta title="Molecules|Splash" component={Splash} />
+
+## Preview
+
+<Preview>
+  <Story name="Splash">
+    <Splash
+      alt={('Alt', 'My image')}
+      imgSrc={text(
+        'Img src',
+        'https://upload.wikimedia.org/wikipedia/commons/9/9b/Bass_logo.svg'
+      )}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Splash} />
