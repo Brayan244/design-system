@@ -1,7 +1,6 @@
 {
-  "name": "reservamos-elements",
+  "name": "@reservamos/elements",
   "version": "0.1.66",
-  "private": true,
   "main": "dist/index.js",
   "module": "lib/index.js",
   "scripts": {
@@ -86,7 +85,7 @@
     "stylelint-processor-styled-components": "^1.9.0"
   },
   "description": "design system for reservamos",
-  "repository": "https://github.com/reservamos/reservamos-elements.git",
+  "repository": "https://github.com/reservamos/elements.git",
   "author": "Reservamos Hackers",
   "license": "MIT"
 }
