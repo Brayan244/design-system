@@ -55,6 +55,7 @@ var error = '#FF040D';
 var errorStrong = '#C80007';
 var info = '#00ABCB';
 var infoStrong = '#009AB7';
+var discount = '#C86B11';
 
 var colors = /*#__PURE__*/Object.freeze({
   __proto__: null,
@@ -73,7 +74,8 @@ var colors = /*#__PURE__*/Object.freeze({
   error: error,
   errorStrong: errorStrong,
   info: info,
-  infoStrong: infoStrong
+  infoStrong: infoStrong,
+  discount: discount
 });
 
 var bus = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2229px%22%20height%3D%2229px%22%20viewBox%3D%220%200%2029%2029%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Eroute-detail%2Fflight%20copy%202%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22UI%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Icons%22%20transform%3D%22translate%28-204.000000%2C%20-377.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22route-detail%2Fbus%22%20transform%3D%22translate%28204.000000%2C%20377.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22Oval-5-Copy-8%22%20fill%3D%22%2366BA5B%22%20cx%3D%2214.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%3E%3C%2Fcircle%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M8.72%2C16.4590629%20L20.28%2C16.4590629%20L20.28%2C10.1626371%20L8.72%2C10.1626371%20L8.72%2C16.4590629%20Z%20M19.43%2C20.0266878%20C18.954%2C20.0266878%2018.648%2C19.7122163%2018.648%2C19.2224943%20C18.648%2C18.7327723%2018.954%2C18.417951%2019.43%2C18.417951%20C19.906%2C18.417951%2020.212%2C18.7327723%2020.212%2C19.2224943%20C20.212%2C19.7122163%2019.838%2C20.0266878%2019.43%2C20.0266878%20L19.43%2C20.0266878%20Z%20M9.57%2C20.0266878%20C9.094%2C20.0266878%208.788%2C19.7122163%208.788%2C19.2224943%20C8.788%2C18.7327723%209.094%2C18.417951%209.57%2C18.417951%20C10.046%2C18.417951%2010.352%2C18.7327723%2010.352%2C19.2224943%20C10.318%2C19.7122163%2010.012%2C20.0266878%209.57%2C20.0266878%20L9.57%2C20.0266878%20Z%20M10.658%2C7.74900718%20C10.658%2C7.53912632%2010.828%2C7.39920574%2010.998%2C7.39920574%20L17.968%2C7.39920574%20C18.138%2C7.39920574%2018.308%2C7.53912632%2018.308%2C7.74900718%20L18.308%2C8.4832404%20C18.308%2C8.65814111%2018.138%2C8.83304183%2017.968%2C8.83304183%20L11.032%2C8.83304183%20C10.862%2C8.83304183%2010.692%2C8.65814111%2010.692%2C8.4832404%20L10.692%2C7.74900718%20L10.658%2C7.74900718%20Z%20M22.83%2C10.1626371%20L21.606%2C10.1626371%20L21.606%2C8.4832404%20C21.606%2C8.4832404%2021.674%2C7.22430503%2020.45%2C6.8045433%20C19.226%2C6.41976172%2017.594%2C6%2014.5%2C6%20C11.406%2C6%209.774%2C6.38443178%208.55%2C6.8045433%20C7.326%2C7.18932488%207.394%2C8.4832404%207.394%2C8.4832404%20L7.394%2C10.1626371%20L6.17%2C10.1626371%20C6.102%2C10.1626371%206%2C10.2322476%206%2C10.3375378%20L6%2C13.2055598%20C6%2C13.2758699%206.068%2C13.3804605%206.17%2C13.3804605%20L7.394%2C13.3804605%20L7.394%2C20.6916603%20C7.394%2C21.2509928%207.768%2C21.3912632%207.938%2C21.4962036%20C7.938%2C22.3003971%208.55%2C23%209.4%2C23%20C10.182%2C23%2010.862%2C22.3707072%2010.862%2C21.4962036%20L14.5%2C21.4962036%20L18.138%2C21.4962036%20C18.138%2C22.3003971%2018.75%2C23%2019.6%2C23%20C20.382%2C23%2021.062%2C22.3707072%2021.062%2C21.4962036%20C21.3%2C21.4258935%2021.606%2C21.2509928%2021.606%2C20.6916603%20L21.606%2C13.3804605%20L22.83%2C13.3804605%20C22.898%2C13.3804605%2023%2C13.31085%2023%2C13.2055598%20L23%2C10.3375378%20C23%2C10.2675775%2022.932%2C10.1626371%2022.83%2C10.1626371%20L22.83%2C10.1626371%20Z%22%20id%3D%22Fill-3-Copy-9%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
@@ -569,7 +571,8 @@ var tones = {
   grayStrong: gray600,
   grayMedium: gray500,
   grayLight: gray400,
-  info: info
+  info: info,
+  discount: discount
 };
 var weights = {
   regular: regular,
@@ -592,7 +595,7 @@ var Text = function Text(_ref) {
       elementType = _ref.elementType;
   var BodyElement = elementType;
   var textStyle =
-  core.css("font-family:'Open Sans',sans-serif;color:", tones[color], ";font-size:", sizes$1[size], ";font-weight:", weights[weight], ";;label:textStyle;" + ("production" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRleHQuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWlDdUIiLCJmaWxlIjoiVGV4dC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJy4uL3Rva2Vucy9jb2xvcnMnO1xuaW1wb3J0ICogYXMgdHlwb2dyYXBoeSBmcm9tICcuLi90b2tlbnMvdHlwb2dyYXBoeSc7XG5cbmNvbnN0IHRvbmVzID0ge1xuICBwcmltYXJ5OiBjb2xvcnMucHJpbWFyeSxcbiAgYWNjZW50OiBjb2xvcnMuYWNjZW50LFxuICBncmF5U3Ryb25nOiBjb2xvcnMuZ3JheTYwMCxcbiAgZ3JheU1lZGl1bTogY29sb3JzLmdyYXk1MDAsXG4gIGdyYXlMaWdodDogY29sb3JzLmdyYXk0MDAsXG4gIGluZm86IGNvbG9ycy5pbmZvLFxufTtcblxuY29uc3Qgd2VpZ2h0cyA9IHtcbiAgcmVndWxhcjogdHlwb2dyYXBoeS5yZWd1bGFyLFxuICBzZW1pYm9sZDogdHlwb2dyYXBoeS5zZW1pYm9sZCxcbiAgYm9sZDogdHlwb2dyYXBoeS5ib2xkLFxufTtcblxuY29uc3Qgc2l6ZXMgPSB7XG4gIFhTOiB0eXBvZ3JhcGh5LnNpemVYUyxcbiAgUzogdHlwb2dyYXBoeS5zaXplUyxcbiAgTTogdHlwb2dyYXBoeS5zaXplTSxcbiAgTDogdHlwb2dyYXBoeS5zaXplTCxcbiAgWEw6IHR5cG9ncmFwaHkuc2l6ZVhMLFxuICBYWEw6IHR5cG9ncmFwaHkuc2l6ZVhYTCxcbn07XG5cbmNvbnN0IFRleHQgPSAoeyBjaGlsZHJlbiwgc2l6ZSwgd2VpZ2h0LCBjb2xvciwgZWxlbWVudFR5cGUgfSkgPT4ge1xuICBjb25zdCBCb2R5RWxlbWVudCA9IGVsZW1lbnRUeXBlO1xuXG4gIGNvbnN0IHRleHRTdHlsZSA9IGNzc2BcbiAgICBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7XG4gICAgY29sb3I6ICR7dG9uZXNbY29sb3JdfTtcbiAgICBmb250LXNpemU6ICR7c2l6ZXNbc2l6ZV19O1xuICAgIGZvbnQtd2VpZ2h0OiAke3dlaWdodHNbd2VpZ2h0XX07XG4gIGA7XG5cbiAgcmV0dXJuIDxCb2R5RWxlbWVudCBjc3M9e3RleHRTdHlsZX0+e2NoaWxkcmVufTwvQm9keUVsZW1lbnQ+O1xufTtcblxuVGV4dC5wcm9wVHlwZXMgPSB7XG4gIC8qKiBgSFRNTGAgZWxlbWVudCAqL1xuICBlbGVtZW50VHlwZTogUHJvcFR5cGVzLm9uZU9mKFsncCcsICdzcGFuJ10pLFxuICBjaGlsZHJlbjogUHJvcFR5cGVzLm5vZGUuaXNSZXF1aXJlZCxcbiAgLyoqIFRleHQgY29sb3IgKi9cbiAgY29sb3I6IFByb3BUeXBlcy5vbmVPZihbXG4gICAgJ3ByaW1hcnknLFxuICAgICdhY2NlbnQnLFxuICAgICdncmF5U3Ryb25nJyxcbiAgICAnZ3JheU1lZGl1bScsXG4gICAgJ2dyYXlMaWdodCcsXG4gICAgJ2luZm8nLFxuICBdKSxcbiAgLyoqIEZvbnQgd2VpZ2h0ICovXG4gIHdlaWdodDogUHJvcFR5cGVzLm9uZU9mKFsnYm9sZCcsICdzZW1pYm9sZCcsICdyZWd1bGFyJ10pLFxuICAvKiogRm9udCBzaXplICovXG4gIHNpemU6IFByb3BUeXBlcy5vbmVPZihbJ1hTJywgJ1MnLCAnTScsICdMJywgJ1hMJywgJ1hYTCddKSxcbn07XG5cblRleHQuZGVmYXVsdFByb3BzID0ge1xuICBlbGVtZW50VHlwZTogJ3AnLFxuICBjb2xvcjogJ2dyYXlTdHJvbmcnLFxuICB3ZWlnaHQ6ICdyZWd1bGFyJyxcbiAgc2l6ZTogJ00nLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgVGV4dDtcbiJdfQ== */"));
+  core.css("font-family:'Open Sans',sans-serif;color:", tones[color], ";font-size:", sizes$1[size], ";font-weight:", weights[weight], ";;label:textStyle;" + ("production" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRleHQuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWtDdUIiLCJmaWxlIjoiVGV4dC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJy4uL3Rva2Vucy9jb2xvcnMnO1xuaW1wb3J0ICogYXMgdHlwb2dyYXBoeSBmcm9tICcuLi90b2tlbnMvdHlwb2dyYXBoeSc7XG5cbmNvbnN0IHRvbmVzID0ge1xuICBwcmltYXJ5OiBjb2xvcnMucHJpbWFyeSxcbiAgYWNjZW50OiBjb2xvcnMuYWNjZW50LFxuICBncmF5U3Ryb25nOiBjb2xvcnMuZ3JheTYwMCxcbiAgZ3JheU1lZGl1bTogY29sb3JzLmdyYXk1MDAsXG4gIGdyYXlMaWdodDogY29sb3JzLmdyYXk0MDAsXG4gIGluZm86IGNvbG9ycy5pbmZvLFxuICBkaXNjb3VudDogY29sb3JzLmRpc2NvdW50LFxufTtcblxuY29uc3Qgd2VpZ2h0cyA9IHtcbiAgcmVndWxhcjogdHlwb2dyYXBoeS5yZWd1bGFyLFxuICBzZW1pYm9sZDogdHlwb2dyYXBoeS5zZW1pYm9sZCxcbiAgYm9sZDogdHlwb2dyYXBoeS5ib2xkLFxufTtcblxuY29uc3Qgc2l6ZXMgPSB7XG4gIFhTOiB0eXBvZ3JhcGh5LnNpemVYUyxcbiAgUzogdHlwb2dyYXBoeS5zaXplUyxcbiAgTTogdHlwb2dyYXBoeS5zaXplTSxcbiAgTDogdHlwb2dyYXBoeS5zaXplTCxcbiAgWEw6IHR5cG9ncmFwaHkuc2l6ZVhMLFxuICBYWEw6IHR5cG9ncmFwaHkuc2l6ZVhYTCxcbn07XG5cbmNvbnN0IFRleHQgPSAoeyBjaGlsZHJlbiwgc2l6ZSwgd2VpZ2h0LCBjb2xvciwgZWxlbWVudFR5cGUgfSkgPT4ge1xuICBjb25zdCBCb2R5RWxlbWVudCA9IGVsZW1lbnRUeXBlO1xuXG4gIGNvbnN0IHRleHRTdHlsZSA9IGNzc2BcbiAgICBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7XG4gICAgY29sb3I6ICR7dG9uZXNbY29sb3JdfTtcbiAgICBmb250LXNpemU6ICR7c2l6ZXNbc2l6ZV19O1xuICAgIGZvbnQtd2VpZ2h0OiAke3dlaWdodHNbd2VpZ2h0XX07XG4gIGA7XG5cbiAgcmV0dXJuIDxCb2R5RWxlbWVudCBjc3M9e3RleHRTdHlsZX0+e2NoaWxkcmVufTwvQm9keUVsZW1lbnQ+O1xufTtcblxuVGV4dC5wcm9wVHlwZXMgPSB7XG4gIC8qKiBgSFRNTGAgZWxlbWVudCAqL1xuICBlbGVtZW50VHlwZTogUHJvcFR5cGVzLm9uZU9mKFsncCcsICdzcGFuJ10pLFxuICBjaGlsZHJlbjogUHJvcFR5cGVzLm5vZGUuaXNSZXF1aXJlZCxcbiAgLyoqIFRleHQgY29sb3IgKi9cbiAgY29sb3I6IFByb3BUeXBlcy5vbmVPZihbXG4gICAgJ3ByaW1hcnknLFxuICAgICdhY2NlbnQnLFxuICAgICdncmF5U3Ryb25nJyxcbiAgICAnZ3JheU1lZGl1bScsXG4gICAgJ2dyYXlMaWdodCcsXG4gICAgJ2luZm8nLFxuICAgICdkaXNjb3VudCcsXG4gIF0pLFxuICAvKiogRm9udCB3ZWlnaHQgKi9cbiAgd2VpZ2h0OiBQcm9wVHlwZXMub25lT2YoWydib2xkJywgJ3NlbWlib2xkJywgJ3JlZ3VsYXInXSksXG4gIC8qKiBGb250IHNpemUgKi9cbiAgc2l6ZTogUHJvcFR5cGVzLm9uZU9mKFsnWFMnLCAnUycsICdNJywgJ0wnLCAnWEwnLCAnWFhMJ10pLFxufTtcblxuVGV4dC5kZWZhdWx0UHJvcHMgPSB7XG4gIGVsZW1lbnRUeXBlOiAncCcsXG4gIGNvbG9yOiAnZ3JheVN0cm9uZycsXG4gIHdlaWdodDogJ3JlZ3VsYXInLFxuICBzaXplOiAnTScsXG59O1xuXG5leHBvcnQgZGVmYXVsdCBUZXh0O1xuIl19 */"));
   return core.jsx(BodyElement, {
     css: textStyle
   }, children);
@@ -600,7 +603,7 @@ var Text = function Text(_ref) {
 Text.propTypes = {
   elementType: PropTypes.oneOf(['p', 'span']),
   children: PropTypes.node.isRequired,
-  color: PropTypes.oneOf(['primary', 'accent', 'grayStrong', 'grayMedium', 'grayLight', 'info']),
+  color: PropTypes.oneOf(['primary', 'accent', 'grayStrong', 'grayMedium', 'grayLight', 'info', 'discount']),
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
 };
@@ -1476,6 +1479,52 @@ Visibility.propTypes = {
   children: PropTypes.node.isRequired
 };
 
+function formatCurrency(amount) {
+  var decimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+  var formatted = Number(amount).toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return "$".concat(formatted);
+}
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__$c() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+var _ref$c = "production" === "production" ? {
+  name: "vbj4q-currencyText",
+  styles: "text-transform:uppercase;;label:currencyText;"
+} : {
+  name: "vbj4q-currencyText",
+  styles: "text-transform:uppercase;;label:currencyText;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlByaWNlLmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFPMEIiLCJmaWxlIjoiUHJpY2UuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgeyBjc3MgfSBmcm9tICdAZW1vdGlvbi9jb3JlJztcbmltcG9ydCBUZXh0IGZyb20gJy4uL2F0b21zL1RleHQnO1xuaW1wb3J0IGZvcm1hdEN1cnJlbmN5IGZyb20gJy4uL3V0aWxzL2Zvcm1hdEN1cnJlbmN5JztcblxuY29uc3QgUHJpY2UgPSAoeyB3ZWlnaHQsIHNpemUsIHByaWNlLCBjdXJyZW5jeSwgY29sb3IgfSkgPT4ge1xuICBjb25zdCBjdXJyZW5jeVRleHQgPSBjc3NgXG4gICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgYDtcblxuICByZXR1cm4gKFxuICAgIDxUZXh0IGVsZW1lbnRUeXBlPVwic3BhblwiIHNpemU9e3NpemV9IHdlaWdodD17d2VpZ2h0fSBjb2xvcj17Y29sb3J9PlxuICAgICAge2Ake2Zvcm1hdEN1cnJlbmN5KHByaWNlKX1gfVxuICAgICAgPHNtYWxsIGNzcz17Y3VycmVuY3lUZXh0fT57Y3VycmVuY3l9PC9zbWFsbD5cbiAgICA8L1RleHQ+XG4gICk7XG59O1xuXG5QcmljZS5wcm9wVHlwZXMgPSB7XG4gIC8qKiBBbW91bnQgcHJpY2UgKi9cbiAgcHJpY2U6IFByb3BUeXBlcy5udW1iZXIuaXNSZXF1aXJlZCxcbiAgLyoqIFNldHMgY3VycmVuY3kgKi9cbiAgY3VycmVuY3k6IFByb3BUeXBlcy5zdHJpbmcsXG4gIC8qKiBDb2xvciAqL1xuICBjb2xvcjogUHJvcFR5cGVzLm9uZU9mKFtcbiAgICAncHJpbWFyeScsXG4gICAgJ2FjY2VudCcsXG4gICAgJ2dyYXlTdHJvbmcnLFxuICAgICdncmF5TWVkaXVtJyxcbiAgICAnZ3JheUxpZ2h0JyxcbiAgICAnaW5mbycsXG4gICAgJ2Rpc2NvdW50JyxcbiAgXSksXG4gIC8qKiBGb250IHNpemUgKi9cbiAgc2l6ZTogUHJvcFR5cGVzLm9uZU9mKFsnWFMnLCAnUycsICdNJywgJ0wnLCAnWEwnLCAnWFhMJ10pLFxuICAvKiogRm9udCB3ZWlnaHQgKi9cbiAgd2VpZ2h0OiBQcm9wVHlwZXMub25lT2YoWydib2xkJywgJ3NlbWlib2xkJywgJ3JlZ3VsYXInXSksXG59O1xuXG5QcmljZS5kZWZhdWx0UHJvcHMgPSB7XG4gIGN1cnJlbmN5OiAnbXhuJyxcbiAgY29sb3I6ICdncmF5U3Ryb25nJyxcbiAgc2l6ZTogJ00nLFxuICB3ZWlnaHQ6ICdyZWd1bGFyJyxcbn07XG5cbmV4cG9ydCBkZWZhdWx0IFByaWNlO1xuIl19 */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__$c
+};
+var Price = function Price(_ref2) {
+  var weight = _ref2.weight,
+      size = _ref2.size,
+      price = _ref2.price,
+      currency = _ref2.currency,
+      color = _ref2.color;
+  var currencyText = _ref$c;
+  return core.jsx(Text, {
+    elementType: "span",
+    size: size,
+    weight: weight,
+    color: color
+  }, "".concat(formatCurrency(price)), core.jsx("small", {
+    css: currencyText
+  }, currency));
+};
+Price.propTypes = {
+  price: PropTypes.number.isRequired,
+  currency: PropTypes.string,
+  color: PropTypes.oneOf(['primary', 'accent', 'grayStrong', 'grayMedium', 'grayLight', 'info', 'discount']),
+  size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
+  weight: PropTypes.oneOf(['bold', 'semibold', 'regular'])
+};
+Price.defaultProps = {
+  currency: 'mxn',
+  color: 'grayStrong',
+  size: 'M',
+  weight: 'regular'
+};
+
 exports.AlertMessage = AlertMessage;
 exports.Button = Button;
 exports.Card = Card;
@@ -1491,6 +1540,7 @@ exports.Link = Link;
 exports.ListItem = ListItem;
 exports.Logo = Logo;
 exports.NavLink = NavLink;
+exports.Price = Price;
 exports.RadioItem = RadioItem;
 exports.Select = Select;
 exports.SidebarLink = SidebarLink;
