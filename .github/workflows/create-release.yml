@@ -47,7 +47,7 @@ jobs:
       - name: Push changes
         run: git push origin master
 
-      - name: Upload release notes
+      - name: Upload release notess
         if: env.tag
         uses: Roang-zero1/github-create-release-action@master
         with:
