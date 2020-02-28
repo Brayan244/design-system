@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.0
+
+- Deletes Social link, wallet info and user info large
+
 ## v0.1.68
 
 - Adds Price component and formatCurrency function
