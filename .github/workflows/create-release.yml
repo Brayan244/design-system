@@ -10,7 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged
+    if: github.event.pull_request.merged && (
+      contains(github.event.pull_request.labels.*.name, 'patch') ||
+      contains(github.event.pull_request.labels.*.name, 'minor') ||
+      contains(github.event.pull_request.labels.*.name, 'major'))
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -27,7 +30,7 @@ jobs:
         run: yarn && yarn build
 
       - name: Commit build bundle
-        run: | 
+        run: |
           git add .
           git commit -m "adds build files"
 
@@ -44,6 +47,14 @@ jobs:
       - name: Push changes
         run: git push origin master
 
+      - name: Deploy to npm
+        env:
+          CI: true
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+          npm publish --access private
+
       - name: Upload release notes
         if: env.tag
         uses: Roang-zero1/github-create-release-action@master
@@ -52,4 +63,3 @@ jobs:
           created_tag: ${{ env.tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
