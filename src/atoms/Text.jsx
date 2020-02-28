@@ -11,6 +11,7 @@ const tones = {
   grayMedium: colors.gray500,
   grayLight: colors.gray400,
   info: colors.info,
+  discount: colors.discount,
 };
 
 const weights = {
@@ -53,6 +54,7 @@ Text.propTypes = {
     'grayMedium',
     'grayLight',
     'info',
+    'discount',
   ]),
   /** Font weight */
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),

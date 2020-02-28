@@ -17,3 +17,4 @@ export const error = '#FF040D';
 export const errorStrong = '#C80007';
 export const info = '#00ABCB';
 export const infoStrong = '#009AB7';
+export const discount = '#C86B11';

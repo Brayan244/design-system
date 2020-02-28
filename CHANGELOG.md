@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.68
+
+- Adds Price component and formatCurrency function
+
 ## v0.1.67
 
 - Adds flex prop on Spacing component

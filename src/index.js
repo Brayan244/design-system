@@ -36,3 +36,4 @@ export { default as DialogMessage } from './molecules/DialogMessage';
 export { default as Spacing } from './atoms/Spacing';
 export { default as Visibility } from './atoms/Visibility';
 export { default as Logo } from './atoms/Logo';
+export { default as Price } from './molecules/Price';
