@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
+import LoaderButton from '../molecules/LoaderButton';
 
 const varianStyles = {
   accent: {
@@ -35,7 +36,9 @@ const varianStyles = {
   },
 };
 
-const Button = ({ variant, isDisabled, onClick, text }) => {
+const Button = ({ variant, isDisabled, onClick, text, isLoading }) => {
+  if (isLoading) return <LoaderButton isNoFill={variant !== 'accent'} />;
+
   const variantStyle = varianStyles[variant];
 
   const ButtonStyle = css`
@@ -84,11 +87,14 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   /** Texto del botón */
   text: PropTypes.string.isRequired,
+  /** Indicates that is disabled */
+  isLoading: PropTypes.bool,
 };
 
 Button.defaultProps = {
   variant: 'accent',
   isDisabled: false,
+  isLoading: false,
 };
 
 export default Button;

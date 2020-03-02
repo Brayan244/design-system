@@ -5,7 +5,7 @@ import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
 import * as zIndexes from '../tokens/zIndexes';
 import Text from '../atoms/Text';
-import Button from '../atoms/Button';
+import Button from '../organisms/Button';
 
 const DialogMessage = ({
   title,

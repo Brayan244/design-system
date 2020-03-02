@@ -8,7 +8,7 @@ export { colors };
 
 export { default as UserPhoto } from './atoms/UserPhoto';
 export { default as Input } from './molecules/Input';
-export { default as Button } from './atoms/Button';
+export { default as Button } from './organisms/Button';
 export { default as Link } from './atoms/Link';
 export { default as Select } from './molecules/Select';
 export { default as Icon } from './atoms/Icon';
@@ -33,3 +33,4 @@ export { default as Spacing } from './atoms/Spacing';
 export { default as Visibility } from './atoms/Visibility';
 export { default as Logo } from './atoms/Logo';
 export { default as Price } from './molecules/Price';
+export { default as LoaderDots } from './atoms/LoaderDots';

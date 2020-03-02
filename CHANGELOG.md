@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.01
+
+- Adds Loader Button
+- Adds Loader Dots
+- Adds loading state to button
+
 ## v0.2.0
 
 - Deletes Social link, wallet info and user info large

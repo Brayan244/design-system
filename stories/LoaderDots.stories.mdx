@@ -1,0 +1,18 @@
+import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import LoaderDots from '../src/atoms/LoaderDots';
+
+<Meta title="Atoms|Loader Dots" component={LoaderDots} />
+
+## Props
+
+<Props of={LoaderDots} />
+
+## Preview
+
+<Preview>
+  <Story name="LoaderDots">
+    <LoaderDots isAccent={boolean('Is Accent', true)} />
+  </Story>
+</Preview>
