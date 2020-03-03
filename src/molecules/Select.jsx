@@ -39,27 +39,29 @@ const Select = ({
   `;
 
   return (
-    <div css={selectWrapper}>
-      <div css={iconStyle} />
+    <div>
+      <div css={selectWrapper}>
+        <div css={iconStyle} />
 
-      <select
-        id={id}
-        css={inputStyles}
-        onChange={onChange}
-        value={value}
-        disabled={isDisabled}
-      >
-        <option value="" disabled>
-          {placeholder}
-        </option>
-
-        {options.map(option => (
-          <option key={option.value} value={option.value}>
-            {option.label}
+        <select
+          id={id}
+          css={inputStyles}
+          onChange={onChange}
+          value={value}
+          disabled={isDisabled}
+        >
+          <option value="" disabled>
+            {placeholder}
           </option>
-        ))}
-      </select>
-      <FieldLabel inputId={id} text={label} />
+
+          {options.map(option => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <FieldLabel inputId={id} text={label} />
+      </div>
     </div>
   );
 };

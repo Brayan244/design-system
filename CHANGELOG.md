@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.02
+
+- Adds reponsive styles for Spacing somponent
+- Adds wrapper `<div>` on Input and Select component
+
 ## v0.2.01
 
 - Adds Loader Button

@@ -24,24 +24,26 @@ const Input = ({
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
   return (
-    <div css={container}>
-      <input
-        id={id}
-        type={type}
-        css={inputStyles}
-        value={value}
-        onChange={onChange}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        disabled={isDisabled}
-        maxLength={maxLength}
-      />
+    <div>
+      <div css={container}>
+        <input
+          id={id}
+          type={type}
+          css={inputStyles}
+          value={value}
+          onChange={onChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          disabled={isDisabled}
+          maxLength={maxLength}
+        />
 
-      <InputLabel
-        inputId={id}
-        isPlaceholder={!isDisabled && !value && !isFocused}
-        text={label}
-      />
+        <InputLabel
+          inputId={id}
+          isPlaceholder={!isDisabled && !value && !isFocused}
+          text={label}
+        />
+      </div>
     </div>
   );
 };
