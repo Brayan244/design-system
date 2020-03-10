@@ -12,6 +12,7 @@ const tones = {
   grayLight: colors.gray400,
   info: colors.info,
   discount: colors.discount,
+  white: colors.white,
 };
 
 const weights = {

@@ -11,6 +11,8 @@ export const gray300 = '#C7C7C7';
 export const gray200 = '#E6E6E6';
 export const gray100 = '#FAFAFA';
 
+export const white = '#FFFFFF';
+
 export const success = '#66BA5B';
 export const warning = '#E8B600';
 export const error = '#FF040D';

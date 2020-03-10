@@ -1,0 +1,43 @@
+import { text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Card from '../src/molecules/Card';
+import Badge from '../src/molecules/Badge';
+
+<Meta title="Molecules|Badge" component={Badge} />
+
+## Preview
+
+<Preview>
+  <Story name="Badge">
+    <Badge
+      text={text('Text', 'Texto')}
+      hasIcon={boolean('Has Icon', true)}
+      isAccent={boolean('Is Accent', false)}
+    />
+  </Story>
+</Preview>
+
+## Sale
+
+<Preview>
+  <Story name="Badge sale">
+    <Badge text={text('Text', 'OFERTA')} />
+  </Story>
+</Preview>
+
+## Recommended
+
+<Preview>
+  <Story name="Badge Recommended">
+    <Badge
+      text={text('Text', 'Recomendado')}
+      hasIcon={boolean('Has Icon', true)}
+      isAccent={boolean('Is Accent', true)}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Badge} />
