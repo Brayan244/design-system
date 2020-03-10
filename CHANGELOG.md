@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.03
+
+- Adds Rating component
+
 ## v0.2.02
 
 - Adds reponsive styles for Spacing somponent

@@ -16,3 +16,6 @@ export { default as info } from '../../images/icons/alert/notification-info.svg'
 export { default as close } from '../../images/icons/close.svg';
 export { default as menu } from '../../images/icons/menu.svg';
 export { default as checkmarkWhite } from '../../images/icons/checkmark-white.svg';
+export { default as starFull } from '../../images/icons/rating/full.svg';
+export { default as starHalf } from '../../images/icons/rating/half.svg';
+export { default as starEmpty } from '../../images/icons/rating/empty.svg';
