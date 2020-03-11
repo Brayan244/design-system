@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.04
+
+- Adds Rating and Badge on index components
+
 ## v0.2.03
 
 - Adds Rating component

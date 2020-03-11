@@ -34,3 +34,5 @@ export { default as Visibility } from './atoms/Visibility';
 export { default as Logo } from './atoms/Logo';
 export { default as Price } from './molecules/Price';
 export { default as LoaderDots } from './atoms/LoaderDots';
+export { default as Rating } from './molecules/Rating';
+export { default as Badge } from './molecules/Badge';
