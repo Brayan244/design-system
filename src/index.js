@@ -30,7 +30,7 @@ export { default as DialogMessage } from './molecules/DialogMessage';
 export { default as Spacing } from './atoms/Spacing';
 export { default as Visibility } from './atoms/Visibility';
 export { default as Logo } from './atoms/Logo';
-export { default as Price } from './molecules/Price';
+export { default as Currency } from './molecules/Currency';
 export { default as LoaderDots } from './atoms/LoaderDots';
 export { default as Rating } from './molecules/Rating';
 export { default as Badge } from './molecules/Badge';

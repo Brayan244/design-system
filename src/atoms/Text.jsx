@@ -30,7 +30,7 @@ const sizes = {
   XXL: typography.sizeXXL,
 };
 
-const Text = ({ children, size, weight, color, elementType }) => {
+const Text = ({ children, size, weight, color, elementType, lineThrough }) => {
   const BodyElement = elementType;
 
   const textStyle = css`
@@ -38,6 +38,7 @@ const Text = ({ children, size, weight, color, elementType }) => {
     color: ${tones[color]};
     font-size: ${sizes[size]};
     font-weight: ${weights[weight]};
+    text-decoration: ${lineThrough ? 'line-through' : 'none'};
   `;
 
   return <BodyElement css={textStyle}>{children}</BodyElement>;
@@ -61,6 +62,8 @@ Text.propTypes = {
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
   /** Font size */
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
+  /** Sets the `line-through` decoration */
+  lineThrough: PropTypes.bool,
 };
 
 Text.defaultProps = {
@@ -68,6 +71,7 @@ Text.defaultProps = {
   color: 'grayStrong',
   weight: 'regular',
   size: 'M',
+  lineThrough: false,
 };
 
 export default Text;

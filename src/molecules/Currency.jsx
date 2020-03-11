@@ -4,22 +4,38 @@ import { css } from '@emotion/core';
 import Text from '../atoms/Text';
 import formatCurrency from '../utils/formatCurrency';
 
-const Price = ({ weight, size, price, currency, color }) => {
+const Currency = ({
+  weight,
+  size,
+  price,
+  decimals,
+  currency,
+  color,
+  lineThrough,
+}) => {
   const currencyText = css`
     text-transform: uppercase;
   `;
 
   return (
-    <Text elementType="span" size={size} weight={weight} color={color}>
-      {`${formatCurrency(price)}`}
+    <Text
+      elementType="span"
+      size={size}
+      weight={weight}
+      color={color}
+      lineThrough={lineThrough}
+    >
+      {`${formatCurrency(price, decimals)} `}
       <small css={currencyText}>{currency}</small>
     </Text>
   );
 };
 
-Price.propTypes = {
+Currency.propTypes = {
   /** Amount price */
   price: PropTypes.number.isRequired,
+  /** Defines how much decimals to show */
+  decimals: PropTypes.number,
   /** Sets currency */
   currency: PropTypes.string,
   /** Color */
@@ -36,13 +52,17 @@ Price.propTypes = {
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
   /** Font weight */
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
+  /** Sets the `line-through` decoration */
+  lineThrough: PropTypes.bool,
 };
 
-Price.defaultProps = {
-  currency: 'mxn',
+Currency.defaultProps = {
+  currency: '',
+  decimals: 2,
   color: 'grayStrong',
   size: 'M',
   weight: 'regular',
+  lineThrough: false,
 };
 
-export default Price;
+export default Currency;
