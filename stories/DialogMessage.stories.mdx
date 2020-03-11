@@ -5,26 +5,65 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Molecules|Dialog Message" component={DialogMessage} />
 
-## Props
-
-<Props of={DialogMessage} />
-
-## Preview
+## Dialog Message
 
 <Preview>
-  <Story name="Dialog Message">
+  <Story name="Dialog Message" height="150px">
     <DialogMessage
-      title={text('Title', '¿Estás seguro de eliminar tu tarjeta?')}
+      title={text('Title', 'Título')}
       message={text(
         'Message',
-        'Los datos de la tarjeta serán borrados permanentemente'
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       )}
-      primaryButton={text('Text Primary Button', 'Eliminar')}
+      primaryButton={text('Text Primary Button', 'Aceptar')}
       secondaryButton={text('Text Secondary Button', 'Cancelar')}
       onClickPrimary={action('onClick')}
-      onClickSecundary={action('onClick')}
+      onClickSecondary={action('onClick')}
+      iconType={text('Icon', 'twitter')}
       showFade={boolean('Show fade?', false)}
       zIndex={text('Z index', 900)}
     />
   </Story>
 </Preview>
+
+## Delete card
+
+Version with no icon and double button
+
+<Preview>
+  <Story name="Delete card" height="150px">
+    <DialogMessage
+      title="¿Estás seguro de eliminar tu tarjeta?"
+      message="Podrás hacer ajustes nuevamente desde el menú"
+      primaryButton="Eliminar"
+      secondaryButton="Cancelar"
+      onClickPrimary={action('onClick')}
+      onClickSecondary={action('onClick')}
+      showFade={boolean('Show fade?', false)}
+      zIndex={text('Z index', 900)}
+    />
+  </Story>
+</Preview>
+
+## Timer
+
+Version with an icon and one button
+
+<Preview>
+  <Story name="Timer" height="150px">
+    <DialogMessage
+      title="Se agotó el tiempo para la compra"
+      iconType={text('Icon', 'timer')}
+      iconSize={'L'}
+      message="Puedes volver a seleccionar un horario para terminar la compra de tu viaje."
+      primaryButton="Buscar otra vez"
+      onClickPrimary={action('onClick')}
+      showFade={boolean('Show fade?', false)}
+      zIndex={text('Z index', 900)}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={DialogMessage} />

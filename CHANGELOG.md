@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.2.6
+## v0.2.7
 
-- Adds prop for line through on Text and Price component
-- Adds prop for decimals on Price component
+- Added icon for DialogMessage
+- Added timer icon to index

@@ -5,6 +5,7 @@ import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
 import * as zIndexes from '../tokens/zIndexes';
 import Text from '../atoms/Text';
+import Icon from '../atoms/Icon';
 import Button from '../organisms/Button';
 
 const DialogMessage = ({
@@ -13,9 +14,11 @@ const DialogMessage = ({
   primaryButton,
   secondaryButton,
   onClickPrimary,
-  onClickSecundary,
+  onClickSecondary,
   showFade,
   zIndex,
+  iconType,
+  iconSize,
 }) => {
   const fade = css`
     background-color: #000000;
@@ -76,14 +79,24 @@ const DialogMessage = ({
     height: 10px;
   `;
 
+  const containerTitle = css`
+    display: flex;
+    align-items: center;
+  `;
+
   return (
     <>
       <div css={fade} />
       <div css={container}>
         <div>
-          <Text size="XL" weight="semibold">
-            {title}
-          </Text>
+          <div css={containerTitle}>
+            {Boolean(iconType) && (
+              <Icon size={iconSize} type={iconType} hasMargin />
+            )}
+            <Text size="XL" weight="semibold">
+              {title}
+            </Text>
+          </div>
           <div css={spacing} />
           <Text size="M">{message}</Text>
         </div>
@@ -92,7 +105,7 @@ const DialogMessage = ({
             <Button
               variant="default"
               text={secondaryButton}
-              onClick={onClickSecundary}
+              onClick={onClickSecondary}
             />
           )}
           <Button
@@ -107,9 +120,9 @@ const DialogMessage = ({
 };
 
 DialogMessage.propTypes = {
-  /** Dialog title */
+  /** Message title */
   title: PropTypes.string,
-  /** Dialog Message */
+  /** Message description */
   message: PropTypes.string,
   /** Text for primary `<button>` */
   primaryButton: PropTypes.string.isRequired,
@@ -118,19 +131,25 @@ DialogMessage.propTypes = {
   /** Callback onClick primary `<button>` */
   onClickPrimary: PropTypes.func.isRequired,
   /** Callback onClick secondary `<button>` */
-  onClickSecundary: PropTypes.func,
+  onClickSecondary: PropTypes.func,
   /** Shows fade screen */
   showFade: PropTypes.bool.isRequired,
   /** `z-index` value - Default `900` */
   zIndex: PropTypes.string,
+  /** Icon for Dialog Message  */
+  iconType: PropTypes.string,
+  /** Defines icon size  */
+  iconSize: PropTypes.oneOf(['S', 'M', 'L', 'XL']),
 };
 
 DialogMessage.defaultProps = {
   title: '',
   message: '',
+  iconType: '',
   secondaryButton: '',
-  onClickSecundary: null,
+  onClickSecondary: null,
   zIndex: zIndexes.dialogMessage,
+  iconSize: 'M',
 };
 
 export default DialogMessage;

@@ -20,6 +20,7 @@ const Icon = ({ size, hasMargin, type, margin }) => {
     height: ${iconSizes[size]}px;
     margin-right: ${hasMargin ? `${margin}px` : 0};
     width: ${iconSizes[size]}px;
+    min-width: ${iconSizes[size]}px;
   `;
 
   return <div css={styles} />;
