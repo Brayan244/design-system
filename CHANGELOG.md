@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.8
+
+- Fixes timer icon
+
 ## v0.2.7
 
 - Added icon for DialogMessage
