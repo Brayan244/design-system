@@ -1,10 +1,5 @@
 # Changelog
 
-## v0.2.8
+## v0.2.9
 
-- Fixes timer icon
-
-## v0.2.7
-
-- Added icon for DialogMessage
-- Added timer icon to index
+- Adds location icon for autocomplete

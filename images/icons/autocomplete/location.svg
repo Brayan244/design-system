@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>refactor/Icons/Autoc/Reservamos/ac-airport Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="refactor/Icons/Autoc/Reservamos/ac-airport-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ac-city" transform="translate(30.000000, 5.000000)" fill="#DDE8F6" fill-rule="nonzero" stroke="#3B4D97" stroke-width="7.16800057">
+            <path d="M45.5,0 C70.5887,0 91,21.2617709 91,47.3958333 C91,55.9636835 88.7808639,64.3603821 84.582225,71.6782987 L49.3846889,138.079942 C48.705475,139.261678 47.4840528,139.989204 46.1617722,140 C46.1516611,140 46.1418028,140 46.1316917,140 C44.8207861,140 43.6018917,139.294329 42.9100389,138.132868 L6.79188611,72.3186691 C2.34805278,64.8427661 0,56.2256769 0,47.3958333 C0,21.2617709 20.4113,0 45.5,0 Z M45.5168097,67.4074074 C56.8748741,67.4074074 65.7222222,57.9269595 65.7222222,46.6666667 C65.7222222,35.268217 56.6395365,25.9259259 45.5168097,25.9259259 C34.3940835,25.9259259 25.2777778,35.268217 25.2777778,46.6666667 C25.2777778,58.0937124 34.3359213,67.4074074 45.5168097,67.4074074 Z" id="icon"></path>
+        </g>
+    </g>
+</svg>
