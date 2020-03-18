@@ -21,3 +21,5 @@ export { default as starHalf } from '../../images/icons/rating/half.svg';
 export { default as starEmpty } from '../../images/icons/rating/empty.svg';
 export { default as timer } from '../../images/icons/timer.png';
 export { default as acLocation } from '../../images/icons/autocomplete/location.svg';
+export { default as guest } from '../../images/icons/guest.svg';
+export { default as selectArrow } from '../../images/icons/arrows/select-arrow.svg';

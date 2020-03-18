@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="6px" viewBox="0 0 16 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>select-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Hotels-1st-Draft-🖥" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Group-2" transform="translate(-974.000000, -18.000000)" stroke="#909090" stroke-width="1.4">
+            <g id="SearchBar">
+                <g id="select-arrow" transform="translate(975.000000, 19.000000)">
+                    <line x1="0.4375" y1="0.363636364" x2="7.01456726" y2="3.64847149" id="Line"></line>
+                    <line x1="6.5625" y1="0.363636364" x2="13.1395673" y2="3.64847149" id="Line-Copy-2" transform="translate(10.062500, 2.181818) scale(-1, 1) translate(-10.062500, -2.181818) "></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

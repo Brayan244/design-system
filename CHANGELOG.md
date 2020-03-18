@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.2.9
+## v0.2.10
 
-- Adds location icon for autocomplete
+- Add icon guest and selectArrow
