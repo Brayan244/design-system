@@ -27,6 +27,13 @@ const varianStyles = {
     colorDisabled: colors.gray400,
     backgroundHover: colors.gray100,
   },
+  discount: {
+    background: colors.discount,
+    color: '#ffffff',
+    backgroundDisabled: colors.gray400,
+    colorDisabled: '#ffffff',
+    backgroundHover: colors.discountStrong,
+  },
   default: {
     background: '#ffffff',
     color: colors.gray500,
@@ -37,7 +44,10 @@ const varianStyles = {
 };
 
 const Button = ({ variant, isDisabled, onClick, text, isLoading }) => {
-  if (isLoading) return <LoaderButton isNoFill={variant !== 'accent'} />;
+  if (isLoading)
+    return (
+      <LoaderButton isNoFill={variant !== 'accent' && variant !== 'discount'} />
+    );
 
   const variantStyle = varianStyles[variant];
 
@@ -80,7 +90,13 @@ const Button = ({ variant, isDisabled, onClick, text, isLoading }) => {
 
 Button.propTypes = {
   /** Set the button variant */
-  variant: PropTypes.oneOf(['accent', 'noFill', 'danger', 'default']),
+  variant: PropTypes.oneOf([
+    'accent',
+    'noFill',
+    'danger',
+    'discount',
+    'default',
+  ]),
   /** Indicates that is disabled */
   isDisabled: PropTypes.bool,
   /** Callback onClick */
@@ -92,7 +108,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  variant: 'accent',
+  variant: 'default',
   isDisabled: false,
   isLoading: false,
 };

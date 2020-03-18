@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.2.12
+## v0.2.13
 
-- Adds Counter Field
+- Adds discount variant for Button

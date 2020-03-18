@@ -20,3 +20,4 @@ export const errorStrong = '#C80007';
 export const info = '#00ABCB';
 export const infoStrong = '#009AB7';
 export const discount = '#C86B11';
+export const discountStrong = '#A55509';
