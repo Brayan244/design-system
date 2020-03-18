@@ -24,3 +24,5 @@ export { default as acLocation } from '../../images/icons/autocomplete/location.
 export { default as guest } from '../../images/icons/guest.svg';
 export { default as selectArrow } from '../../images/icons/arrows/select-arrow.svg';
 export { default as dropdown } from '../../images/icons/arrows/dropdown.svg';
+export { default as less } from '../../images/icons/less.svg';
+export { default as plus } from '../../images/icons/plus.svg';

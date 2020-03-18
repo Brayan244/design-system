@@ -1,0 +1,23 @@
+import { text, number } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CounterField from '../src/molecules/CounterField';
+
+<Meta title="Molecules|Counter Field" component={CounterField} />
+
+## Preview
+
+<Preview>
+  <Story name="Counter Field">
+    <CounterField
+      initialCount={number('Initial Count', 2)}
+      minCount={number('Min Count', 1)}
+      maxCount={number('Max Count', 5)}
+      onChange={action('onChange')}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={CounterField} />

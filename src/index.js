@@ -37,3 +37,4 @@ export { default as Badge } from './molecules/Badge';
 export { default as Price } from './molecules/Currency';
 export { default as InfoCard } from './atoms/InfoCard';
 export { default as Dropdown } from './molecules/Dropdown';
+export { default as CounterField } from './molecules/CounterField';

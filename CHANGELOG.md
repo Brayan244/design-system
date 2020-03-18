@@ -1,11 +1,5 @@
 # Changelog
 
-## v0.2.1
+## v0.2.12
 
-- Adds Dropdown component
-- Adds button type in NavLink
-- Adds accentBold type in ListItem
-
-## v0.2.10
-
-- Add icon guest and selectArrow
+- Adds Counter Field
