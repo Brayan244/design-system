@@ -5,19 +5,23 @@ import CreditCardItem from '../src/molecules/CreditCardItem';
 
 <Meta title="Molecules|Credit Card Item" component={CreditCardItem} />
 
-## Props
-
-<Props of={CreditCardItem} />
-
 ## Preview
 
 <Preview>
   <Story name="CreditCardItem">
     <CreditCardItem
       buttonText={text('Button text', 'Eliminar')}
-      cardBrand={select('Card brand', ['visa', 'mastercard', 'amex'], 'default')}
+      cardBrand={select(
+        'Card brand',
+        ['visa', 'mastercard', 'amex'],
+        'default'
+      )}
       onDelete={action('onDelete')}
       text={text('Text', '**** **** **** 0182')}
     />
   </Story>
 </Preview>
+
+## Props
+
+<Props of={CreditCardItem} />

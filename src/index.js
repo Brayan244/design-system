@@ -34,3 +34,6 @@ export { default as Currency } from './molecules/Currency';
 export { default as LoaderDots } from './atoms/LoaderDots';
 export { default as Rating } from './molecules/Rating';
 export { default as Badge } from './molecules/Badge';
+export { default as Price } from './molecules/Currency';
+export { default as InfoCard } from './atoms/InfoCard';
+export { default as Dropdown } from './molecules/Dropdown';

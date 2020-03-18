@@ -1,0 +1,25 @@
+import { text, boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import InfoCard from '../src/atoms/InfoCard';
+
+<Meta title="Atoms|Info Card" component={InfoCard} />
+
+## Preview
+
+<Preview>
+  <Story name="Info Card">
+    <InfoCard
+      icon={text('Icon', 'wallet')}
+      title={text(
+        'Title',
+        'Hola Daniela'
+      )}
+    >
+      <p>Recuerda que te devolvemos un % de tus compras para que viajes ahorrando.</p>
+    </InfoCard>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={InfoCard} />

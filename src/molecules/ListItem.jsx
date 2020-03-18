@@ -4,21 +4,30 @@ import PropTypes from 'prop-types';
 import Text from '../atoms/Text';
 import Icon from '../atoms/Icon';
 
-const iconTypes = {
-  normal: {
+const Types = {
+  default: {
     color: 'grayLight',
     size: 'M',
-    weight: 'regular',
+    weightLeft: 'regular',
+    weightRight: 'regular',
   },
   accent: {
     color: 'accent',
     size: 'M',
-    weight: 'regular',
+    weightLeft: 'regular',
+    weightRight: 'regular',
+  },
+  accentBold: {
+    color: 'accent',
+    size: 'S',
+    weightLeft: 'semibold',
+    weightRight: 'bold',
   },
   main: {
     color: 'gray500',
     size: 'L',
-    weight: 'semibold',
+    weightLeft: 'semibold',
+    weightRight: 'semibold',
   },
 };
 
@@ -26,40 +35,38 @@ const ListItem = ({ type, text, price, currency, hasNotice }) => {
   const listItemStyle = css`
     display: flex;
     justify-content: space-between;
-    padding: 5px 15px;
+    padding: ${type === 'accentBold' ? '15px' : '5px 15px'};
   `;
 
   const listItemContent = css`
     display: flex;
     align-items: center;
-
-    p {
-      margin-right: 10px;
-    }
   `;
 
   const listItemIcon = css`
-    display: ${hasNotice ? 'block' : 'none'};
+    margin-left: 10px;
   `;
 
   return (
     <div css={listItemStyle}>
       <div css={listItemContent}>
         <Text
-          size={iconTypes[type].size}
-          color={iconTypes[type].color}
-          weight={iconTypes[type].weight}
+          size={Types[type].size}
+          color={Types[type].color}
+          weight={Types[type].weightLeft}
         >
           {text}
         </Text>
-        <div css={listItemIcon}>
-          <Icon size="S" type="badgeQuestion" />
-        </div>
+        {Boolean(hasNotice) && (
+          <div css={listItemIcon}>
+            <Icon size="S" type="badgeQuestion" />
+          </div>
+        )}
       </div>
       <Text
-        size={iconTypes[type].size}
-        color={iconTypes[type].color}
-        weight={iconTypes[type].weight}
+        size={Types[type].size}
+        color={Types[type].color}
+        weight={Types[type].weightRight}
       >
         {`$${price}${currency}`}
       </Text>
@@ -69,7 +76,7 @@ const ListItem = ({ type, text, price, currency, hasNotice }) => {
 
 ListItem.propTypes = {
   /** Tipo de texto */
-  type: PropTypes.oneOf(['normal', 'accent', 'main']).isRequired,
+  type: PropTypes.oneOf(['default', 'accent', 'main', 'accentBold']).isRequired,
 
   /** Para editar el texto principal y más largo */
   text: PropTypes.string.isRequired,

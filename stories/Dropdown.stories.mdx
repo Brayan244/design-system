@@ -1,0 +1,34 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { boolean} from '@storybook/addon-knobs';
+import Dropdown from '../src/molecules/Dropdown';
+import NavLink from '../src/atoms/NavLink';
+import ListItem from '../src/molecules/ListItem';
+
+<Meta title="Molecules|Dropdown" component={Dropdown} />
+
+## Preview
+
+<Preview>
+  <Story name="Dropdown">
+    <Dropdown  hasArrow={boolean('Has arrow', true)} trigger={(
+       <p>abrir</p>
+      )}>
+      <ListItem type="accentBold"  text="Tu Monedero:" price="40" currency="MXN" />
+      <div>
+        <NavLink small>
+          <a href="#">Navigation Link</a>
+        </NavLink>
+        <NavLink small>
+          <a href="#">Navigation Link</a>
+        </NavLink>
+        <NavLink small>
+          <a href="#">Navigation Link</a>
+        </NavLink> 
+      </div>    
+    </Dropdown>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Dropdown} />

@@ -4,23 +4,20 @@ import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
-const NavLink = ({ active, children }) => {
+const NavLink = ({ active, children, small }) => {
   const container = css`
     position: relative;
 
-    &:first-of-type a {
-      border-top: 1px solid ${colors.gray200};
-    }
-
-    a {
+    a,
+    button {
       align-items: center;
       border-bottom: 1px solid ${colors.gray200};
       border-right: ${active ? `5px solid ${colors.accent}` : 0};
       color: ${colors.gray600};
       cursor: ${active ? 'default' : 'pointer'};
       display: flex;
-      font-size: ${typography.sizeM};
-      font-weight: ${active
+      font-size: ${small ? `${typography.sizeS}` : `${typography.sizeM}`};
+      font-weight: ${active || small
         ? `${typography.semibold}`
         : `${typography.regular}`};
       font-family: 'Open Sans', sans-serif;
@@ -33,6 +30,11 @@ const NavLink = ({ active, children }) => {
         background-color: ${colors.gray200};
       }
     }
+
+    &:first-of-type a,
+    &:first-of-type button {
+      border-top: 1px solid ${colors.gray200};
+    }
   `;
 
   return <div css={container}>{children}</div>;
@@ -41,12 +43,15 @@ const NavLink = ({ active, children }) => {
 NavLink.propTypes = {
   /** Whether the user is in the current link's page path */
   active: PropTypes.bool,
-  /** Must be an `<a>` tag to work */
+  /** Must be an `<a>` or `<button>` tag to work */
   children: PropTypes.node.isRequired,
+  /** Whether the user is in the current link's page path */
+  small: PropTypes.bool,
 };
 
 NavLink.defaultProps = {
   active: false,
+  small: false,
 };
 
 export default NavLink;

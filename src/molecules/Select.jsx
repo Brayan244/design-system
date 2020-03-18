@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import inputBaseStyles from '../base/input.styles';
-import iconDropDown from '../../images/icons/arrow-dropdown.svg';
+import iconDropDown from '../../images/icons/arrows/select.svg';
 import FieldLabel from '../atoms/FieldLabel';
 
 const Select = ({

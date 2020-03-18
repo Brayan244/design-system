@@ -4,16 +4,16 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Atoms|Nav Link" component={NavLink} />
 
-## Props
-
-<Props of={NavLink} />
-
 ## Preview
 
 <Preview>
   <Story name="NavLink">
-    <NavLink active={boolean('Is Active', false)}>
+    <NavLink active={boolean('Is Active', false)} small={boolean('Is Small', false)}>
       <a href="#">Navigation Link</a>
     </NavLink>
   </Story>
 </Preview>
+
+## Props
+
+<Props of={NavLink} />

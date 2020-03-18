@@ -12,11 +12,12 @@ import ListItem from '../src/molecules/ListItem';
       type={select(
         'type',
         {
-          Normal: 'normal',
-          Accent: 'accent',
-          Main: 'main',
+          'Default': 'normal',
+          'Accent': 'accent',
+          'Accent bold': 'accentBold',
+          'Main': 'main',
         },
-        'normal'
+        'default'
       )}
       text={text('Text', 'Cargo por servicio')}
       price={number('Price', 80)}

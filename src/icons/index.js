@@ -23,3 +23,4 @@ export { default as timer } from '../../images/icons/timer.png';
 export { default as acLocation } from '../../images/icons/autocomplete/location.svg';
 export { default as guest } from '../../images/icons/guest.svg';
 export { default as selectArrow } from '../../images/icons/arrows/select-arrow.svg';
+export { default as dropdown } from '../../images/icons/arrows/dropdown.svg';
