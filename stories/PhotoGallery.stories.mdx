@@ -1,0 +1,27 @@
+import { select, text, boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import PhotoGallery from '../src/organisms/PhotoGallery';
+
+<Meta title="Organisms|PhotoGallery" component={PhotoGallery} />
+
+## Props
+
+<Props of={PhotoGallery} />
+
+## Preview
+
+<Preview>
+  <Story name="PhotoGallery">
+    <PhotoGallery
+      alt={text('Alt', 'nombre')}
+      isLoading={boolean('Is Loading', false)}
+      photoUrlList={[
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
+      ]}
+    />
+  </Story>
+</Preview>

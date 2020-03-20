@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.2.13
+## v0.2.14
 
-- Adds discount variant for Button
+- Adds LoaderPhoto component
+- Adds Photo component

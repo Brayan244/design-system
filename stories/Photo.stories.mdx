@@ -1,0 +1,33 @@
+import { text, select, boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Photo from '../src/molecules/Photo';
+
+<Meta title="Molecules|Photo" component={Photo} />
+
+## Props
+
+<Props of={Photo} />
+
+## Preview
+
+<Preview>
+  <Story name="Photo">
+    <Photo
+      type={select(
+        'Type',
+        {
+          Large: 'L',
+          Medium: 'M',
+          Small: 'S',
+        },
+        'L'
+      )}
+      photoUrl={text(
+        'Photo URL',
+        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg'
+      )}
+      alt={text('Alt', 'nombre')}
+      isLoading={boolean('Is Loading', false)}
+    />
+  </Story>
+</Preview>
