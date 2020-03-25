@@ -1,6 +1,5 @@
 # Changelog
 
-## v0.2.14
+## v0.2.16
 
-- Adds LoaderPhoto component
-- Adds Photo component
+- Adds hotelLocation icon

@@ -26,3 +26,4 @@ export { default as selectArrow } from '../../images/icons/arrows/select-arrow.s
 export { default as dropdown } from '../../images/icons/arrows/dropdown.svg';
 export { default as less } from '../../images/icons/less.svg';
 export { default as plus } from '../../images/icons/plus.svg';
+export { default as hotelLocation } from '../../images/icons/hotels/location.svg';
