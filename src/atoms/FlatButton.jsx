@@ -23,14 +23,23 @@ const colorTypes = {
   },
 };
 
-const FlatButton = ({ text, onClick, isDisabled, type }) => {
+const sizes = {
+  XS: typography.sizeXS,
+  S: typography.sizeS,
+  M: typography.sizeM,
+  L: typography.sizeL,
+  XL: typography.sizeXL,
+  XXL: typography.sizeXXL,
+};
+
+const FlatButton = ({ text, onClick, isDisabled, type, size }) => {
   const colorType = isDisabled ? colorTypes.disabled : colorTypes[type];
 
   const container = css`
     color: ${colorType.color};
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
-    font-size: ${typography.sizeM};
+    font-size: ${sizes[size]};
     text-decoration: underline;
     cursor: ${isDisabled ? 'default' : 'pointer'};
 
@@ -60,10 +69,13 @@ FlatButton.propTypes = {
   text: PropTypes.string.isRequired,
   /** Tipo de color del `<button>` */
   type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']),
+  /** Font size */
+  size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
 };
 
 FlatButton.defaultProps = {
   type: 'accent',
+  size: 'M',
   isDisabled: false,
 };
 

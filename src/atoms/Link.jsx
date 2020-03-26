@@ -23,9 +23,18 @@ const colorTypes = {
   },
 };
 
-const Link = ({ large, text, href, type, newTab }) => {
+const sizes = {
+  XS: typography.sizeXS,
+  S: typography.sizeS,
+  M: typography.sizeM,
+  L: typography.sizeL,
+  XL: typography.sizeXL,
+  XXL: typography.sizeXXL,
+};
+
+const Link = ({ text, href, type, newTab, size }) => {
   const linkStyle = css`
-    font-size: ${large ? `${typography.sizeL}` : `${typography.sizeS}`};
+    font-size: ${sizes[size]};
     font-weight: ${typography.semibold};
     text-decoration: underline;
     color: ${colorTypes[type].color};
@@ -49,8 +58,6 @@ const Link = ({ large, text, href, type, newTab }) => {
 };
 
 Link.propTypes = {
-  /** Aumenta el tamaño de la tipografía a 16px */
-  large: PropTypes.bool,
   /** Texto que tendrá el link */
   text: PropTypes.string.isRequired,
   /** URL del link */
@@ -59,11 +66,13 @@ Link.propTypes = {
   type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']).isRequired,
   /** Opens the linked document in the same windown or new tab */
   newTab: PropTypes.bool,
+  /** Font size */
+  size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
 };
 
 Link.defaultProps = {
-  large: false,
   newTab: false,
+  size: 'S',
 };
 
 export default Link;

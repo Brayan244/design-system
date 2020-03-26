@@ -14,6 +14,18 @@ import Link from '../src/atoms/Link';
       href={text('href', 'https://www.reservamos.mx/')}
       type={select('type', ['accent', 'disabled', 'info', 'error'], 'accent')}
       newTab={boolean('New Tab', false)}
+      size={select(
+        'Size',
+        {
+          XSmall: 'XS',
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+          XXLarge: 'XXL',
+        },
+        'S'
+      )}
     />
   </Story>
 </Preview>
