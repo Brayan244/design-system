@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.2.18
+## v0.2.19
 
-- Updates styles and props for Card component
+- Icons of bus and plane amenities were added
+- Hotel icons added
