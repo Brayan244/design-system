@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.2.17
+## v0.2.18
 
-- Sizes in link and flatButton components added
+- Updates styles and props for Card component

@@ -4,13 +4,20 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Card from '../src/molecules/Card';
 import RadioItem from '../src/molecules/RadioItem';
 
-<Meta title="Molecules|Radio Item" component={RadioItem} />
+<Meta title="Molecules|Card" component={RadioItem} />
 
 ## Preview
 
 <Preview>
-  <Story name="Card">
-    <Card isActive={boolean('Is Active', false)}>
+  <Story name="Knobs and actions">
+    <Card
+      isActive={boolean('Is active', false)}
+      hasShadow={boolean('Has shadow', false)}
+      hasPadding={boolean('Has padding', false)}
+      hasMargin={boolean('Has margin', true)}
+      hasBorder={boolean('Has border', true)}
+      paddingSmall={text('Padding small', '15px 5px')}
+    >
       <RadioItem
         textRight="**** **** **** 0182"
         textLeft="Banamex"
@@ -20,6 +27,69 @@ import RadioItem from '../src/molecules/RadioItem';
         isActive={false}
         onChange={action('onChange')}
       />
+    </Card>
+  </Story>
+</Preview>
+
+## Card radio
+
+<Preview>
+  <Story name="CardRadio">
+    <Card
+      isActive={boolean('Is active', false)}
+    >
+      <RadioItem
+        textRight="**** **** **** 0182"
+        textLeft="Banamex"
+        value=""
+        name=""
+        cardBrand={"default"}
+        isActive={false}
+        onChange={action('onChange')}
+      />
+    </Card>
+  </Story>
+</Preview>
+
+## Box container
+
+<Preview>
+  <Story name="BoxContainer">
+    <Card
+      hasBorder={false}
+      hasPadding
+      hasMargin={false}
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </Card>
+  </Story>
+</Preview>
+
+## Box result
+
+<Preview>
+  <Story name="BoxResults">
+    <Card
+      hasShadow
+      hasBorder={false}
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
     </Card>
   </Story>
 </Preview>
