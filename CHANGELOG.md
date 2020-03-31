@@ -1,6 +1,5 @@
 # Changelog
 
-## v0.2.19
+## v0.2.20
 
-- Icons of bus and plane amenities were added
-- Hotel icons added
+- Variants added for button component

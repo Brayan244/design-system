@@ -43,7 +43,30 @@ const varianStyles = {
   },
 };
 
-const Button = ({ variant, isDisabled, onClick, text, isLoading }) => {
+const sizes = {
+  XS: typography.sizeXS,
+  S: typography.sizeS,
+  M: typography.sizeM,
+  L: typography.sizeL,
+  XL: typography.sizeXL,
+  XXL: typography.sizeXXL,
+};
+
+const paddingSizes = {
+  L: '10px 25px',
+  M: '5px 15px',
+  S: '0 5px',
+};
+
+const Button = ({
+  variant,
+  isDisabled,
+  onClick,
+  text,
+  isLoading,
+  fontSize,
+  padding,
+}) => {
   if (isLoading)
     return (
       <LoaderButton isNoFill={variant !== 'accent' && variant !== 'discount'} />
@@ -58,13 +81,13 @@ const Button = ({ variant, isDisabled, onClick, text, isLoading }) => {
     color: ${variantStyle.color};
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
-    font-size: ${typography.sizeM};
-    height: 35px;
+    font-size: ${sizes[fontSize]};
+    min-height: 35px;
     min-width: 100px;
-    padding: 9px 24px;
+    padding: ${paddingSizes[padding]};
     line-height: 15px;
     transition: background-color 200ms ease-out;
-    cursor: ${isDisabled ? 'default' : 'pointer'};
+    cursor: ${isDisabled ? 'default' : null};
 
     &:hover {
       background-color: ${variantStyle.backgroundHover};
@@ -105,12 +128,18 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   /** Indicates that is disabled */
   isLoading: PropTypes.bool,
+  /** Select font size: `S=11px`, `S=13px`, `M=15px`, `L=16px`, `XL=18px` `XXL=20px`, */
+  fontSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
+  /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
+  padding: PropTypes.oneOf(['S', 'M', 'L']),
 };
 
 Button.defaultProps = {
   variant: 'default',
   isDisabled: false,
   isLoading: false,
+  fontSize: 'M',
+  padding: 'L',
 };
 
 export default Button;
