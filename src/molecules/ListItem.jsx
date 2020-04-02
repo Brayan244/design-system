@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Text from '../atoms/Text';
 import Icon from '../atoms/Icon';
+import Currency from './Currency';
 
 const Types = {
   default: {
@@ -24,18 +25,39 @@ const Types = {
     weightRight: 'bold',
   },
   main: {
-    color: 'gray500',
+    color: 'grayMedium',
     size: 'L',
     weightLeft: 'semibold',
     weightRight: 'semibold',
   },
+  strong: {
+    color: 'grayStrong',
+    size: 'M',
+    weightLeft: 'regular',
+    weightRight: 'semibold',
+  },
+  big: {
+    color: 'grayStrong',
+    size: 'XXL',
+    weightLeft: 'regular',
+    weightRight: 'bold',
+  },
 };
 
-const ListItem = ({ type, text, price, currency, hasNotice }) => {
+const ListItem = ({
+  type,
+  textLeft,
+  hasNotice,
+  textRight,
+  price,
+  currency,
+  paddingHorizontal,
+  paddingVertical,
+}) => {
   const listItemStyle = css`
     display: flex;
     justify-content: space-between;
-    padding: ${type === 'accentBold' ? '15px' : '5px 15px'};
+    padding: ${paddingVertical}px ${paddingHorizontal}px;
   `;
 
   const listItemContent = css`
@@ -55,7 +77,7 @@ const ListItem = ({ type, text, price, currency, hasNotice }) => {
           color={Types[type].color}
           weight={Types[type].weightLeft}
         >
-          {text}
+          {textLeft}
         </Text>
         {Boolean(hasNotice) && (
           <div css={listItemIcon}>
@@ -63,32 +85,67 @@ const ListItem = ({ type, text, price, currency, hasNotice }) => {
           </div>
         )}
       </div>
-      <Text
-        size={Types[type].size}
-        color={Types[type].color}
-        weight={Types[type].weightRight}
-      >
-        {`$${price}${currency}`}
-      </Text>
+      {price ? (
+        <Currency
+          size={Types[type].size}
+          color={Types[type].color}
+          weight={Types[type].weightRight}
+          price={price}
+          currency={currency}
+        />
+      ) : (
+        <Text
+          size={Types[type].size}
+          color={Types[type].color}
+          weight={Types[type].weightRight}
+        >
+          {textRight}
+        </Text>
+      )}
     </div>
   );
 };
 
 ListItem.propTypes = {
   /** Tipo de texto */
-  type: PropTypes.oneOf(['default', 'accent', 'main', 'accentBold']).isRequired,
+  type: PropTypes.oneOf([
+    'default',
+    'accent',
+    'main',
+    'accentBold',
+    'strong',
+    'big',
+  ]),
 
-  /** Para editar el texto principal y más largo */
-  text: PropTypes.string.isRequired,
+  /** Para editar el texto de la izquierda y más largo */
+  textLeft: PropTypes.string.isRequired,
+
+  /** Texto del lado derecho */
+  textRight: PropTypes.string,
 
   /** Texto del precio */
-  price: PropTypes.number.isRequired,
+  price: PropTypes.number,
 
-  /** Tipo de peso */
-  currency: PropTypes.string.isRequired,
+  /** Tipo del tipo de moneda */
+  currency: PropTypes.string,
 
   /** Aparece el badgeQuestion */
   hasNotice: PropTypes.bool.isRequired,
+
+  /** Determina el valor del padding horizontal */
+  paddingHorizontal: PropTypes.number,
+
+  /** Determina el valor del padding vertical */
+  paddingVertical: PropTypes.number,
+};
+
+ListItem.defaultProps = {
+  type: 'default',
+  textRight: '',
+  price: null,
+  currency: '',
+  paddingVertical: 15,
+  paddingHorizontal: 15,
 };
 
 export default ListItem;

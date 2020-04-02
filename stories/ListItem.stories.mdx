@@ -12,18 +12,97 @@ import ListItem from '../src/molecules/ListItem';
       type={select(
         'type',
         {
-          'Default': 'normal',
+          'Default': 'default',
           'Accent': 'accent',
           'Accent bold': 'accentBold',
           'Main': 'main',
+          'Strong': 'strong',
+          'Big': 'big',
         },
         'default'
       )}
-      text={text('Text', 'Cargo por servicio')}
-      price={number('Price', 80)}
+      textLeft={text('Text left', 'Cargo por servicio')}
+      textRight={text('Text right', 'Nombre del hotel')}
+      price={number('Price', '')}
       currency={text('Currency', 'MXN')}
       hasNotice={boolean('Has notice', false)}
+      paddingVertical={number('Padding Vertical')}
+      paddingHorizontal={number('Padding Horizontal')}
     />
+  </Story>
+</Preview>
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <ListItem
+      type="default"
+      textLeft="Cargo por servicio"
+      price="830"
+      currency="mxn"
+    />
+  </Story>
+</Preview>
+
+## Accent
+
+<Preview>
+  <Story name="Accent">
+    <ListItem
+      type="accent"
+      textLeft="Cargo por servicio"
+      price="830"
+      currency="mxn"
+    />
+  </Story>
+</Preview>
+
+## Accent bold
+
+<Preview>
+  <Story name="Accent bold">
+    <ListItem
+      type="accentBold"
+      textLeft="Cargo por servicio"
+      price="830"
+      currency="mxn"
+    />
+  </Story>
+</Preview>
+
+## Main
+
+<Preview>
+  <Story name="Main">
+    <ListItem
+      type="main"
+      textLeft="Cargo por servicio"
+      price="830"
+      currency="mxn"
+    />
+  </Story>
+</Preview>
+
+## Strong
+
+<Preview>
+  <Story name="Strong">
+    <ListItem
+      type="strong"
+      textLeft="Check in:"
+      textRight="a partir de las 15:00 hrs"
+      paddingVertical="0"
+      paddingHorizontal="0"
+    />
+  </Story>
+</Preview>
+
+## Big
+
+<Preview>
+  <Story name="Big">
+    <ListItem type="big" textLeft="Total:" price="830" currency="mxn" />
   </Story>
 </Preview>
 

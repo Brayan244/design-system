@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.2.20
+## v0.3.0
 
-- Variants added for button component
+- Adds variant that allows choose price or text on right side for ListItem
