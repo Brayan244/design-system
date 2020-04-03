@@ -23,19 +23,10 @@ const colorTypes = {
   },
 };
 
-const sizes = {
-  XS: typography.sizeXS,
-  S: typography.sizeS,
-  M: typography.sizeM,
-  L: typography.sizeL,
-  XL: typography.sizeXL,
-  XXL: typography.sizeXXL,
-};
-
-const Link = ({ text, href, type, newTab, size }) => {
+const Link = ({ text, href, type, newTab, size, weight }) => {
   const linkStyle = css`
-    font-size: ${sizes[size]};
-    font-weight: ${typography.semibold};
+    font-size: ${typography[size]};
+    font-weight: ${typography[weight]};
     text-decoration: underline;
     color: ${colorTypes[type].color};
     font-family: 'Open Sans', sans-serif;
@@ -68,11 +59,14 @@ Link.propTypes = {
   newTab: PropTypes.bool,
   /** Font size */
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
+  /** Font weight */
+  weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
 };
 
 Link.defaultProps = {
   newTab: false,
   size: 'S',
+  weight: 'semibold',
 };
 
 export default Link;

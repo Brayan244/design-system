@@ -93,7 +93,7 @@ AlertMessage.propTypes = {
   type: PropTypes.oneOf(['error', 'success', 'warning', 'info']),
 
   /** `z-index` value - Default `901` */
-  zIndex: PropTypes.string,
+  zIndex: PropTypes.number,
 };
 
 AlertMessage.defaultProps = {

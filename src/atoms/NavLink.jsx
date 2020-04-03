@@ -16,7 +16,7 @@ const NavLink = ({ active, children, small }) => {
       color: ${colors.gray600};
       cursor: ${active ? 'default' : 'pointer'};
       display: flex;
-      font-size: ${small ? `${typography.sizeS}` : `${typography.sizeM}`};
+      font-size: ${small ? `${typography.S}` : `${typography.M}`};
       font-weight: ${active || small
         ? `${typography.semibold}`
         : `${typography.regular}`};

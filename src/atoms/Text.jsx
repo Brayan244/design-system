@@ -15,30 +15,15 @@ const tones = {
   white: colors.white,
 };
 
-const weights = {
-  regular: typography.regular,
-  semibold: typography.semibold,
-  bold: typography.bold,
-};
-
-const sizes = {
-  XS: typography.sizeXS,
-  S: typography.sizeS,
-  M: typography.sizeM,
-  L: typography.sizeL,
-  XL: typography.sizeXL,
-  XXL: typography.sizeXXL,
-};
-
 const Text = ({ children, size, weight, color, elementType, lineThrough }) => {
   const BodyElement = elementType;
 
   const textStyle = css`
     font-family: 'Open Sans', sans-serif;
     color: ${tones[color]};
-    font-size: ${sizes[size]};
-    font-weight: ${weights[weight]};
-    text-decoration: ${lineThrough ? 'line-through' : 'none'};
+    font-size: ${typography[size]};
+    font-weight: ${typography[weight]};
+    text-decoration: ${lineThrough ? 'line-through' : null};
   `;
 
   return <BodyElement css={textStyle}>{children}</BodyElement>;
@@ -57,6 +42,7 @@ Text.propTypes = {
     'grayLight',
     'info',
     'discount',
+    'white',
   ]),
   /** Font weight */
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),

@@ -26,6 +26,15 @@ import FlatButton from '../src/atoms/FlatButton';
         },
         'M'
       )}
+      weight={select('Weight', ['regular', 'semibold', 'bold'], 'semibold')}
+      buttonType={select(
+        'Button type',
+        {
+          Button: 'button',
+          Submit: 'submit',
+        },
+        'button'
+      )}
     />
   </Story>
 </Preview>

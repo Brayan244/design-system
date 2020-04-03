@@ -2,6 +2,8 @@ import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Spacing from '../src/atoms/Spacing';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Text from '../src/atoms/Text';
+import Rating from '../src/molecules/Rating';
 import Input from '../src/molecules/Input';
 import Select from '../src/molecules/Select';
 
@@ -31,7 +33,7 @@ import Select from '../src/molecules/Select';
             Large: 'L',
             XLarge: 'XL',
           },
-          'M'
+          'L'
         )}
         sizeVertical={select(
           'Size Vertical',
@@ -54,6 +56,7 @@ import Select from '../src/molecules/Select';
             FlexStart: 'flex-start',
             FlexEnd: 'flex-end',
             Center: 'center',
+            Baseline: 'baseline',
           },
           'initial'
         )}
@@ -79,39 +82,9 @@ import Select from '../src/molecules/Select';
           'small'
         )}
       >
-      <Input
-        label="Nombre"
-        id="email"
-        value=""
-        onChange={action('onChange')}
-      />
-     <Select
-      label="Nacionalidad"
-      id="nacionalidad"
-      placeholder={text('placeholder', 'Select Placeholder')}
-      options={[
-        {
-          value: '1',
-          label: 'Option 1',
-        },
-        {
-          value: '2',
-          label: 'Option 2',
-        },
-        {
-          value: '3',
-          label: 'Option 3',
-        },
-        ]}
-        onChange
-        value=""
-      />
-      <Input
-        label="Apellido"
-        id="email"
-        value=""
-        onChange={action('onChange')}
-      />
+      <Text size="M" weight="semibold">Text component</Text>
+      <Text size="M" weight="semibold">Other text component</Text>
+      <Text size="M" weight="semibold">Last text component</Text>
     </Spacing>
   </Story>
 </Preview>
@@ -119,3 +92,112 @@ import Select from '../src/molecules/Select';
 ## Props
 
 <Props of={Spacing} />
+
+## Margin horizontal example
+
+<Preview>
+  <Story name="Margin horizontal example">
+    <Spacing direction="horizontal" sizeHorizontal="S">
+      <Text size="M" weight="semibold">Lisboa</Text>
+      <Rating rating={3.5} compact />
+    </Spacing>
+    </Story>
+</Preview>
+
+## Margin vertical example
+
+<Preview>
+  <Story name="Margin vertical example">
+    <Spacing direction="vertical" sizeVertical="S">
+      <Text size="XXL" weight="semibold">Pestana CR7 Lisboa</Text>
+      <Text size="M" weight="semibold">PURE Lifestyle is our personality - A partnership between Pestana Hotel Group and Cristiano Ronaldo.</Text>
+    </Spacing>
+    </Story>
+</Preview>
+
+## Row example
+With the `horizontal` direction and the `flex: 1` property, rows can be created with children of the same size and occupy 100% of the width.
+
+<Preview>
+  <Story name="Row example">
+    <Spacing
+      direction="horizontal"
+        sizeHorizontal="M"
+        
+        flex='1'
+        isResponsive
+      >
+      <Input
+        label="Nombre"
+        id="name"
+        value="Mary Elizabeth"
+        onChange={action('onChange')}
+      />
+      <Input
+        label="Apellido"
+        id="lastname"
+        value="Winstead"
+        onChange={action('onChange')}
+      />
+    </Spacing>
+  </Story>
+</Preview>
+
+## Spacing inside Spacing
+You can use the Spacing component inside another Spacing component to create layouts.
+The first Spacing has a vertical direction, the inner Spacing have a horizontal direction.
+
+<Preview>
+  <Story name="Spacing inside spacing">
+    <Spacing direction="vertical" sizeVertical="L">
+      <Spacing
+      direction="horizontal"
+        sizeHorizontal="M"
+        
+        flex='1'
+        isResponsive
+      >
+      <Input
+        label="Nombre"
+        id="name"
+        value="Mary Elizabeth"
+        onChange={action('onChange')}
+      />
+      <Input
+        label="Apellido"
+        id="lastname"
+        value="Winstead"
+        onChange={action('onChange')}
+      />
+    </Spacing>
+    <Spacing
+      direction="horizontal"
+        sizeHorizontal="M"
+        
+        flex='1'
+        isResponsive
+      >
+      <Input
+        label="Nombre"
+        id="name"
+        value="Mary Elizabeth"
+        onChange={action('onChange')}
+      />
+      <Input
+        label="Apellido"
+        id="lastname"
+        value="Winstead"
+        onChange={action('onChange')}
+      />
+      <Input
+        label="Email"
+        id="email"
+        value="mew@email.io"
+        onChange={action('onChange')}
+        type="email"
+      />
+    </Spacing>
+    </Spacing>
+  </Story>
+</Preview>
+

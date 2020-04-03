@@ -27,6 +27,14 @@ import Button from '../src/organisms/Button';
       isLoading={boolean('Is Loading', false)}
       fontSize={select('Font Size', ['XS', 'S', 'M', 'L', 'XL', 'XXL'], 'M')}
       padding={select('Padding', ['S', 'M', 'L'], 'L')}
+      buttonType={select(
+        'Button type',
+        {
+          Button: 'button',
+          Submit: 'submit',
+        },
+        'button'
+      )}
     />
   </Story>
 </Preview>

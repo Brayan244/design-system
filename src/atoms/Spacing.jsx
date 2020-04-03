@@ -81,6 +81,7 @@ Spacing.propTypes = {
     'flex-start',
     'flex-end',
     'center',
+    'baseline',
   ]),
   /** Aligns the flexible container's items when the items do not use all available space on the main-axis */
   justifyContent: PropTypes.oneOf([

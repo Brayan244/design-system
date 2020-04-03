@@ -15,7 +15,7 @@ const InfoCard = ({ children, icon, title }) => {
   const card = css`
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.regular};
-    font-size: ${typography.sizeS};
+    font-size: ${typography.S};
     white-space: normal;
     margin-top: 10px;
   `;

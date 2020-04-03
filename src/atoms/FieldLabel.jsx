@@ -15,7 +15,7 @@ const FieldLabel = ({ inputId, isPlaceholder, text }) => {
     position: absolute;
     top: 0;
     left: 15px;
-    font-size: ${typography.sizeM};
+    font-size: ${typography.M};
     cursor: text;
     transition: transform 0.2s ease-out, color 0.2s ease-out;
     transform-origin: 0% 100%;

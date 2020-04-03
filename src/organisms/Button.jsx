@@ -43,15 +43,6 @@ const varianStyles = {
   },
 };
 
-const sizes = {
-  XS: typography.sizeXS,
-  S: typography.sizeS,
-  M: typography.sizeM,
-  L: typography.sizeL,
-  XL: typography.sizeXL,
-  XXL: typography.sizeXXL,
-};
-
 const paddingSizes = {
   L: '10px 25px',
   M: '5px 15px',
@@ -59,6 +50,7 @@ const paddingSizes = {
 };
 
 const Button = ({
+  buttonType,
   variant,
   isDisabled,
   onClick,
@@ -81,7 +73,7 @@ const Button = ({
     color: ${variantStyle.color};
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
-    font-size: ${sizes[fontSize]};
+    font-size: ${typography[fontSize]};
     min-height: 35px;
     min-width: 100px;
     padding: ${paddingSizes[padding]};
@@ -100,8 +92,10 @@ const Button = ({
   `;
 
   return (
+    // eslint doesn't allow dynamic button type
+    // eslint-disable-next-line react/button-has-type
     <button
-      type="button"
+      type={buttonType}
       css={ButtonStyle}
       onClick={onClick}
       disabled={isDisabled}
@@ -123,7 +117,7 @@ Button.propTypes = {
   /** Indicates that is disabled */
   isDisabled: PropTypes.bool,
   /** Callback onClick */
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   /** Texto del botón */
   text: PropTypes.string.isRequired,
   /** Indicates that is disabled */
@@ -132,14 +126,18 @@ Button.propTypes = {
   fontSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
   /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
   padding: PropTypes.oneOf(['S', 'M', 'L']),
+  /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
+  buttonType: PropTypes.oneOf(['button', 'submit']),
 };
 
 Button.defaultProps = {
+  onClick: () => {},
   variant: 'default',
   isDisabled: false,
   isLoading: false,
   fontSize: 'M',
   padding: 'L',
+  buttonType: 'button',
 };
 
 export default Button;
