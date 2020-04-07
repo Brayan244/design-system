@@ -56,3 +56,4 @@ export { default as breakfast } from '../../images/icons/amenities/hotels/breakf
 export { default as amenity } from '../../images/icons/amenities/common/amenity.svg';
 export { default as restaurant } from '../../images/icons/amenities/hotels/restaurant.svg';
 export { default as parking } from '../../images/icons/amenities/hotels/parking.svg';
+export { default as bed } from '../../images/icons/amenities/hotels/bed.svg';
