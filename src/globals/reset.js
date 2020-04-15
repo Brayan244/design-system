@@ -14,10 +14,6 @@ export default css`
     &::before {
       box-sizing: inherit;
     }
-
-    &:focus {
-      outline: none;
-    }
   }
 
   body,
@@ -53,7 +49,6 @@ export default css`
     box-shadow: none;
     padding: 0;
     margin: 0;
-    -webkit-tap-highlight-color: transparent;
   }
 
   input::-ms-clear {

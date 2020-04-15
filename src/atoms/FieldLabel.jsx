@@ -6,7 +6,7 @@ import * as typography from '../tokens/typography';
 
 const FieldLabel = ({ inputId, isPlaceholder, text }) => {
   const activeStyle = css`
-    transform: translateY(-14px) scale(0.8);
+    transform: translateY(-20px) scale(0.8);
     transform-origin: 0 0;
   `;
 

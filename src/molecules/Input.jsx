@@ -17,7 +17,7 @@ const Input = ({
   const [isFocused, setIsFocused] = useState(false);
 
   const container = css`
-    margin-top: 15px;
+    margin-top: 20px;
     position: relative;
   `;
 

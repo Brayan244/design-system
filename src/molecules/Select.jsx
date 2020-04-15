@@ -18,7 +18,7 @@ const Select = ({
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
   const selectWrapper = css`
-    margin-top: 15px;
+    margin-top: 20px;
     position: relative;
   `;
 

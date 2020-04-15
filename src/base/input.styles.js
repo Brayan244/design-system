@@ -18,8 +18,11 @@ export default function inputStyles(isDisabled, hasError) {
     width: 100%;
 
     &:focus {
-      border-color: ${errorColor || colors.accent};
-      box-shadow: 0 1px 0 0 ${hasError ? colors.error : colors.accent};
+      border: 1px solid ${errorColor || colors.accent};
+      box-shadow: ${hasError
+        ? colors.error
+        : '0px 0px 4px 2px rgba(206, 52, 139, 0.36)'};
+      outline: none;
 
       & + label {
         color: ${errorColor || colors.accent};
