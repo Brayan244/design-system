@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.3.4
+## v0.3.5
 
-- add icons galleries
-- deleted succes icon and change it for checkmarkWhite
+- Adds eTicket icons
+- changes amenities directory path
