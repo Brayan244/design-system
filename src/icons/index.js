@@ -10,12 +10,11 @@ export { default as badgeQuestion } from '../../images/icons/badge-question.svg'
 export { default as rightPrimary } from '../../images/icons/arrows/right-primary.svg';
 export { default as arrowBack } from '../../images/icons/arrows/back.svg';
 export { default as error } from '../../images/icons/alert/notification-error.svg';
-export { default as success } from '../../images/icons/alert/notification-success.svg';
+export { default as checkmarkWhite } from '../../images/icons/checkmark-white.svg';
 export { default as warning } from '../../images/icons/alert/notification-warning.svg';
 export { default as info } from '../../images/icons/alert/notification-info.svg';
 export { default as close } from '../../images/icons/close.svg';
 export { default as menu } from '../../images/icons/menu.svg';
-export { default as checkmarkWhite } from '../../images/icons/checkmark-white.svg';
 export { default as starFull } from '../../images/icons/rating/full.svg';
 export { default as starHalf } from '../../images/icons/rating/half.svg';
 export { default as starEmpty } from '../../images/icons/rating/empty.svg';

@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.3.3
+## v0.3.4
 
-- fix focus input
+- add icons galleries
+- deleted succes icon and change it for checkmarkWhite

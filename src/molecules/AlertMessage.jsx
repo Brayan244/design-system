@@ -10,7 +10,7 @@ import * as zIndexes from '../tokens/zIndexes';
 
 const variantTypes = {
   success: {
-    icon: 'success',
+    icon: 'checkmarkWhite',
     color: colors.success,
   },
   error: {

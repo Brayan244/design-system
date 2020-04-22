@@ -1,5 +1,7 @@
 import { text, boolean, select, number } from '@storybook/addon-knobs';
 import Icon from '../src/atoms/Icon';
+import Text from '../src/atoms/Text';
+import Spacing from '../src/atoms/Spacing';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Atoms|Icon" component={Icon} />
@@ -23,6 +25,325 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
       type={text('Type', 'twitter')}
       margin={number('Margin - px', 10)}
     />
+  </Story>
+</Preview>
+
+# All Icons
+
+Icon showdown / *White icons have gray background*
+
+<Preview>
+  <Story name="All Icons">
+    <Spacing direction="vertical" sizeVertical="XL">
+      <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="transportBus"/>
+          <Text size="M">transportBus</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="transportFlight"/>
+          <Text size="M">transportFlight</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="transportDot"/>
+          <Text size="M">transportDot</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="facebook"/>
+          <Text size="M">facebook</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="instagram"/>
+          <Text size="M">instagram</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="twitter"/>
+          <Text size="M">twitter</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="guarantee"/>
+          <Text size="M">guarantee</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="wallet"/>
+          <Text size="M">wallet</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="badgeQuestion"/>
+          <Text size="M">badgeQuestion</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="rightPrimary"/>
+          <Text size="M">rightPrimary</Text>
+        </Spacing>  
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="arrowBack"/>
+          <Text size="M">arrowBack</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+          <Text size="M">error</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="checkmarkWhite"/>
+          <Text size="M">checkmarkWhite</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="warning"/>
+          <Text size="M">warning</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="info"/>
+          <Text size="M">info</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="close"/>
+          <Text size="M">close</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="menu"/>
+          <Text size="M">menu</Text>
+        </Spacing>    
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="starFull"/>
+          <Text size="M">starFull</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="starHalf"/>
+          <Text size="M">starHalf</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="starEmpty"/>
+          <Text size="M">starEmpty</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="timer"/>
+          <Text size="M">timer</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="acLocation"/>
+          <Text size="M">acLocation</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="guest"/>
+          <Text size="M">guest</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="selectArrow"/>
+          <Text size="M">selectArrow</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="dropdown"/>
+          <Text size="M">dropdown</Text>
+        </Spacing>   
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="less"/>
+          <Text size="M">less</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="plus"/>
+          <Text size="M">plus</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="hotelLocation"/>
+          <Text size="M">hotelLocation</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+     </Spacing>
+    </Spacing>
+  </Story>
+</Preview>
+
+# Bus amenities
+
+<Preview>
+  <Story name="Bus amenities">
+    <Spacing direction="vertical" sizeVertical="XL">
+      <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="bathroom"/>
+          <Text size="M">bathroom</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="coffee"/>
+          <Text size="M">coffee</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="eticket"/>
+          <Text size="M">eticket</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="wardrobe"/>
+          <Text size="M">wardrobe</Text>
+        </Spacing> 
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="tv"/>
+          <Text size="M">tv</Text>
+        </Spacing>
+     </Spacing>
+    </Spacing>
+  </Story>
+</Preview>
+
+# Hotel amenities
+
+<Preview>
+  <Story name="Hotel amenities">
+    <Spacing direction="vertical" sizeVertical="XL">
+      <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="parking"/>
+          <Text size="M">parking</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="breakfast"/>
+          <Text size="M">breakfast</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="wifi"/>
+          <Text size="M">wifi</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="airConditioning"/>
+          <Text size="M">airConditioning</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="restaurant"/>
+          <Text size="M">restaurant</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="amenity"/>
+          <Text size="M">amenity</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="bed"/>
+          <Text size="M">bed</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+     </Spacing>
+    </Spacing>
+  </Story>
+</Preview>
+
+# Flights amenities
+
+<Preview>
+  <Story name="Flights amenities">
+    <Spacing direction="vertical" sizeVertical="XL">
+      <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="freeSnacks"/>
+          <Text size="M">freeSnacks</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="freePetTravel"/>
+          <Text size="M">freePetTravel</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="freeInfantTravel"/>
+          <Text size="M">freeInfantTravel</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="freeItineraryChange"/>
+          <Text size="M">freeItineraryChange</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="freeFlightFastForward"/>
+          <Text size="M">freeFlightFastForward</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="webCheckin"/>
+          <Text size="M">webCheckin</Text>
+        </Spacing>
+       <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="smallCarryons"/>
+          <Text size="M">smallCarryons</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="twoSmallCarryons"/>
+          <Text size="M">twoSmallCarryons</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="noCarryon"/>
+          <Text size="M">noCarryon</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="oneDocumentedLuggage"/>
+          <Text size="M">oneDocumentedLuggage</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="twoDocumentedLuggage"/>
+          <Text size="M">twoDocumentedLuggage</Text>
+        </Spacing>
+       <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="threeDocumentedLuggage"/>
+          <Text size="M">threeDocumentedLuggage</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="noDocumentedLuggage"/>
+          <Text size="M">noDocumentedLuggage</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="buyableSnacks"/>
+          <Text size="M">buyableSnacks</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="buyableCounterCheckin"/>
+          <Text size="M">buyableCounterCheckin</Text>
+        </Spacing>      
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="buyableInfantTravel"/>
+          <Text size="M">buyableInfantTravel</Text>
+        </Spacing>
+     </Spacing>
+     <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="buyableItineraryChange"/>
+          <Text size="M">buyableItineraryChange</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="buyablePetTravel"/>
+          <Text size="M">buyablePetTravel</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error"/>
+        </Spacing>
+     </Spacing>
+    </Spacing>
   </Story>
 </Preview>
 
