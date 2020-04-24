@@ -59,3 +59,5 @@ export { default as parking } from '../../images/amenities/hotels/parking.svg';
 export { default as bed } from '../../images/amenities/hotels/bed.svg';
 export { default as eTicket } from '../../images/icons/eTicket.svg';
 export { default as eTicketCheck } from '../../images/icons/eTicketCheck.svg';
+export { default as freeCancellation } from '../../images/amenities/hotels/free-cancellation.svg';
+export { default as nonRefundable } from '../../images/amenities/hotels/non-refundable.svg';
