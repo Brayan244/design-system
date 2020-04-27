@@ -3,6 +3,7 @@ import Icon from '../src/atoms/Icon';
 import Text from '../src/atoms/Text';
 import Spacing from '../src/atoms/Spacing';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import backgroundColors from '../.storybook/backgroundColors';
 
 <Meta title="Atoms|Icon" component={Icon} />
 
@@ -31,7 +32,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 # All Icons
 
 <Preview>
-  <Story name="All Icons">
+  <Story name="All Icons" parameters={{backgrounds: [...backgroundColors, { name: 'gray200', value: '#E6E6E6', default: true }]}}>
     <Spacing direction="vertical" sizeVertical="XL">
       <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
         <Spacing direction="vertical" alignItems="center">
