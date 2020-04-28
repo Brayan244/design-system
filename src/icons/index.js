@@ -61,3 +61,6 @@ export { default as eTicket } from '../../images/icons/eTicket.svg';
 export { default as eTicketCheck } from '../../images/icons/eTicketCheck.svg';
 export { default as freeCancellation } from '../../images/amenities/hotels/free-cancellation.svg';
 export { default as nonRefundable } from '../../images/amenities/hotels/non-refundable.svg';
+export { default as purchaseFailed } from '../../images/icons/purchase/failed.svg';
+export { default as purchasePending } from '../../images/icons/purchase/pending.svg';
+export { default as purchaseSuccess } from '../../images/icons/purchase/success.svg';

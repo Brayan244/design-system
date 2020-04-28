@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.3.6
+## v0.3.7
 
-- Adds backgrounds addOn for Storybook
+-Added icons success, failed and pending

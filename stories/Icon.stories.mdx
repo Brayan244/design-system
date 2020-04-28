@@ -19,6 +19,7 @@ import backgroundColors from '../.storybook/backgroundColors';
           Medium: 'M',
           Large: 'L',
           XLarge: 'XL',
+          XXLarge: 'XXL',
         },
         'L'
       )}
@@ -244,6 +245,35 @@ import backgroundColors from '../.storybook/backgroundColors';
         <Spacing direction="vertical" alignItems="center">
           <Icon size="L" type="nonRefundable" />
           <Text size="M">nonRefundable</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error" />
+        </Spacing>
+      </Spacing>
+    </Spacing>
+  </Story>
+</Preview>
+
+# Purchase status
+
+<Preview>
+  <Story name="Purchase status">
+    <Spacing direction="vertical" sizeVertical="XL">
+      <Spacing direction="horizontal" sizeHorizontal="M" flex="1" isResponsive>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="XXL" type="purchaseFailed" />
+          <Text size="M">failed</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="XXL" type="purchasePending" />
+          <Text size="M">pending</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="XXL" type="purchaseSuccess" />
+          <Text size="M">success</Text>
+        </Spacing>
+        <Spacing direction="vertical" alignItems="center">
+          <Icon size="L" type="error" />
         </Spacing>
         <Spacing direction="vertical" alignItems="center">
           <Icon size="L" type="error" />
