@@ -28,7 +28,7 @@ const Icon = ({ size, hasMargin, type, margin }) => {
 };
 
 Icon.propTypes = {
-  /** Select size: `S=15px`, `M=25px`, `L=35px`, `XL=45px` `XL=80px`  */
+  /** Select size: `S=15px`, `M=25px`, `L=35px`, `XL=45px` `XXL=80px`  */
   size: PropTypes.oneOf(['S', 'M', 'L', 'XL', 'XXL']),
   /** Icon type */
   type: PropTypes.string.isRequired,
