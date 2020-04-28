@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.3.7
+## v0.3.8
 
--Added icons success, failed and pending
+- Changes ListItem prop requirements

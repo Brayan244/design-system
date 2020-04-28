@@ -129,8 +129,8 @@ ListItem.propTypes = {
   /** Tipo del tipo de moneda */
   currency: PropTypes.string,
 
-  /** Aparece el badgeQuestion */
-  hasNotice: PropTypes.bool.isRequired,
+  /** Aparece el question badge */
+  hasNotice: PropTypes.bool,
 
   /** Determina el valor del padding horizontal */
   paddingHorizontal: PropTypes.number,
@@ -144,8 +144,9 @@ ListItem.defaultProps = {
   textRight: '',
   price: null,
   currency: '',
-  paddingVertical: 15,
+  hasNotice: false,
   paddingHorizontal: 15,
+  paddingVertical: 15,
 };
 
 export default ListItem;
