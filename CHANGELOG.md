@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.3.8
+## v0.3.9
 
--Fix icon purchase pending
+- Button full width on small screens

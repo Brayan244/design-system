@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
+import * as mq from '../globals/mediaqueries';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 import LoaderButton from '../molecules/LoaderButton';
@@ -58,6 +59,7 @@ const Button = ({
   isLoading,
   fontSize,
   padding,
+  fullWidthOnSmall,
 }) => {
   if (isLoading)
     return (
@@ -68,7 +70,7 @@ const Button = ({
 
   const ButtonStyle = css`
     background-color: ${variantStyle.background};
-    border-radius: 4px;
+    border-radius: ${fullWidthOnSmall ? '0' : '4px'};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: ${variantStyle.color};
     font-family: 'Open Sans', sans-serif;
@@ -88,6 +90,10 @@ const Button = ({
     &:disabled {
       background-color: ${variantStyle.backgroundDisabled};
       color: ${variantStyle.colorDisabled};
+    }
+
+    ${mq.small} {
+      width: ${fullWidthOnSmall ? '100%' : null};
     }
   `;
 
@@ -128,6 +134,8 @@ Button.propTypes = {
   padding: PropTypes.oneOf(['S', 'M', 'L']),
   /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
   buttonType: PropTypes.oneOf(['button', 'submit']),
+  /** Muestra el botón con 100% de ancho en pantallas pequeñas */
+  fullWidthOnSmall: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -138,6 +146,7 @@ Button.defaultProps = {
   fontSize: 'M',
   padding: 'L',
   buttonType: 'button',
+  fullWidthOnSmall: false,
 };
 
 export default Button;
