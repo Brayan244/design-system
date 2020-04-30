@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.3.9
+## v0.3.10
 
-- Button full width on small screens
+- Adds onChange, onFocus and name props to input and select components

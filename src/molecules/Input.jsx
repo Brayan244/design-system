@@ -13,6 +13,9 @@ const Input = ({
   onChange,
   hasError,
   maxLength,
+  name,
+  onFocus,
+  onBlur,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -23,6 +26,16 @@ const Input = ({
 
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
+  const handleFocus = event => {
+    setIsFocused(true);
+    onFocus(event);
+  };
+
+  const handleBlur = event => {
+    setIsFocused(false);
+    onBlur(event);
+  };
+
   return (
     <div>
       <div css={container}>
@@ -32,10 +45,11 @@ const Input = ({
           css={inputStyles}
           value={value}
           onChange={onChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           disabled={isDisabled}
           maxLength={maxLength}
+          name={name}
         />
 
         <InputLabel
@@ -57,8 +71,14 @@ Input.propTypes = {
   isDisabled: PropTypes.bool,
   /** The label of the `<input>` */
   label: PropTypes.string.isRequired,
+  /** The name value of the `<input>` */
+  name: PropTypes.string,
   /** Called with the new value */
   onChange: PropTypes.func.isRequired,
+  /** Handle focus events on the control */
+  onFocus: PropTypes.func,
+  /** Handle blur events on the control */
+  onBlur: PropTypes.func,
   /** Specifies the type `<input>` element to display */
   type: PropTypes.oneOf(['text', 'tel', 'email']),
   /** Defines a value for the `<input>` */
@@ -72,6 +92,9 @@ Input.defaultProps = {
   isDisabled: false,
   type: 'text',
   maxLength: null,
+  name: '',
+  onFocus: () => {},
+  onBlur: () => {},
 };
 
 export default Input;

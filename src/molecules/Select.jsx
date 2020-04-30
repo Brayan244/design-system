@@ -14,6 +14,9 @@ const Select = ({
   options,
   placeholder,
   value,
+  name,
+  onFocus,
+  onBlur,
 }) => {
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
@@ -49,6 +52,9 @@ const Select = ({
           onChange={onChange}
           value={value}
           disabled={isDisabled}
+          name={name}
+          onFocus={onFocus}
+          onBlur={onBlur}
         >
           <option value="" disabled>
             {placeholder}
@@ -67,16 +73,22 @@ const Select = ({
 };
 
 Select.propTypes = {
-  /** Indicates the `<input>` field has an error */
+  /** Indicates the `<select>` field has an error */
   hasError: PropTypes.bool,
   /** The id attribute specifies a unique `id` */
   id: PropTypes.string.isRequired,
-  /** Indicates the `<input>` field is disabled */
+  /** The name value of the `<select>` */
+  name: PropTypes.string,
+  /** Indicates the `<select>` field is disabled */
   isDisabled: PropTypes.bool,
-  /** The label of the `<input>` */
+  /** The label of the `<select>` */
   label: PropTypes.string.isRequired,
   /** Callback that handle select changes */
   onChange: PropTypes.func.isRequired,
+  /** Handle focus events on the control */
+  onFocus: PropTypes.func,
+  /** Handle blur events on the control */
+  onBlur: PropTypes.func,
   /** Array of options that populate the select menu */
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -84,7 +96,7 @@ Select.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
-  /** The placeholder of the `<input>` */
+  /** The placeholder of the `<select>` */
   placeholder: PropTypes.string.isRequired,
   /** Current value */
   value: PropTypes.string.isRequired,
@@ -93,6 +105,9 @@ Select.propTypes = {
 Select.defaultProps = {
   hasError: false,
   isDisabled: false,
+  name: '',
+  onFocus: () => {},
+  onBlur: () => {},
 };
 
 export default Select;
