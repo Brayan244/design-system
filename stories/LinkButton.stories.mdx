@@ -1,0 +1,41 @@
+import { select, text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import LinkButton from '../src/atoms/LinkButton';
+
+<Meta title="Atoms|Link Button" component={LinkButton} />
+
+## Preview
+
+<Preview>
+  <Story name="LinkButton">
+    <LinkButton
+      text={text('Text', 'Buscar viaje a Ciudad de México')}
+      fontSize={select(
+        'Font Size',
+        {
+          XSmall: 'XS',
+          Small: 'S',
+          Medium: 'M',
+          Large: 'L',
+          XLarge: 'XL',
+          XXLarge: 'XXL',
+        },
+        'M'
+      )}
+      weight={select(
+        'Font Weight',
+        ['regular', 'semibold', 'bold'],
+        'semibold'
+      )}
+      href={text('href', 'https://www.reservamos.mx/')}
+      newTab={boolean('New Tab', false)}
+      padding={select('Padding', ['S', 'M', 'L'], 'L')}
+      fullWidthOnSmall={boolean('Full Width On Small', false)}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={LinkButton} />

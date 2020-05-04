@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.3.12
+## v0.3.13
 
-- Removes `<Photo />` loading state
+- Add Link as Button
