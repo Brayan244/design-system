@@ -5,9 +5,9 @@ import Photo from '../molecules/Photo';
 import * as mq from '../globals/mediaqueries';
 
 const chunkUrls = (urls, size) => {
-  return Array.from({ length: Math.ceil(urls.length / size) }, (_, index) =>
-    urls.slice(index * size, index * size + size)
-  );
+  return Array.from({ length: Math.ceil(urls.length / size) }, (_, index) => {
+    return urls.slice(index * size, index * size + size);
+  });
 };
 
 const PhotoGallery = ({ alt, isLoading, photoUrlList }) => {

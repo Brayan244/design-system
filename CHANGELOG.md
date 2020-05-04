@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.3.10
+## v0.3.12
 
-- Adds onChange, onFocus and name props to input and select components
+- Removes `<Photo />` loading state

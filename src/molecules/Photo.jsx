@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as mq from '../globals/mediaqueries';
@@ -25,15 +25,12 @@ const imagesSizes = {
 };
 
 const Photo = ({ photoUrl, alt, type }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
   const photoStyle = css`
     border-radius: 5px;
     height: ${imagesSizes[type].large}px;
     max-height: ${imagesSizes[type].large}px;
     object-fit: cover;
     width: 100%;
-    ${isLoading ? 'display: none;' : ''}
 
     ${mq.small} {
       height: ${imagesSizes[type].small}px;
@@ -41,17 +38,7 @@ const Photo = ({ photoUrl, alt, type }) => {
     }
   `;
 
-  return (
-    <>
-      <img
-        src={photoUrl}
-        css={photoStyle}
-        alt={alt}
-        onLoad={() => setIsLoading(false)}
-      />
-      {isLoading && <LoaderPhoto type={type} />}
-    </>
-  );
+  return <img src={photoUrl} css={photoStyle} alt={alt} />;
 };
 
 Photo.propTypes = {
