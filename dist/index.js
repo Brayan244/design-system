@@ -2183,6 +2183,45 @@ PhotoGallery.defaultProps = {
   isLoading: false
 };
 
+var paddingSizes$1 = {
+  L: '10px 25px',
+  M: '5px 15px',
+  S: '0 5px'
+};
+var LinkButton = function LinkButton(_ref) {
+  var text = _ref.text,
+      fontSize = _ref.fontSize,
+      weight = _ref.weight,
+      href = _ref.href,
+      newTab = _ref.newTab,
+      padding = _ref.padding,
+      fullWidthOnSmall = _ref.fullWidthOnSmall;
+  var container =
+  core.css("color:#ffffff;font-family:'Open Sans',sans-serif;font-weight:", typography[weight], ";font-size:", typography[fontSize], ";cursor:pointer;background-color:", accent, ";padding:", paddingSizes$1[padding], ";border-radius:", fullWidthOnSmall ? '0' : '4px', ";display:inline-block;text-decoration:none;&:hover{background-color:", accentStrong, ";}", small$1, "{width:", fullWidthOnSmall ? '100%' : null, ";text-align:center;border-radius:0;};label:container;" + ("production" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkxpbmtCdXR0b24uanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCdUIiLCJmaWxlIjoiTGlua0J1dHRvbi5qc3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJy4uL3Rva2Vucy9jb2xvcnMnO1xuaW1wb3J0ICogYXMgdHlwb2dyYXBoeSBmcm9tICcuLi90b2tlbnMvdHlwb2dyYXBoeSc7XG5pbXBvcnQgKiBhcyBtcSBmcm9tICcuLi9nbG9iYWxzL21lZGlhcXVlcmllcyc7XG5cbmNvbnN0IHBhZGRpbmdTaXplcyA9IHtcbiAgTDogJzEwcHggMjVweCcsXG4gIE06ICc1cHggMTVweCcsXG4gIFM6ICcwIDVweCcsXG59O1xuXG5jb25zdCBMaW5rQnV0dG9uID0gKHtcbiAgdGV4dCxcbiAgZm9udFNpemUsXG4gIHdlaWdodCxcbiAgaHJlZixcbiAgbmV3VGFiLFxuICBwYWRkaW5nLFxuICBmdWxsV2lkdGhPblNtYWxsLFxufSkgPT4ge1xuICBjb25zdCBjb250YWluZXIgPSBjc3NgXG4gICAgY29sb3I6ICNmZmZmZmY7XG4gICAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmO1xuICAgIGZvbnQtd2VpZ2h0OiAke3R5cG9ncmFwaHlbd2VpZ2h0XX07XG4gICAgZm9udC1zaXplOiAke3R5cG9ncmFwaHlbZm9udFNpemVdfTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogJHtjb2xvcnMuYWNjZW50fTtcbiAgICBwYWRkaW5nOiAke3BhZGRpbmdTaXplc1twYWRkaW5nXX07XG4gICAgYm9yZGVyLXJhZGl1czogJHtmdWxsV2lkdGhPblNtYWxsID8gJzAnIDogJzRweCd9O1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG5cbiAgICAmOmhvdmVyIHtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICR7Y29sb3JzLmFjY2VudFN0cm9uZ307XG4gICAgfVxuXG4gICAgJHttcS5zbWFsbH0ge1xuICAgICAgd2lkdGg6ICR7ZnVsbFdpZHRoT25TbWFsbCA/ICcxMDAlJyA6IG51bGx9O1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICB9XG4gIGA7XG5cbiAgcmV0dXJuIChcbiAgICA8YVxuICAgICAgY3NzPXtjb250YWluZXJ9XG4gICAgICBocmVmPXtocmVmfVxuICAgICAgdGFyZ2V0PXtuZXdUYWIgPyAnX2JsYW5rJyA6ICdfc2VsZid9XG4gICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICA+XG4gICAgICB7dGV4dH1cbiAgICA8L2E+XG4gICk7XG59O1xuXG5MaW5rQnV0dG9uLnByb3BUeXBlcyA9IHtcbiAgLyoqIFNlbGVjdCBwYWRkaW5nIHNpemU6IGBTPTExcHhgLCBgUz0wIDVweGAsIGBNPTVweCAxNXB4YCwgYEw9MTBweCAyNXB4YCAqL1xuICBwYWRkaW5nOiBQcm9wVHlwZXMub25lT2YoWydTJywgJ00nLCAnTCddKSxcbiAgLyoqIFRleHRvIGRlbCBib3TDs24gKi9cbiAgdGV4dDogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxuICAvKiogRm9udCBzaXplICovXG4gIGZvbnRTaXplOiBQcm9wVHlwZXMub25lT2YoWydYUycsICdTJywgJ00nLCAnTCcsICdYTCcsICdYWEwnXSksXG4gIC8qKiBGb250IHdlaWdodCAqL1xuICB3ZWlnaHQ6IFByb3BUeXBlcy5vbmVPZihbJ2JvbGQnLCAnc2VtaWJvbGQnLCAncmVndWxhciddKSxcbiAgLyoqIFRleHRvIGRlbCBsaW5rICovXG4gIGhyZWY6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgLyoqIE9wZW5zIHRoZSBsaW5rZWQgZG9jdW1lbnQgaW4gdGhlIHNhbWUgd2luZG93biBvciBuZXcgdGFiICovXG4gIG5ld1RhYjogUHJvcFR5cGVzLmJvb2wsXG4gIC8qKiBNdWVzdHJhIGVsIGJvdMOzbiBjb24gMTAwJSBkZSBhbmNobyBlbiBwYW50YWxsYXMgcGVxdWXDsWFzICovXG4gIGZ1bGxXaWR0aE9uU21hbGw6IFByb3BUeXBlcy5ib29sLFxufTtcblxuTGlua0J1dHRvbi5kZWZhdWx0UHJvcHMgPSB7XG4gIGZvbnRTaXplOiAnTScsXG4gIHdlaWdodDogJ3NlbWlib2xkJyxcbiAgbmV3VGFiOiBmYWxzZSxcbiAgcGFkZGluZzogJ0wnLFxuICBmdWxsV2lkdGhPblNtYWxsOiBmYWxzZSxcbn07XG5cbmV4cG9ydCBkZWZhdWx0IExpbmtCdXR0b247XG4iXX0= */"));
+  return core.jsx("a", {
+    css: container,
+    href: href,
+    target: newTab ? '_blank' : '_self',
+    rel: "noopener noreferrer"
+  }, text);
+};
+LinkButton.propTypes = {
+  padding: PropTypes.oneOf(['S', 'M', 'L']),
+  text: PropTypes.string.isRequired,
+  fontSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
+  weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
+  href: PropTypes.string.isRequired,
+  newTab: PropTypes.bool,
+  fullWidthOnSmall: PropTypes.bool
+};
+LinkButton.defaultProps = {
+  fontSize: 'M',
+  weight: 'semibold',
+  newTab: false,
+  padding: 'L',
+  fullWidthOnSmall: false
+};
+
 exports.AlertMessage = AlertMessage;
 exports.Badge = Badge;
 exports.Button = Button;
@@ -2200,6 +2239,7 @@ exports.Icon = Icon;
 exports.InfoCard = InfoCard;
 exports.Input = Input;
 exports.Link = Link;
+exports.LinkButton = LinkButton;
 exports.ListItem = ListItem;
 exports.LoaderDots = LoaderDots;
 exports.LoaderPhoto = Photo;
