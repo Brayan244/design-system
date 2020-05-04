@@ -41,3 +41,4 @@ export { default as CounterField } from './molecules/CounterField';
 export { default as LoaderPhoto } from './atoms/LoaderPhoto';
 export { default as Photo } from './molecules/Photo';
 export { default as PhotoGallery } from './organisms/PhotoGallery';
+export { default as LinkButton } from './atoms/LinkButton';
