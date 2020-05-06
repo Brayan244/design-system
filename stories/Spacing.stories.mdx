@@ -14,19 +14,10 @@ import Select from '../src/molecules/Select';
 <Preview>
   <Story name="Spacing Story">
     <Spacing
-      direction={select(
-          'Direction',
+      vertical={boolean('Vertical', false)}
+        size={select(
+          'Size',
           {
-            Both: 'both',
-            Horizontal: 'horizontal',
-            Vertical: 'vertical',
-          },
-          'horizontal'
-        )}
-        sizeHorizontal={select(
-          'Size Horizontal',
-          {
-            Empty: '',
             XSmall: 'XS',
             Small: 'S',
             Medium: 'M',
@@ -35,19 +26,7 @@ import Select from '../src/molecules/Select';
           },
           'L'
         )}
-        sizeVertical={select(
-          'Size Vertical',
-          {
-            Empty: '',
-            XSmall: 'XS',
-            Small: 'S',
-            Medium: 'M',
-            Large: 'L',
-            XLarge: 'XL',
-          },
-          ''
-        )}
-        flex={text('Flex', '0 1 auto')}
+        flexGrow={boolean('Flex Grow', false)}
         alignItems={select(
           'Align Items',
           {
@@ -81,10 +60,20 @@ import Select from '../src/molecules/Select';
           },
           'small'
         )}
+        responsiveColumnReverse={boolean('Column reverse', false)}
+        textAlign={select(
+          'Text align',
+          {
+            Left: 'left',
+            Center: 'center',
+            Right: 'right',
+          },
+          'left'
+        )}
       >
-      <Text size="M" weight="semibold">Text component</Text>
-      <Text size="M" weight="semibold">Other text component</Text>
-      <Text size="M" weight="semibold">Last text component</Text>
+      <Text size="M" weight="semibold">First component</Text>
+      <Text size="M" weight="semibold">Second text component</Text>
+      <Text size="M" weight="semibold">Third text component</Text>
     </Spacing>
   </Story>
 </Preview>
@@ -97,7 +86,7 @@ import Select from '../src/molecules/Select';
 
 <Preview>
   <Story name="Margin horizontal example">
-    <Spacing direction="horizontal" sizeHorizontal="S">
+    <Spacing size="S">
       <Text size="M" weight="semibold">Lisboa</Text>
       <Rating rating={3.5} compact />
     </Spacing>
@@ -108,7 +97,7 @@ import Select from '../src/molecules/Select';
 
 <Preview>
   <Story name="Margin vertical example">
-    <Spacing direction="vertical" sizeVertical="S">
+    <Spacing vertical size="S">
       <Text size="XXL" weight="semibold">Pestana CR7 Lisboa</Text>
       <Text size="M" weight="semibold">PURE Lifestyle is our personality - A partnership between Pestana Hotel Group and Cristiano Ronaldo.</Text>
     </Spacing>
@@ -121,10 +110,7 @@ With the `horizontal` direction and the `flex: 1` property, rows can be created 
 <Preview>
   <Story name="Row example">
     <Spacing
-      direction="horizontal"
-        sizeHorizontal="M"
-        
-        flex='1'
+        flexGrow
         isResponsive
       >
       <Input
@@ -149,12 +135,9 @@ The first Spacing has a vertical direction, the inner Spacing have a horizontal 
 
 <Preview>
   <Story name="Spacing inside spacing">
-    <Spacing direction="vertical" sizeVertical="L">
+    <Spacing vertical size="L">
       <Spacing
-      direction="horizontal"
-        sizeHorizontal="M"
-        
-        flex='1'
+        flexGrow
         isResponsive
       >
       <Input
@@ -171,10 +154,7 @@ The first Spacing has a vertical direction, the inner Spacing have a horizontal 
       />
     </Spacing>
     <Spacing
-      direction="horizontal"
-        sizeHorizontal="M"
-        
-        flex='1'
+        flexGrow
         isResponsive
       >
       <Input

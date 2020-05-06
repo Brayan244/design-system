@@ -4,58 +4,63 @@ import { css } from '@emotion/core';
 import * as mq from '../globals/mediaqueries';
 
 const spacingSizes = {
-  XS: 5,
-  S: 10,
-  M: 20,
-  L: 30,
-  XL: 40,
+  XS: '5px',
+  S: '10px',
+  M: '20px',
+  L: '30px',
+  XL: '40px',
 };
 
 const Spacing = ({
-  sizeVertical,
-  sizeHorizontal,
+  size,
   children,
-  direction,
+  vertical,
   alignItems,
   justifyContent,
-  flex,
+  flexGrow,
   isResponsive,
   responsiveScreen,
+  responsiveColumnReverse,
+  textAlign,
 }) => {
-  const marginLeft = `${spacingSizes[sizeHorizontal || sizeVertical]}px;`;
-  const marginTop = `${spacingSizes[sizeVertical || sizeHorizontal]}px;`;
+  const verticalSpacing = vertical ? spacingSizes[size] : null;
+  const horizontalSpacing = !vertical ? spacingSizes[size] : null;
+
+  let responsiveDirection = 'column';
+  let responsiveMargin = 'margin-top';
+  if (responsiveColumnReverse) {
+    responsiveMargin = 'margin-bottom';
+    responsiveDirection = 'column-reverse';
+  }
 
   const childrenStyles = css`
     > * {
-      flex: ${flex};
+      flex-grow: ${flexGrow ? '1' : null};
 
       & + * {
-        margin-top: ${direction === 'vertical' || direction === 'both'
-          ? marginTop
-          : 0};
-        margin-left: ${direction === 'horizontal' || direction === 'both'
-          ? marginLeft
-          : 0};
+        margin-left: ${horizontalSpacing};
+        margin-top: ${verticalSpacing};
       }
     }
   `;
 
   const mediaQueries = css`
     ${mq[responsiveScreen]} {
-      flex-direction: column;
+      flex-direction: ${responsiveDirection};
 
       > * + * {
         margin-left: 0;
-        margin-top: ${direction === 'horizontal' ? marginLeft : 0};
+        ${responsiveMargin}: ${horizontalSpacing};
       }
     }
   `;
 
   const wrapper = css`
     display: flex;
-    flex-direction: ${direction === 'vertical' ? 'column' : 'row'};
+    flex-direction: ${vertical ? 'column' : 'row'};
     align-items: ${alignItems};
     justify-content: ${justifyContent};
+    text-align: ${textAlign};
     ${childrenStyles};
     ${isResponsive && mediaQueries}
   `;
@@ -67,13 +72,11 @@ Spacing.propTypes = {
   /** Displays the element or elements you include between the opening and closing tags */
   children: PropTypes.node.isRequired,
   /** Select direction for spacing */
-  direction: PropTypes.oneOf(['both', 'vertical', 'horizontal']).isRequired,
-  /** Select horizontal spacing size: `XS=5px`, `S=10px`, `M=20px`, `L=30px`, `XL=40px`  */
-  sizeHorizontal: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
-  /** Select vertical spacing size: `XS=5px`, `S=10px`, `M=20px`, `L=30px`, `XL=40px`  */
-  sizeVertical: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
-  /** Let all the flexible items be the same length */
-  flex: PropTypes.string,
+  vertical: PropTypes.bool,
+  /** Select spacing size: `XS=5px`, `S=10px`, `M=20px`, `L=30px`, `XL=40px`  */
+  size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
+  /** Let all the flexible items be the same length adding `flex-grow: 1` */
+  flexGrow: PropTypes.bool,
   /** Specifies the alignment for items inside the flexible container */
   alignItems: PropTypes.oneOf([
     'initial',
@@ -96,16 +99,22 @@ Spacing.propTypes = {
   isResponsive: PropTypes.bool,
   /** Select screen size for responsive: `small` or `medium`  */
   responsiveScreen: PropTypes.oneOf(['medium', 'small']),
+  /** Sets `column-reverse` on flex-direction for responsive  */
+  responsiveColumnReverse: PropTypes.bool,
+  /** Set text alignmetn for spacing items */
+  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
 };
 
 Spacing.defaultProps = {
-  sizeHorizontal: 'M',
-  sizeVertical: null,
-  flex: '0 1 auto',
+  vertical: false,
+  size: 'M',
+  flexGrow: false,
   alignItems: 'initial',
   justifyContent: 'initial',
   isResponsive: false,
   responsiveScreen: 'small',
+  responsiveColumnReverse: false,
+  textAlign: 'left',
 };
 
 export default Spacing;
