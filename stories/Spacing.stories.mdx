@@ -26,6 +26,18 @@ import Select from '../src/molecules/Select';
           },
           'L'
         )}
+        responsiveSize={select(
+          'Responsive Size',
+          {
+            Empty: '',
+            XSmall: 'XS',
+            Small: 'S',
+            Medium: 'M',
+            Large: 'L',
+            XLarge: 'XL',
+          },
+          ''
+        )}
         flexGrow={boolean('Flex Grow', false)}
         alignItems={select(
           'Align Items',

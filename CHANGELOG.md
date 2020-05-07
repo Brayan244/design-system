@@ -1,10 +1,5 @@
 # Changelog
 
-## v0.4.0
+## v0.4.1
 
-- Refactors sizes on Spacing component
-- Adds responsiveColumnReverse prop
-- Removes "both" direction
-- Sets "horizontal" as default direction
-- Adds textAlign prop on Spacing
-- Changes direction prop for vertical boolean prop
+- Adds prop for responsive margin on Spacing
