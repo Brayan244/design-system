@@ -40,7 +40,7 @@ const Spacing = ({
 
   const childrenStyles = css`
     > * {
-      flex-grow: ${flexGrow ? '1' : null};
+      flex: ${flexGrow ? '1' : null};
 
       & + * {
         margin-left: ${horizontalSpacing};
@@ -91,7 +91,7 @@ Spacing.propTypes = {
   /** Select spacing size: `XS=5px`, `S=10px`, `M=20px`, `L=30px`, `XL=40px`  */
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
   /** Select different spacing size for responsive: `XS=5px`, `S=10px`, `M=20px`, `L=30px`, `XL=40px`  */
-  responsiveSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
+  responsiveSize: PropTypes.oneOf(['', 'XS', 'S', 'M', 'L', 'XL']),
   /** Let all the flexible items be the same length adding `flex-grow: 1` */
   flexGrow: PropTypes.bool,
   /** Specifies the alignment for items inside the flexible container */

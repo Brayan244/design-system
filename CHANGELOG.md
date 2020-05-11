@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.4.2
+## v0.4.3
 
-- Add prop for height on Button
+- Updates Icons story - Fix flex prop
