@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.4.1
+## v0.4.2
 
-- Adds prop for responsive margin on Spacing
+- Add prop for height on Button

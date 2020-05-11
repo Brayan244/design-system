@@ -60,6 +60,7 @@ const Button = ({
   fontSize,
   padding,
   fullWidthOnSmall,
+  withHeight,
 }) => {
   if (isLoading)
     return (
@@ -82,6 +83,7 @@ const Button = ({
     line-height: 15px;
     transition: background-color 200ms ease-out;
     cursor: ${isDisabled ? 'default' : null};
+    height: ${withHeight ? '50px' : null};
 
     &:hover {
       background-color: ${variantStyle.backgroundHover};
@@ -136,6 +138,8 @@ Button.propTypes = {
   buttonType: PropTypes.oneOf(['button', 'submit']),
   /** Muestra el botón con 100% de ancho en pantallas pequeñas */
   fullWidthOnSmall: PropTypes.bool,
+  /** Agrega una altura de 50px */
+  withHeight: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -147,6 +151,7 @@ Button.defaultProps = {
   padding: 'L',
   buttonType: 'button',
   fullWidthOnSmall: false,
+  withHeight: false,
 };
 
 export default Button;
