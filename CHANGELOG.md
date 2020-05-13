@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.4.3
+## v0.4.4
 
-- Updates Icons story - Fix flex prop
+- Fixes DialogMessage proptype type

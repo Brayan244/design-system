@@ -135,7 +135,7 @@ DialogMessage.propTypes = {
   /** Shows fade screen */
   showFade: PropTypes.bool.isRequired,
   /** `z-index` value - Default `900` */
-  zIndex: PropTypes.string,
+  zIndex: PropTypes.number,
   /** Icon for Dialog Message  */
   iconType: PropTypes.string,
   /** Defines icon size  */
