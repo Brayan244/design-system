@@ -1,0 +1,32 @@
+import { text, number } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import LoaderOverlay from '../src/molecules/LoaderOverlay';
+import amex from '../images/cardTypes/amex.png';
+
+<Meta title="Loader|Overlay" component={LoaderOverlay} />
+
+## Props
+
+<Props of={LoaderOverlay} />
+
+## Preview
+
+<Preview>
+  <Story name="LoaderOverlay">
+    <LoaderOverlay
+      text={text('Text', 'Cargando...')}
+      zIndex={number('z-index', 1)}
+      overlayOpacity={number('Overlay opacity', 0.7)}
+    />
+  </Story>
+</Preview>
+
+Passing an imported image as the src attribute - 50px
+
+`import amex from '../images/amex.png';`
+
+<Preview>
+  <Story name="Logo with imported image">
+    <LoaderOverlay imgSrc={amex} />
+  </Story>
+</Preview>

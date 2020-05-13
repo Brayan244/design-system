@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import * as colors from '../tokens/colors';
 import * as mq from '../globals/mediaqueries';
 import * as zIndexes from '../tokens/zIndexes';
+import Overlay from '../atoms/Overlay';
 import Text from '../atoms/Text';
 import Icon from '../atoms/Icon';
 import Button from '../organisms/Button';
@@ -15,39 +16,22 @@ const DialogMessage = ({
   secondaryButton,
   onClickPrimary,
   onClickSecondary,
-  showFade,
+  overlayOpacity,
   zIndex,
   iconType,
   iconSize,
 }) => {
-  const fade = css`
-    background-color: #000000;
-    opacity: ${showFade ? 0.4 : 0};
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 0.2s ease-in-out;
-    z-index: ${zIndex};
-  `;
-
   const container = css`
+    background-color: #ffffff;
     border-radius: 8px;
     border-left: 10px solid ${colors.errorStrong};
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     min-height: 170px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     max-width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    z-index: ${zIndex};
 
     ${mq.small} {
       min-height: inherit;
@@ -85,8 +69,7 @@ const DialogMessage = ({
   `;
 
   return (
-    <>
-      <div css={fade} />
+    <Overlay overlayOpacity={overlayOpacity} zIndex={zIndex}>
       <div css={container}>
         <div>
           <div css={containerTitle}>
@@ -115,7 +98,7 @@ const DialogMessage = ({
           />
         </div>
       </div>
-    </>
+    </Overlay>
   );
 };
 
@@ -133,7 +116,7 @@ DialogMessage.propTypes = {
   /** Callback onClick secondary `<button>` */
   onClickSecondary: PropTypes.func,
   /** Shows fade screen */
-  showFade: PropTypes.bool.isRequired,
+  overlayOpacity: PropTypes.number,
   /** `z-index` value - Default `900` */
   zIndex: PropTypes.number,
   /** Icon for Dialog Message  */
@@ -148,8 +131,9 @@ DialogMessage.defaultProps = {
   iconType: '',
   secondaryButton: '',
   onClickSecondary: null,
-  zIndex: zIndexes.dialogMessage,
+  zIndex: zIndexes.fristLayer,
   iconSize: 'M',
+  overlayOpacity: 0.7,
 };
 
 export default DialogMessage;

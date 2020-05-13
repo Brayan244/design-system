@@ -1,0 +1,23 @@
+import { number } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Icon from '../src/atoms/Icon';
+import Overlay from '../src/atoms/Overlay';
+
+<Meta title="Atoms|Overlay" component={Overlay} />
+
+## Props
+
+<Props of={Overlay} />
+
+## Preview
+
+<Preview>
+  <Story name="Overlay">
+    <Overlay
+      zIndex={number('z-index', 1)}
+      overlayOpacity={number('Overlay opacity', 0.7)}
+    >
+    <Icon size="XL" type="guarantee" />
+    </Overlay>
+  </Story>
+</Preview>

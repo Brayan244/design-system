@@ -1,2 +1,2 @@
-export const alertMessage = 901;
-export const dialogMessage = 900;
+export const secondLayer = 901;
+export const fristLayer = 900;

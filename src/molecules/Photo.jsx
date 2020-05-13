@@ -2,7 +2,6 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import * as mq from '../globals/mediaqueries';
-import LoaderPhoto from '../atoms/LoaderPhoto';
 
 const imagesSizes = {
   L: {

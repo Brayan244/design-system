@@ -1,6 +1,5 @@
 # Changelog
 
-## v0.4.5
+## v0.4.6
 
-- Makes `label` prop for Select optional
-- Adds FieldLabel on import components
+- Adds overlay Loader
