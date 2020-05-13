@@ -1,4 +1,5 @@
 import { number } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Icon from '../src/atoms/Icon';
 import Overlay from '../src/atoms/Overlay';
@@ -16,6 +17,7 @@ import Overlay from '../src/atoms/Overlay';
     <Overlay
       zIndex={number('z-index', 1)}
       overlayOpacity={number('Overlay opacity', 0.7)}
+      onClick={action('onClick')}
     >
     <Icon size="XL" type="guarantee" />
     </Overlay>

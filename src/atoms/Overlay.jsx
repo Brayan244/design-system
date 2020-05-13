@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 
-const Overlay = ({ children, zIndex, overlayOpacity }) => {
+const Overlay = ({ children, onClick, zIndex, overlayOpacity }) => {
   const overlay = css`
     bottom: 0;
     left: 0;
@@ -17,7 +17,11 @@ const Overlay = ({ children, zIndex, overlayOpacity }) => {
     align-items: center;
   `;
 
-  return <div css={overlay}>{children}</div>;
+  return (
+    <div css={overlay} onClick={onClick} role="presentation">
+      {children}
+    </div>
+  );
 };
 
 Overlay.propTypes = {
@@ -26,9 +30,12 @@ Overlay.propTypes = {
   zIndex: PropTypes.number,
   /** Value for `opacity` on Overlay  */
   overlayOpacity: PropTypes.number,
+  /** Function for close overlay on Modals */
+  onClick: PropTypes.func,
 };
 
 Overlay.defaultProps = {
+  onClick: () => {},
   overlayOpacity: 0.7,
   zIndex: 1,
 };
