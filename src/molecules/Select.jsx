@@ -21,7 +21,7 @@ const Select = ({
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
   const selectWrapper = css`
-    margin-top: 20px;
+    margin-top: ${label ? '20px' : null};
     position: relative;
   `;
 
@@ -66,7 +66,7 @@ const Select = ({
             </option>
           ))}
         </select>
-        <FieldLabel inputId={id} text={label} />
+        {Boolean(label) && <FieldLabel inputId={id} text={label} />}
       </div>
     </div>
   );
@@ -82,7 +82,7 @@ Select.propTypes = {
   /** Indicates the `<select>` field is disabled */
   isDisabled: PropTypes.bool,
   /** The label of the `<select>` */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /** Callback that handle select changes */
   onChange: PropTypes.func.isRequired,
   /** Handle focus events on the control */
@@ -106,6 +106,7 @@ Select.defaultProps = {
   hasError: false,
   isDisabled: false,
   name: '',
+  label: '',
   onFocus: () => {},
   onBlur: () => {},
 };

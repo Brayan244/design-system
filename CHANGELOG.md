@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.4.4
+## v0.4.5
 
-- Fixes DialogMessage proptype type
+- Makes `label` prop for Select optional
+- Adds FieldLabel on import components
