@@ -1,5 +1,10 @@
 # Changelog
 
-## v0.4.7
+## v0.5.0
 
-- Overlay - Adds onClick prop
+ListItem component
+
+- Refactor
+- Sets textLeft prop optional
+- Removes unused variants
+- Removes Price prop

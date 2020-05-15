@@ -1,152 +1,75 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
+import * as mq from '../globals/mediaqueries';
+import Spacing from '../atoms/Spacing';
 import Text from '../atoms/Text';
-import Icon from '../atoms/Icon';
 import Currency from './Currency';
 
-const Types = {
-  default: {
-    color: 'grayLight',
-    size: 'M',
-    weightLeft: 'regular',
-    weightRight: 'regular',
-  },
-  accent: {
-    color: 'accent',
-    size: 'M',
-    weightLeft: 'regular',
-    weightRight: 'regular',
-  },
-  accentBold: {
-    color: 'accent',
-    size: 'S',
-    weightLeft: 'semibold',
-    weightRight: 'bold',
-  },
-  main: {
-    color: 'grayMedium',
-    size: 'L',
-    weightLeft: 'semibold',
-    weightRight: 'semibold',
-  },
-  strong: {
-    color: 'grayStrong',
-    size: 'M',
-    weightLeft: 'regular',
-    weightRight: 'semibold',
-  },
-  big: {
-    color: 'grayStrong',
-    size: 'XXL',
-    weightLeft: 'regular',
-    weightRight: 'bold',
-  },
-};
-
-const ListItem = ({
-  type,
-  textLeft,
-  hasNotice,
-  textRight,
-  price,
-  currency,
-  paddingHorizontal,
-  paddingVertical,
-}) => {
+const ListItem = ({ isMain, textLeft, textRight, isMoney, currency }) => {
   const listItemStyle = css`
-    display: flex;
-    justify-content: space-between;
-    padding: ${paddingVertical}px ${paddingHorizontal}px;
+    padding: 5px 0;
   `;
 
-  const listItemContent = css`
-    display: flex;
-    align-items: center;
+  const leftItem = css`
+    flex: 1;
+
+    ${mq.small} {
+      max-width: 100px;
+    }
   `;
 
-  const listItemIcon = css`
-    margin-left: 10px;
+  const rightItem = css`
+    flex: 2;
   `;
 
   return (
     <div css={listItemStyle}>
-      <div css={listItemContent}>
-        <Text
-          size={Types[type].size}
-          color={Types[type].color}
-          weight={Types[type].weightLeft}
-        >
-          {textLeft}
-        </Text>
-        {Boolean(hasNotice) && (
-          <div css={listItemIcon}>
-            <Icon size="S" type="badgeQuestion" />
-          </div>
-        )}
-      </div>
-      {price ? (
-        <Currency
-          size={Types[type].size}
-          color={Types[type].color}
-          weight={Types[type].weightRight}
-          price={price}
-          currency={currency}
-        />
-      ) : (
-        <Text
-          size={Types[type].size}
-          color={Types[type].color}
-          weight={Types[type].weightRight}
-        >
-          {textRight}
-        </Text>
-      )}
+      <Spacing justifyContent="space-between" alignItems="center">
+        <div css={leftItem}>
+          <Text size={isMain ? 'XXL' : 'M'}>{textLeft}</Text>
+        </div>
+        <div css={rightItem}>
+          {isMoney ? (
+            <Currency
+              size={isMain ? 'XXL' : 'M'}
+              weight={isMain ? 'bold' : 'semibold'}
+              price={Number(textRight)}
+              currency={currency}
+            />
+          ) : (
+            <Text
+              size={isMain ? 'XXL' : 'M'}
+              weight={isMain ? 'bold' : 'semibold'}
+            >
+              {textRight}
+            </Text>
+          )}
+        </div>
+      </Spacing>
     </div>
   );
 };
 
 ListItem.propTypes = {
   /** Tipo de texto */
-  type: PropTypes.oneOf([
-    'default',
-    'accent',
-    'main',
-    'accentBold',
-    'strong',
-    'big',
-  ]),
-
+  isMain: PropTypes.bool,
   /** Para editar el texto de la izquierda y más largo */
-  textLeft: PropTypes.string.isRequired,
-
+  textLeft: PropTypes.string,
   /** Texto del lado derecho */
-  textRight: PropTypes.string,
-
-  /** Texto del precio */
-  price: PropTypes.number,
-
+  textRight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Usa `<Currency />` en lugar de `<Text />` */
+  isMoney: PropTypes.bool,
   /** Tipo del tipo de moneda */
   currency: PropTypes.string,
-
-  /** Aparece el question badge */
-  hasNotice: PropTypes.bool,
-
-  /** Determina el valor del padding horizontal */
-  paddingHorizontal: PropTypes.number,
-
-  /** Determina el valor del padding vertical */
-  paddingVertical: PropTypes.number,
 };
 
 ListItem.defaultProps = {
-  type: 'default',
+  isMain: false,
+  textLeft: '',
   textRight: '',
-  price: null,
+  isMoney: false,
   currency: '',
-  hasNotice: false,
-  paddingHorizontal: 15,
-  paddingVertical: 15,
 };
 
 export default ListItem;

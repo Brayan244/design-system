@@ -9,65 +9,23 @@ import ListItem from '../src/molecules/ListItem';
 <Preview>
   <Story name="ListItem">
     <ListItem
-      type={select(
-        'type',
-        {
-          'Default': 'default',
-          'Accent': 'accent',
-          'Accent bold': 'accentBold',
-          'Main': 'main',
-          'Strong': 'strong',
-          'Big': 'big',
-        },
-        'default'
+      isMain={boolean('Is main?', false)}
+      textLeft={text('Text left', 'Hotel')}
+      textRight={text(
+        'Text right',
+        'Pestana CR7 Lisboa'
       )}
-      textLeft={text('Text left', 'Cargo por servicio')}
-      textRight={text('Text right', 'Nombre del hotel')}
-      price={number('Price', '')}
+      isMoney={boolean('Is money?', false)}
       currency={text('Currency', 'MXN')}
-      hasNotice={boolean('Has notice', false)}
-      paddingVertical={number('Padding Vertical')}
-      paddingHorizontal={number('Padding Horizontal')}
     />
   </Story>
 </Preview>
 
-## Default
+## Only right text
 
 <Preview>
-  <Story name="Default">
-    <ListItem
-      type="default"
-      textLeft="Cargo por servicio"
-      price="830"
-      currency="mxn"
-    />
-  </Story>
-</Preview>
-
-## Accent
-
-<Preview>
-  <Story name="Accent">
-    <ListItem
-      type="accent"
-      textLeft="Cargo por servicio"
-      price="830"
-      currency="mxn"
-    />
-  </Story>
-</Preview>
-
-## Accent bold
-
-<Preview>
-  <Story name="Accent bold">
-    <ListItem
-      type="accentBold"
-      textLeft="Cargo por servicio"
-      price="830"
-      currency="mxn"
-    />
+  <Story name="Only right text">
+    <ListItem textRight="2 Niños" />
   </Story>
 </Preview>
 
@@ -75,34 +33,21 @@ import ListItem from '../src/molecules/ListItem';
 
 <Preview>
   <Story name="Main">
-    <ListItem
-      type="main"
-      textLeft="Cargo por servicio"
-      price="830"
-      currency="mxn"
-    />
+    <ListItem isMain textLeft="Total:" textRight={830} isMoney currency="mxn" />
   </Story>
 </Preview>
 
-## Strong
+## Details
 
 <Preview>
-  <Story name="Strong">
-    <ListItem
-      type="strong"
-      textLeft="Check in:"
-      textRight="a partir de las 15:00 hrs"
-      paddingVertical="0"
-      paddingHorizontal="0"
-    />
-  </Story>
-</Preview>
-
-## Big
-
-<Preview>
-  <Story name="Big">
-    <ListItem type="big" textLeft="Total:" price="830" currency="mxn" />
+  <Story name="Details">
+    <>
+      <ListItem textLeft="Hotel:" textRight="Four Points by Sheraton Galerias Monterrey" />
+      <ListItem textLeft="Huéspedes:" textRight="2 Adultos" />
+      <ListItem textRight="3 Niños" />
+      <ListItem textLeft="Impuestos y servicios en línea:" textRight={12389} isMoney currency="MXN" />
+      <ListItem isMain textLeft="Total:" textRight={22093} isMoney currency="MXN" />
+    </>
   </Story>
 </Preview>
 
