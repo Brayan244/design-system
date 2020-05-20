@@ -9,38 +9,43 @@ import LoaderButton from '../molecules/LoaderButton';
 const varianStyles = {
   accent: {
     background: colors.accent,
-    color: '#ffffff',
     backgroundDisabled: colors.gray400,
-    colorDisabled: '#ffffff',
     backgroundHover: colors.accentStrong,
+    color: '#ffffff',
+    colorDisabled: '#ffffff',
+    focus: colors.accent,
   },
   noFill: {
     background: '#ffffff',
-    color: colors.accent,
     backgroundDisabled: '#ffffff',
-    colorDisabled: colors.gray400,
     backgroundHover: colors.gray100,
+    color: colors.accent,
+    colorDisabled: colors.gray400,
+    focus: colors.accent,
   },
   danger: {
     background: '#ffffff',
-    color: colors.error,
     backgroundDisabled: '#ffffff',
-    colorDisabled: colors.gray400,
     backgroundHover: colors.gray100,
+    color: colors.error,
+    colorDisabled: colors.gray400,
+    focus: colors.error,
   },
   discount: {
     background: colors.discount,
-    color: '#ffffff',
     backgroundDisabled: colors.gray400,
-    colorDisabled: '#ffffff',
     backgroundHover: colors.discountStrong,
+    color: '#ffffff',
+    colorDisabled: '#ffffff',
+    focus: colors.discountStrong,
   },
   default: {
     background: '#ffffff',
-    color: colors.gray500,
-    backgroundDisabled: '#ffffff',
-    colorDisabled: colors.gray400,
     backgroundHover: colors.gray100,
+    backgroundDisabled: '#ffffff',
+    color: colors.gray500,
+    colorDisabled: colors.gray400,
+    focus: colors.gray400,
   },
 };
 
@@ -81,12 +86,17 @@ const Button = ({
     min-width: 100px;
     padding: ${paddingSizes[padding]};
     line-height: 15px;
-    transition: background-color 200ms ease-out;
+    transition: background-color 0.25s ease-out;
     cursor: ${isDisabled ? 'default' : null};
     height: ${withHeight ? '50px' : null};
 
     &:hover {
       background-color: ${variantStyle.backgroundHover};
+    }
+
+    &:focus {
+      box-shadow: 0 0 10px 2px ${variantStyle.focus}90;
+      outline: dashed 2px ${variantStyle.focus}30;
     }
 
     &:disabled {

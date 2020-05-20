@@ -17,32 +17,30 @@ const LoaderDots = ({ isAccent, size }) => {
   `;
 
   const bounce = keyframes`
-    0,
+    0%,
     100% {
-      transform: scale(1);
+      opacity: 1;
     }
-    
+
     25%,
     75% {
-      transform: scale(0.5);
+      transform: scale(0.85);
+      opacity: 0.5;
     }
-    
+
     50% {
-      transform: scale(0);
+      transform: scale(0.85);
+      opacity: 0.1;
     }
   `;
 
   const circle = css`
-    animation: ${bounce} 1.5s infinite linear;
+    animation: ${bounce} 1.25s infinite cubic-bezier(0.4, 0, 1, 1);
     border-radius: 50%;
     width: ${sizes[size]};
     height: ${sizes[size]};
     background-color: ${isAccent ? `${colors.accent}` : '#ffffff'};
-    margin: 5px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-right: 10px;
 
     &:nth-child(2n) {
       animation-delay: 0.25s;
@@ -50,6 +48,7 @@ const LoaderDots = ({ isAccent, size }) => {
 
     &:nth-child(3n) {
       animation-delay: 0.75s;
+      margin-right: 0;
     }
   `;
 

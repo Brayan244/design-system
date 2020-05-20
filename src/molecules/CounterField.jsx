@@ -31,6 +31,11 @@ const CounterField = ({ initialCount, minCount, maxCount, onChange }) => {
     height: 30px;
     width: 30px;
     justify-content: center;
+
+    &:focus {
+      box-shadow: 0 0 10px 2px ${colors.gray400}90;
+      outline: dashed 2px ${colors.gray400}30;
+    }
   `;
 
   const hiddenInput = css`

@@ -36,6 +36,11 @@ const LinkButton = ({
       background-color: ${colors.accentStrong};
     }
 
+    &:focus {
+      box-shadow: 0 0 10px 2px ${colors.accent}90;
+      outline: dashed 2px ${colors.accent}30;
+    }
+
     ${mq.small} {
       width: ${fullWidthOnSmall ? '100%' : null};
       text-align: center;

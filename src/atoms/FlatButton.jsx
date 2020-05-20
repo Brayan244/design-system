@@ -45,6 +45,10 @@ const FlatButton = ({
     &:hover {
       color: ${colorType.hover};
     }
+
+    &:focus {
+      outline: dashed 2px ${colorType.color}30;
+    }
   `;
 
   return (

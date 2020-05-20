@@ -34,6 +34,10 @@ const Link = ({ text, href, type, newTab, size, weight }) => {
     &:hover {
       color: ${colorTypes[type].hover};
     }
+
+    &:focus {
+      outline: dashed 2px ${colorTypes[type].color}30;
+    }
   `;
 
   return (

@@ -29,6 +29,10 @@ const NavLink = ({ active, children, small }) => {
       &:hover {
         background-color: ${colors.gray200};
       }
+
+      &:focus {
+        outline: dashed 2px ${colors.gray200};
+      }
     }
 
     &:first-of-type a,

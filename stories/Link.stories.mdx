@@ -1,8 +1,9 @@
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Link from '../src/atoms/Link';
+import Spacing from '../src/atoms/Spacing';
 
-<Meta title="Atoms|Link" component={Link} />
+<Meta title="Trigger|Link" component={Link} />
 
 ## Preview
 
@@ -28,6 +29,39 @@ import Link from '../src/atoms/Link';
       )}
       weight={select('Weight', ['regular', 'semibold', 'bold'], 'semibold')}
     />
+  </Story>
+</Preview>
+
+## All variants
+
+<Preview>
+  <Story name="All variants">
+    <Spacing>
+      <Link
+        size="XL"
+        text="Accent"
+        href="https://www.reservamos.mx/"
+        type="accent"
+      />
+      <Link
+        size="XL"
+        text="Disabled"
+        href="https://www.reservamos.mx/"
+        type="disabled"
+      />
+      <Link
+        size="XL"
+        text="Info"
+        href="https://www.reservamos.mx/"
+        type="info"
+      />
+      <Link
+        size="XL"
+        text="Error"
+        href="https://www.reservamos.mx/"
+        type="error"
+      />
+    </Spacing>
   </Story>
 </Preview>
 

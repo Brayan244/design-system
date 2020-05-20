@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.5.1
+## v0.5.2
 
-- Adds loaderPulse component
+- Adds focus styles for buttons and links

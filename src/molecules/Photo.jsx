@@ -30,6 +30,7 @@ const Photo = ({ photoUrl, alt, type }) => {
     max-height: ${imagesSizes[type].large}px;
     object-fit: cover;
     width: 100%;
+    overflow: hidden;
 
     ${mq.small} {
       height: ${imagesSizes[type].small}px;
