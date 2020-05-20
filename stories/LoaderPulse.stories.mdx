@@ -1,20 +1,19 @@
 import { select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import LoaderDots from '../src/atoms/LoaderDots';
+import LoaderPulse from '../src/atoms/LoaderPulse';
 
-<Meta title="Loader|Dots" component={LoaderDots} />
+<Meta title="Loader|Pulse" component={LoaderPulse} />
 
 ## Props
 
-<Props of={LoaderDots} />
+<Props of={LoaderPulse} />
 
 ## Preview
 
 <Preview>
-  <Story name="LoaderDots">
-    <LoaderDots
-      isAccent={boolean('Is Accent', true)}
+  <Story name="LoaderPulse">
+    <LoaderPulse
       size={select(
         'Size',
         {
@@ -23,6 +22,8 @@ import LoaderDots from '../src/atoms/LoaderDots';
         },
         'S'
       )}
+      color={select('Color', ['primary', 'accent', 'gray', 'white'], 'gray')}
+      hasWrapper={boolean('Has wrapper?', true)}
     />
   </Story>
 </Preview>

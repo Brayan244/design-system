@@ -1,10 +1,5 @@
 # Changelog
 
-## v0.5.0
+## v0.5.1
 
-ListItem component
-
-- Refactor
-- Sets textLeft prop optional
-- Removes unused variants
-- Removes Price prop
+- Adds loaderPulse component

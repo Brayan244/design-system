@@ -44,3 +44,4 @@ export { default as LinkButton } from './atoms/LinkButton';
 export { default as FieldLabel } from './atoms/FieldLabel';
 export { default as Overlay } from './atoms/Overlay';
 export { default as LoaderOverlay } from './molecules/LoaderOverlay';
+export { default as LoaderPulse } from './atoms/LoaderPulse';
