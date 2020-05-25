@@ -33,13 +33,14 @@ const FieldLabel = ({ inputId, isPlaceholder, text }) => {
 };
 
 FieldLabel.propTypes = {
-  inputId: PropTypes.string.isRequired,
+  inputId: PropTypes.string,
   isPlaceholder: PropTypes.bool,
   text: PropTypes.string.isRequired,
 };
 
 FieldLabel.defaultProps = {
   isPlaceholder: false,
+  inputId: null,
 };
 
 export default FieldLabel;

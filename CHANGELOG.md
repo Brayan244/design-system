@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.5.2
+## v0.5.3
 
-- Adds focus styles for buttons and links
+- FieldLabel: makes iD optional
