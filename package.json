@@ -1,6 +1,6 @@
 {
   "name": "@reservamos/elements",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "main": "dist/index.js",
   "module": "lib/index.js",
   "scripts": {
