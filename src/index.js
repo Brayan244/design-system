@@ -45,3 +45,4 @@ export { default as FieldLabel } from './atoms/FieldLabel';
 export { default as Overlay } from './atoms/Overlay';
 export { default as LoaderOverlay } from './molecules/LoaderOverlay';
 export { default as LoaderPulse } from './atoms/LoaderPulse';
+export { default as SmallSelect } from './molecules/SmallSelect';

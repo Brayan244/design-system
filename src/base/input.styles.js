@@ -6,6 +6,7 @@ export default function inputStyles(isDisabled, hasError) {
 
   return css`
     background-color: ${colors.gray100};
+    border: solid 1px transparent;
     border-bottom-color: ${hasError ? errorColor : colors.gray200};
     border-bottom-style: solid;
     border-bottom-width: ${isDisabled ? 0 : '1px'};
