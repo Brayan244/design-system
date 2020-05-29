@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
-const FieldLabel = ({ inputId, isPlaceholder, text }) => {
+const FieldLabel = ({ leftZero, inputId, isPlaceholder, text }) => {
   const activeStyle = css`
     transform: translateY(-20px) scale(0.8);
     transform-origin: 0 0;
@@ -14,7 +14,7 @@ const FieldLabel = ({ inputId, isPlaceholder, text }) => {
     color: ${colors.gray400};
     position: absolute;
     top: 0;
-    left: 15px;
+    left: ${leftZero ? '0' : '15px'};
     font-size: ${typography.M};
     cursor: text;
     transition: transform 0.2s ease-out, color 0.2s ease-out;
@@ -35,11 +35,13 @@ const FieldLabel = ({ inputId, isPlaceholder, text }) => {
 FieldLabel.propTypes = {
   inputId: PropTypes.string,
   isPlaceholder: PropTypes.bool,
+  leftZero: PropTypes.bool,
   text: PropTypes.string.isRequired,
 };
 
 FieldLabel.defaultProps = {
   isPlaceholder: false,
+  leftZero: false,
   inputId: null,
 };
 

@@ -76,7 +76,7 @@ const Button = ({
 
   const ButtonStyle = css`
     background-color: ${variantStyle.background};
-    border-radius: ${fullWidthOnSmall ? '0' : '4px'};
+    border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: ${variantStyle.color};
     font-family: 'Open Sans', sans-serif;
@@ -106,6 +106,7 @@ const Button = ({
 
     ${mq.small} {
       width: ${fullWidthOnSmall ? '100%' : null};
+      border-radius: ${fullWidthOnSmall ? '0' : null};
     }
   `;
 

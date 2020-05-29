@@ -36,7 +36,7 @@ const SmallSelect = ({
   const selectStyle = css`
     color: ${errorColor || colors.gray600};
     font-size: ${typography.M};
-    padding: 0 15px;
+    padding: 0 15px 0 0;
     transition: color 0.3s;
     min-width: 120px;
 
@@ -99,7 +99,7 @@ const SmallSelect = ({
             ))}
           </select>
         </div>
-        {Boolean(label) && <FieldLabel inputId={id} text={label} />}
+        {Boolean(label) && <FieldLabel inputId={id} text={label} leftZero />}
       </div>
     </div>
   );
