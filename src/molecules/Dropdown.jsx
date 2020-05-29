@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Icon from '../atoms/Icon';
+import useOutsideClick from '../hooks/useOutsideClick';
 
 const Dropdown = ({ trigger, children, hasArrow }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef();
+
+  useOutsideClick(dropdownRef.current, () => setIsOpen(false));
 
   const dropdown = css`
     display: flex;
@@ -43,8 +47,10 @@ const Dropdown = ({ trigger, children, hasArrow }) => {
   }
 
   return (
-    <div css={dropdown}>
-      <div onClick={() => setIsOpen(!isOpen)}>{trigger}</div>
+    <div ref={dropdownRef} css={dropdown}>
+      <div onClick={() => setIsOpen(!isOpen)} role="presentation">
+        {trigger}
+      </div>
 
       <div css={containerStyles}>
         {Boolean(hasArrow) && (
