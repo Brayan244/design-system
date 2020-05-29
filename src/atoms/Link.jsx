@@ -21,15 +21,20 @@ const colorTypes = {
     color: colors.error,
     hover: colors.errorStrong,
   },
+  success: {
+    color: colors.success,
+    hover: colors.successStrong,
+  },
 };
 
 const Link = ({ text, href, type, newTab, size, weight }) => {
   const linkStyle = css`
+    color: ${colorTypes[type].color};
+    text-decoration: underline;
+    font-family: 'Open Sans', sans-serif;
     font-size: ${typography[size]};
     font-weight: ${typography[weight]};
-    text-decoration: underline;
-    color: ${colorTypes[type].color};
-    font-family: 'Open Sans', sans-serif;
+    transition: color 0.25s ease-out;
 
     &:hover {
       color: ${colorTypes[type].hover};
@@ -58,7 +63,8 @@ Link.propTypes = {
   /** URL del link */
   href: PropTypes.string.isRequired,
   /** Tipo de color del link */
-  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']).isRequired,
+  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error', 'success'])
+    .isRequired,
   /** Opens the linked document in the same windown or new tab */
   newTab: PropTypes.bool,
   /** Font size */

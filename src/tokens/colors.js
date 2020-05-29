@@ -14,6 +14,7 @@ export const gray100 = '#FAFAFA';
 export const white = '#FFFFFF';
 
 export const success = '#66BA5B';
+export const successStrong = '#448c3b';
 export const warning = '#E8B600';
 export const error = '#FF040D';
 export const errorStrong = '#C80007';

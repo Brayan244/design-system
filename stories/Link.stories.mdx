@@ -13,7 +13,11 @@ import Spacing from '../src/atoms/Spacing';
       large={boolean('Is Large', false)}
       text={text('Text', 'Editar')}
       href={text('href', 'https://www.reservamos.mx/')}
-      type={select('type', ['accent', 'disabled', 'info', 'error'], 'accent')}
+      type={select(
+        'type',
+        ['accent', 'disabled', 'info', 'error', 'success'],
+        'accent'
+      )}
       newTab={boolean('New Tab', false)}
       size={select(
         'Size',

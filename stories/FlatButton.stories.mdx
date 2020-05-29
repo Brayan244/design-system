@@ -13,7 +13,11 @@ import FlatButton from '../src/atoms/FlatButton';
       isDisabled={boolean('Is disabled?', false)}
       onClick={action('onClick')}
       text={text('Text', 'Guardar')}
-      type={select('type', ['accent', 'disabled', 'info', 'error'], 'accent')}
+      type={select(
+        'type',
+        ['accent', 'disabled', 'info', 'error', 'success'],
+        'accent'
+      )}
       size={select(
         'Size',
         {

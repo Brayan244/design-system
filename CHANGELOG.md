@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.5.5
+## v0.5.6
 
-- adds useOutsideClick
+- adds success color on Link and FlatButton components

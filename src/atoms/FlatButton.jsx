@@ -21,6 +21,10 @@ const colorTypes = {
     color: colors.error,
     hover: colors.errorStrong,
   },
+  success: {
+    color: colors.success,
+    hover: colors.successStrong,
+  },
 };
 
 const FlatButton = ({
@@ -36,11 +40,12 @@ const FlatButton = ({
 
   const container = css`
     color: ${colorType.color};
-    font-family: 'Open Sans', sans-serif;
-    font-weight: ${typography[weight]};
-    font-size: ${typography[size]};
-    text-decoration: underline;
     cursor: ${isDisabled ? 'default' : 'pointer'};
+    text-decoration: underline;
+    font-family: 'Open Sans', sans-serif;
+    font-size: ${typography[size]};
+    font-weight: ${typography[weight]};
+    transition: color 0.25s ease-out;
 
     &:hover {
       color: ${colorType.hover};
@@ -73,7 +78,7 @@ FlatButton.propTypes = {
   /** Texto del botón */
   text: PropTypes.string.isRequired,
   /** Tipo de color del `<button>` */
-  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error']),
+  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error', 'success']),
   /** Font size */
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
   /** Font weight */
