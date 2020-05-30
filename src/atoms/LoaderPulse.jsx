@@ -36,40 +36,46 @@ const LoaderPulse = ({ color, size, hasWrapper }) => {
     margin: 20px auto;
   `;
 
-  const circle = css`
+  const container = css`
     position: relative;
     width: ${sizes[size]};
     height: ${sizes[size]};
     ${hasWrapper && wrapperStyles}
+  `;
 
-    & > div {
-      animation: ${bounce} 1.2s 0s linear infinite;
-      animation-fill-mode: both;
-      background-color: ${tones[color]};
-      border-radius: 100%;
-      position: absolute;
-      top: 0;
-      opacity: 0;
-      margin: 0;
-      width: ${sizes[size]};
-      height: ${sizes[size]};
+  const circles = css`
+    animation: ${bounce} 1.2s 0s linear infinite;
+    animation-fill-mode: both;
+    background-color: ${tones[color]};
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    margin: 0;
+    width: ${sizes[size]};
+    height: ${sizes[size]};
+  `;
 
-      &:nth-child(3) {
-        animation-delay: -0.2s;
-      }
+  const firstCircle = css`
+    ${circles}
+  `;
 
-      :nth-child(2) {
-        animation-delay: -0.4s;
-      }
-    }
+  const secondCircle = css`
+    ${circles}
+    animation-delay: -0.4s;
+  `;
+
+  const thirdCircle = css`
+    ${circles}
+    animation-delay: -0.2s;
   `;
 
   return (
     <div>
-      <div css={circle}>
-        <div />
-        <div />
-        <div />
+      <div css={container}>
+        <div css={firstCircle} />
+        <div css={secondCircle} />
+        <div css={thirdCircle} />
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 # Changelog
 
-## v0.5.7
+## v0.5.8
 
-- adds leftZero on label component
-- removes paddingRight on smallSelect
-- fix borderRadius for Button prop `fullWidthOnSmall`
+- adds `positionTop` prop for Overlay component
+- adds classes for circles on LoaderPulse
