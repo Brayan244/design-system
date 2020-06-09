@@ -1,10 +1,12 @@
 import * as mediaQueries from './globals/mediaqueries';
 import * as screenSizes from './globals/screenSizes';
 import * as colors from './tokens/colors';
+import * as typography from './tokens/typography';
 
 export { mediaQueries };
 export { screenSizes };
 export { colors };
+export { typography };
 
 export { default as UserPhoto } from './atoms/UserPhoto';
 export { default as Input } from './molecules/Input';

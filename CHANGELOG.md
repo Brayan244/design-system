@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.5.9
+## v0.5.10
 
-- Updates S, M and L fontSizes
+- Exports typography
