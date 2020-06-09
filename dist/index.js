@@ -84,6 +84,29 @@ var colors = /*#__PURE__*/Object.freeze({
   discountStrong: discountStrong
 });
 
+var XXL = '20px';
+var XL = '18px';
+var L = '17px';
+var M = '16px';
+var S = '14px';
+var XS = '11px';
+var bold = 700;
+var semibold = 600;
+var regular = 400;
+
+var typography = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  XXL: XXL,
+  XL: XL,
+  L: L,
+  M: M,
+  S: S,
+  XS: XS,
+  bold: bold,
+  semibold: semibold,
+  regular: regular
+});
+
 var sizes = {
   S: 25,
   M: 70,
@@ -169,29 +192,6 @@ function _iterableToArrayLimit(arr, i) {
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
-
-var XXL = '20px';
-var XL = '18px';
-var L = '17px';
-var M = '16px';
-var S = '14px';
-var XS = '11px';
-var bold = 700;
-var semibold = 600;
-var regular = 400;
-
-var typography = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  XXL: XXL,
-  XL: XL,
-  L: L,
-  M: M,
-  S: S,
-  XS: XS,
-  bold: bold,
-  semibold: semibold,
-  regular: regular
-});
 
 function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 var _ref = "production" === "production" ? {
@@ -2504,3 +2504,4 @@ exports.Visibility = Visibility;
 exports.colors = colors;
 exports.mediaQueries = mq;
 exports.screenSizes = screenSizes;
+exports.typography = typography;
