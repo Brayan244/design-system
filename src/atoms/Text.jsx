@@ -46,7 +46,7 @@ Text.propTypes = {
   ]),
   /** Font weight */
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
-  /** Font size */
+  /** Font size: `XS=11px`, `S=14px`, `M=16px`, `L=17px`, `XL=18px`, `XLL=20px` */
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
   /** Sets the `line-through` decoration */
   lineThrough: PropTypes.bool,

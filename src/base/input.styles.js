@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
 import * as colors from '../tokens/colors';
+import * as typography from '../tokens/typography';
 
 export default function inputStyles(isDisabled, hasError) {
   const errorColor = hasError ? colors.error : null;
@@ -12,7 +13,7 @@ export default function inputStyles(isDisabled, hasError) {
     border-bottom-width: ${isDisabled ? 0 : '1px'};
     box-shadow: ${hasError ? `0 1px 0 0 ${colors.error}` : 'inherit'};
     color: ${errorColor || colors.gray600};
-    font-size: 16px;
+    font-size: ${typography.M};
     height: 50px;
     padding: 0 15px;
     transition: border 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;

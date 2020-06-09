@@ -1,6 +1,5 @@
 # Changelog
 
-## v0.5.8
+## v0.5.9
 
-- adds `positionTop` prop for Overlay component
-- adds classes for circles on LoaderPulse
+- Updates S, M and L fontSizes
