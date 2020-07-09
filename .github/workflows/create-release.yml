@@ -10,15 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     if: github.event.pull_request.merged && (
       contains(github.event.pull_request.labels.*.name, 'patch') ||
       contains(github.event.pull_request.labels.*.name, 'minor') ||
       contains(github.event.pull_request.labels.*.name, 'major'))
     steps:
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12.14.1
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '12.14.1'
       - uses: actions/checkout@master
       - uses: fregante/setup-git-token@v1
         with:
