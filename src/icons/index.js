@@ -64,3 +64,5 @@ export { default as nonRefundable } from '../../images/amenities/hotels/non-refu
 export { default as purchaseFailed } from '../../images/icons/purchase/failed.svg';
 export { default as purchasePending } from '../../images/icons/purchase/pending.svg';
 export { default as purchaseSuccess } from '../../images/icons/purchase/success.svg';
+export { default as hotelGray } from '../../images/icons/hotels/hotel-gray.svg';
+export { default as hotelWhite } from '../../images/icons/hotels/hotel-white.svg';
