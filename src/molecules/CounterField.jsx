@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import Icon from '../atoms/Icon';
 import Text from '../atoms/Text';
-import * as colors from '../tokens/colors';
 import triggerOnChange from '../utils/triggerOnChange';
+import IconButton from '../atoms/IconButton';
 
 const CounterField = ({ initialCount, minCount, maxCount, onChange }) => {
   const calculateInitialCount = () => {
@@ -17,24 +16,11 @@ const CounterField = ({ initialCount, minCount, maxCount, onChange }) => {
   const hiddenInputRef = useRef();
 
   const quantityContent = css`
+    align-items: center;
     display: flex;
 
     p {
       margin: 0 15px;
-    }
-  `;
-
-  const button = css`
-    background-color: ${colors.gray200};
-    display: inline-block;
-    border-radius: 3px;
-    height: 30px;
-    width: 30px;
-    justify-content: center;
-
-    &:focus {
-      box-shadow: 0 0 10px 2px ${colors.gray400}90;
-      outline: dashed 2px ${colors.gray400}30;
     }
   `;
 
@@ -60,15 +46,11 @@ const CounterField = ({ initialCount, minCount, maxCount, onChange }) => {
 
   return (
     <div css={quantityContent}>
-      <button type="button" css={button} onClick={decrementCount}>
-        <Icon size="S" type="less" />
-      </button>
+      <IconButton iconType="less" variant="noFill" onClick={decrementCount} />
       <Text size="XL" weight="semibold">
         {count}
       </Text>
-      <button type="button" css={button} onClick={incrementCount}>
-        <Icon size="S" type="plus" />
-      </button>
+      <IconButton iconType="plus" variant="noFill" onClick={incrementCount} />
       <input
         type="text"
         css={hiddenInput}

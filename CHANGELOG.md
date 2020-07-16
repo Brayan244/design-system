@@ -1,6 +1,7 @@
 # Changelog
 
-## v0.5.11
+## v0.6.0
 
-- Adds hotelGray and hotelWhite icons
-- Attempt to fix github workflows
+- Adds IconButton component
+- Adds isRounded and button with icon variants on Button
+- Adds listWhite, reloadWhite, searchWhite and map icons

@@ -66,3 +66,7 @@ export { default as purchasePending } from '../../images/icons/purchase/pending.
 export { default as purchaseSuccess } from '../../images/icons/purchase/success.svg';
 export { default as hotelGray } from '../../images/icons/hotels/hotel-gray.svg';
 export { default as hotelWhite } from '../../images/icons/hotels/hotel-white.svg';
+export { default as listWhite } from '../../images/icons/hotels/listWhite.svg';
+export { default as reloadWhite } from '../../images/icons/hotels/reloadWhite.svg';
+export { default as searchWhite } from '../../images/icons/hotels/searchWhite.svg';
+export { default as map } from '../../images/icons/hotels/map.svg';

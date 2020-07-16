@@ -5,8 +5,9 @@ import * as mq from '../globals/mediaqueries';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 import LoaderButton from '../molecules/LoaderButton';
+import Icon from '../atoms/Icon';
 
-const varianStyles = {
+const variantStyles = {
   accent: {
     background: colors.accent,
     backgroundDisabled: colors.gray400,
@@ -47,6 +48,14 @@ const varianStyles = {
     colorDisabled: colors.gray400,
     focus: colors.gray400,
   },
+  primary: {
+    background: colors.primary,
+    backgroundHover: colors.primaryStrong,
+    backgroundDisabled: colors.gray400,
+    color: '#ffffff',
+    colorDisabled: '#ffffff',
+    focus: colors.primaryStrong,
+  },
 };
 
 const paddingSizes = {
@@ -66,19 +75,23 @@ const Button = ({
   padding,
   fullWidthOnSmall,
   withHeight,
+  isRounded,
+  iconType,
 }) => {
   if (isLoading)
     return (
       <LoaderButton isNoFill={variant !== 'accent' && variant !== 'discount'} />
     );
 
-  const variantStyle = varianStyles[variant];
+  const variantStyle = variantStyles[variant];
 
   const ButtonStyle = css`
+    align-items: center;
     background-color: ${variantStyle.background};
-    border-radius: 4px;
+    border-radius: ${isRounded ? '50px' : '4px'};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: ${variantStyle.color};
+    display: flex;
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
     font-size: ${typography[fontSize]};
@@ -119,6 +132,7 @@ const Button = ({
       onClick={onClick}
       disabled={isDisabled}
     >
+      {Boolean(iconType) && <Icon size="S" type={iconType} hasMargin />}
       {text}
     </button>
   );
@@ -132,6 +146,7 @@ Button.propTypes = {
     'danger',
     'discount',
     'default',
+    'primary',
   ]),
   /** Indicates that is disabled */
   isDisabled: PropTypes.bool,
@@ -145,12 +160,16 @@ Button.propTypes = {
   fontSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
   /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
   padding: PropTypes.oneOf(['S', 'M', 'L']),
-  /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
+  /** Indicates button type */
   buttonType: PropTypes.oneOf(['button', 'submit']),
   /** Muestra el botón con 100% de ancho en pantallas pequeñas */
   fullWidthOnSmall: PropTypes.bool,
   /** Agrega una altura de 50px */
   withHeight: PropTypes.bool,
+  /** Indicates if button is rounded */
+  isRounded: PropTypes.bool,
+  /** Indicates the icon's name to display on button */
+  iconType: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -163,6 +182,8 @@ Button.defaultProps = {
   buttonType: 'button',
   fullWidthOnSmall: false,
   withHeight: false,
+  isRounded: false,
+  iconType: '',
 };
 
 export default Button;

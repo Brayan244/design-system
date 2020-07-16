@@ -6,7 +6,7 @@ import Button from '../src/organisms/Button';
 import LoaderButton from '../src/molecules/LoaderButton';
 import backgroundColors from '../.storybook/backgroundColors';
 
-<Meta title="Trigger|Button" component={Button} />
+<Meta title="Buttons|Button" component={Button} />
 
 ## Preview
 
@@ -26,6 +26,7 @@ import backgroundColors from '../.storybook/backgroundColors';
           Danger: 'danger',
           Discount: 'discount',
           Default: 'default',
+          Primary: 'primary',
         },
         'accent'
       )}
@@ -40,6 +41,8 @@ import backgroundColors from '../.storybook/backgroundColors';
         },
         'button'
       )}
+      isRounded={boolean('Is Rounded', false)}
+      iconType={text('Icon Type', 'warning')}
     />
   </Story>
 </Preview>
@@ -102,6 +105,25 @@ import backgroundColors from '../.storybook/backgroundColors';
           text="Default"
           onClick={action('onClick')}
           variant="default"
+          isDisabled
+        />
+      </Spacing>
+      <Spacing>
+        <Button text="Primary" onClick={action('onClick')} variant="primary" />
+        <Button
+          text="Primary"
+          onClick={action('onClick')}
+          variant="primary"
+          isDisabled
+        />
+      </Spacing>
+      <Spacing>
+        <Button text="Has Icon" onClick={action('onClick')} variant="primary" iconType="checkmarkWhite"/>
+        <Button
+        text="Has Icon"
+          onClick={action('onClick')}
+          variant="primary"
+          iconType="checkmarkWhite"
           isDisabled
         />
       </Spacing>
