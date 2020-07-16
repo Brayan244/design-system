@@ -2571,6 +2571,7 @@ exports.FlatButton = FlatButton;
 exports.Guarantee = Guarantee;
 exports.Header = Header;
 exports.Icon = Icon;
+exports.IconButton = IconButton;
 exports.InfoCard = InfoCard;
 exports.Input = Input;
 exports.Link = Link;
