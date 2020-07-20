@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.6.1
+## v0.6.2
 
-- Adds Icon Button on index.js
+- Fixes alignment bug on button when it's large
+- Updates listWhite icon

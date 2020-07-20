@@ -95,6 +95,7 @@ const Button = ({
     font-family: 'Open Sans', sans-serif;
     font-weight: ${typography.semibold};
     font-size: ${typography[fontSize]};
+    justify-content: center;
     min-height: 35px;
     min-width: 100px;
     padding: ${paddingSizes[padding]};
