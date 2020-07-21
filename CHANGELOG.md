@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.6.2
+## v0.6.3
 
-- Fixes alignment bug on button when it's large
-- Updates listWhite icon
+- Fixes prop error in `<Currency />` component
+- Changes nth-child for nth-of-type to fix SSR error

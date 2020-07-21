@@ -42,11 +42,11 @@ const LoaderDots = ({ isAccent, size }) => {
     background-color: ${isAccent ? `${colors.accent}` : '#ffffff'};
     margin-right: 10px;
 
-    &:nth-child(2n) {
+    &:nth-of-type(2) {
       animation-delay: 0.25s;
     }
 
-    &:nth-child(3n) {
+    &:nth-of-type(3) {
       animation-delay: 0.75s;
       margin-right: 0;
     }

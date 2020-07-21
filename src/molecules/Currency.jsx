@@ -47,6 +47,7 @@ Currency.propTypes = {
     'grayLight',
     'info',
     'discount',
+    'white',
   ]),
   /** Font size */
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
