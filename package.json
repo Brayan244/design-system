@@ -9,6 +9,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "yarn storybook",
+    "watch": "yarn build --watch",
     "storybook": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",

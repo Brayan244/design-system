@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Photo from '../molecules/Photo';
 import * as mq from '../globals/mediaqueries';
 
-const chunkUrls = (urls, size) => {
+function chunkUrls(urls, size) {
   return Array.from({ length: Math.ceil(urls.length / size) }, (_, index) => {
     return urls.slice(index * size, index * size + size);
   });
-};
+}
 
-const PhotoGallery = ({ alt, isLoading, photoUrlList }) => {
+const PhotoGallery = ({ photos }) => {
   const container = css`
     display: flex;
 
@@ -66,31 +66,24 @@ const PhotoGallery = ({ alt, isLoading, photoUrlList }) => {
     }
   `;
 
-  const [firstUrl, ...restUrls] = photoUrlList;
-  const chunks = chunkUrls(restUrls, 2);
+  const [firstPhoto, ...otherPhotos] = photos;
+  const chunks = chunkUrls(otherPhotos, 2);
 
   return (
     <div css={container}>
       <div css={box}>
-        <Photo type="L" photoUrl={firstUrl} alt={alt} isLoading={isLoading} />
+        <Photo type="L" photoUrl={firstPhoto.url} alt={firstPhoto.caption} />
       </div>
+
       <div css={wrapper}>
         {chunks.map((chunk, chunkIndex) => {
           const chunkId = `${chunk.length}-${chunkIndex}`;
+
           return (
             <div css={innerBox} key={chunkId}>
-              {chunk.map((photoUrl, index) => {
-                const photoId = `${photoUrl}-${index}`;
-                return (
-                  <Photo
-                    type="M"
-                    photoUrl={photoUrl}
-                    alt={alt}
-                    isLoading={isLoading}
-                    key={photoId}
-                  />
-                );
-              })}
+              {chunk.map(({ url, caption }) => (
+                <Photo key={url} photoUrl={url} type="M" alt={caption} />
+              ))}
             </div>
           );
         })}
@@ -100,16 +93,13 @@ const PhotoGallery = ({ alt, isLoading, photoUrlList }) => {
 };
 
 PhotoGallery.propTypes = {
-  /** texto alternativo de la imagen */
-  alt: PropTypes.string.isRequired,
-  /** Indicates that is disabled */
-  isLoading: PropTypes.bool,
-  /** URL list */
-  photoUrlList: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-PhotoGallery.defaultProps = {
-  isLoading: false,
+  /** Photo list */
+  photos: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      caption: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default PhotoGallery;

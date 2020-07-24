@@ -4,24 +4,37 @@ import PhotoGallery from '../src/organisms/PhotoGallery';
 
 <Meta title="Organisms|PhotoGallery" component={PhotoGallery} />
 
-## Props
-
-<Props of={PhotoGallery} />
-
 ## Preview
 
 <Preview>
   <Story name="PhotoGallery">
     <PhotoGallery
-      alt={text('Alt', 'nombre')}
-      isLoading={boolean('Is Loading', false)}
-      photoUrlList={[
-        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
-        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
-        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
-        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
-        'https://i.blogs.es/d9095a/lily-collins/650_1200.jpg',
+      photos={[
+        {
+          url: 'https://via.placeholder.com/1000',
+          caption: 'Image 1',
+        },
+        {
+          url: 'https://via.placeholder.com/500',
+          caption: 'Image 2',
+        },
+        {
+          url: 'https://via.placeholder.com/500',
+          caption: 'Image 3',
+        },
+        {
+          url: 'https://via.placeholder.com/500',
+          caption: 'Image 4',
+        },
+        {
+          url: 'https://via.placeholder.com/500',
+          caption: 'Image 5',
+        },
       ]}
     />
   </Story>
 </Preview>
+
+## Props
+
+<Props of={PhotoGallery} />

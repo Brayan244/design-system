@@ -1,6 +1,7 @@
 # Changelog
 
-## v0.6.3
+## v0.6.4
 
-- Fixes prop error in `<Currency />` component
-- Changes nth-child for nth-of-type to fix SSR error
+### 🐞 Fixes
+
+- Refactors `<ImageGallery />` component
