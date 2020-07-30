@@ -11,6 +11,9 @@ function chunkUrls(urls, size) {
 }
 
 const PhotoGallery = ({ photos }) => {
+  // If no pictures available don't render anything
+  if (photos.length < 1) return null;
+
   const container = css`
     display: flex;
 
