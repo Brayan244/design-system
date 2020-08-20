@@ -15,9 +15,10 @@ export { default as warning } from '../../images/icons/alert/notification-warnin
 export { default as info } from '../../images/icons/alert/notification-info.svg';
 export { default as close } from '../../images/icons/close.svg';
 export { default as menu } from '../../images/icons/menu.svg';
-export { default as starFull } from '../../images/icons/rating/full.svg';
-export { default as starHalf } from '../../images/icons/rating/half.svg';
-export { default as starEmpty } from '../../images/icons/rating/empty.svg';
+export { default as starFullPrimary } from '../../images/icons/stars/fullPrimary.svg';
+export { default as starFull } from '../../images/icons/stars/full.svg';
+export { default as starHalf } from '../../images/icons/stars/half.svg';
+export { default as starEmpty } from '../../images/icons/stars/empty.svg';
 export { default as timer } from '../../images/icons/timer.png';
 export { default as acLocation } from '../../images/icons/autocomplete/location.svg';
 export { default as guest } from '../../images/icons/guest.svg';

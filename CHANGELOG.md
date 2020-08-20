@@ -1,7 +1,7 @@
 # Changelog
 
-## v0.6.5
+## v0.7.0
 
 ### 🐞 Fixes
 
-- If no images are passed to `<ImageGallery />`, it renders nothing
+- Adds `RangePicker` and `RangePickerOption` components

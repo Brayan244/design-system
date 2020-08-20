@@ -42,6 +42,7 @@ const DialogMessage = ({
   const buttonsContainer = css`
     align-self: flex-end;
     margin-top: 10px;
+    display: flex;
 
     > button {
       margin-right: 10px;
@@ -54,11 +55,8 @@ const DialogMessage = ({
     ${mq.small} {
       margin-top: 30px;
     }
-
-    ${mq.xsmall} {
-      display: flex;
-    }
   `;
+
   const spacing = css`
     height: 10px;
   `;
