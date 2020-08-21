@@ -1,7 +1,5 @@
 # Changelog
 
-## v0.7.0
+## v0.6.7
 
-### 🐞 Fixes
-
-- Adds `RangePicker` and `RangePickerOption` components
+- Adds `mapWhite` and `filtersWhite` icons

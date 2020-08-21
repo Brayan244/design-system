@@ -71,3 +71,5 @@ export { default as listWhite } from '../../images/icons/hotels/listWhite.svg';
 export { default as reloadWhite } from '../../images/icons/hotels/reloadWhite.svg';
 export { default as searchWhite } from '../../images/icons/hotels/searchWhite.svg';
 export { default as map } from '../../images/icons/hotels/map.svg';
+export { default as mapWhite } from '../../images/icons/hotels/mapWhite.svg';
+export { default as filtersWhite } from '../../images/icons/hotels/filtersWhite.svg';
