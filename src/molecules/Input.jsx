@@ -82,7 +82,7 @@ Input.propTypes = {
   /** Specifies the type `<input>` element to display */
   type: PropTypes.oneOf(['text', 'tel', 'email']),
   /** Defines a value for the `<input>` */
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** Defines the input max length */
   maxLength: PropTypes.number,
 };

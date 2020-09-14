@@ -6,6 +6,7 @@ export default function inputStyles(isDisabled, hasError) {
   const errorColor = hasError ? colors.error : null;
 
   return css`
+    appearance: none;
     background-color: ${colors.gray100};
     border: solid 1px transparent;
     border-bottom-color: ${hasError ? errorColor : colors.gray200};

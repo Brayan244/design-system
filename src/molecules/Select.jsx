@@ -92,14 +92,14 @@ Select.propTypes = {
   /** Array of options that populate the select menu */
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string,
-      label: PropTypes.string,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     })
   ).isRequired,
   /** The placeholder of the `<select>` */
   placeholder: PropTypes.string.isRequired,
   /** Current value */
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 Select.defaultProps = {
