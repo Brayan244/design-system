@@ -1,0 +1,144 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { text, boolean, select } from '@storybook/addon-knobs';
+import Modal from '../src/molecules/Modal';
+import Button from '../src/organisms/Button';
+import Dropdown from '../src/molecules/Dropdown';
+import NavLink from '../src/atoms/NavLink';
+import ListItem from '../src/molecules/ListItem';
+
+<Meta title="Molecules|Modal" component={Modal} />
+
+# Modal
+
+<Preview>
+  <Story name="Modal">
+    <>
+      <Modal
+        title={text(
+          'Title',
+          "Hello"
+        )}
+        portalSelector={text(
+          'Portal Selector',
+          "body"
+        )}
+        expandedModal={boolean('Expanded modal', false)}
+        showOverFlowContent={boolean('Show Over Flow Content', false)}
+        overlay0pacity={boolean('Overlay Opacity', false)}
+        topPosition={boolean('Top Position', false)}
+        responsiveSize={select(
+          'Responsive Size',
+          {
+            Small: 'S',
+            Medium: 'M',
+            Large: 'L',
+          },
+          'S'
+        )}
+        modalTrigger={<Button text="open modal" onClick={() => {}} />}
+      >
+        <span>-Principio-</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+         <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <span>-FIN-</span>
+      </Modal>
+    </>
+  </Story>
+</Preview>
+
+# Modal with dropdown
+
+<Preview>
+  <Story name="Modal with dropdown">
+    <>
+      <Modal
+        title="Dropdown"
+        showOverFlowContent
+        size="S"
+        modalTrigger={<Button text="open modal" onClick={() => {}} />}
+      >
+        <Dropdown hasArrow trigger={(
+            <p>abrir</p>
+          )}>
+          <ListItem type="accentBold"  text="Tu Monedero:" price="40" currency="MXN" />
+          <div>
+            <NavLink small>
+              <a href="#">Navigation Link</a>
+            </NavLink>
+            <NavLink small>
+              <a href="#">Navigation Link</a>
+            </NavLink>
+            <NavLink small>
+              <a href="#">Navigation Link</a>
+            </NavLink>
+          </div>
+        </Dropdown>
+      </Modal>
+    </>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Modal} />

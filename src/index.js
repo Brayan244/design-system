@@ -51,3 +51,4 @@ export { default as SmallSelect } from './molecules/SmallSelect';
 export { default as IconButton } from './atoms/IconButton';
 export { default as RangePicker } from './organisms/RangePicker';
 export { default as RangePickerOption } from './molecules/RangePickerOption';
+export { default as Modal } from './molecules/Modal';

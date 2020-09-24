@@ -1,6 +1,5 @@
 # Changelog
 
-## v0.6.8
+## v0.7.0
 
-- Changes input and select proptypes to accept strings and numbers
-- Adds appearance=none to input base style directly
+- Added Modal
