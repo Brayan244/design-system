@@ -73,3 +73,12 @@ export { default as searchWhite } from '../../images/icons/hotels/searchWhite.sv
 export { default as map } from '../../images/icons/hotels/map.svg';
 export { default as mapWhite } from '../../images/icons/hotels/mapWhite.svg';
 export { default as filtersWhite } from '../../images/icons/hotels/filtersWhite.svg';
+export { default as ratingBus } from '../../images/icons/ratings/bus.svg';
+export { default as ratingPunctuality } from '../../images/icons/ratings/punctuality.svg';
+export { default as ratingStaff } from '../../images/icons/ratings/staff.svg';
+export { default as starEmptyYellow } from '../../images/icons/stars/emptyYellow.svg';
+export { default as starFullYellow } from '../../images/icons/stars/fullYellow.svg';
+export { default as plusBlue } from '../../images/icons/plusBlue.svg';
+export { default as starFullBlue } from '../../images/icons/stars/fullBlue.svg';
+export { default as ticketBlue } from '../../images/icons/ticketBlue.svg';
+export { default as starHalfYellow } from '../../images/icons/stars/halfYellow.svg';

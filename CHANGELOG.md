@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.7.0
+## v0.7.1
 
-- Added Modal
+- New icons added (buses, puntuality, staff, starEmptyYellow, starFullYellow, plusAmenities, starFullBlue and ticketBlue)
