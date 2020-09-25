@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import Icon from '../atoms/Icon';
 import useOutsideClick from '../hooks/useOutsideClick';
 
-const Dropdown = ({ trigger, children, hasArrow }) => {
+const Dropdown = ({
+  trigger,
+  children,
+  hasArrow,
+  hasSoftShadow,
+  isFullWidth,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
 
@@ -19,10 +25,12 @@ const Dropdown = ({ trigger, children, hasArrow }) => {
   const content = css`
     background-color: #ffffff;
     border-radius: 2px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: ${hasSoftShadow
+      ? '0 10px 15px rgba(0, 0, 0, 0.15)'
+      : '0 2px 15px rgba(0, 0, 0, 0.5)'};
     display: none;
-    max-width: 306px;
-    min-width: 300px;
+    max-width: ${isFullWidth ? '100%' : '306px'};
+    min-width: ${isFullWidth ? '100%' : '300px'};
     visibility: hidden;
     z-index: 100;
   `;
@@ -53,7 +61,7 @@ const Dropdown = ({ trigger, children, hasArrow }) => {
       </div>
 
       <div css={containerStyles}>
-        {Boolean(hasArrow) && (
+        {hasArrow && (
           <div css={arrow}>
             <Icon type="dropdown" size="S" />
           </div>
@@ -69,12 +77,18 @@ Dropdown.propTypes = {
   trigger: PropTypes.node.isRequired,
   /** contenido del dropdown */
   children: PropTypes.node.isRequired,
-  /** contenido del dropdown */
+  /** determina si el dropdown tiene una flecha */
   hasArrow: PropTypes.bool,
+  /** determina si el dropdwon tiene sombra tenue */
+  hasSoftShadow: PropTypes.bool,
+  /** determina si el dropdwon abarca el width completo */
+  isFullWidth: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
   hasArrow: true,
+  hasSoftShadow: false,
+  isFullWidth: false,
 };
 
 export default Dropdown;

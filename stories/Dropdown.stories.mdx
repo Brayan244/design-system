@@ -10,10 +10,13 @@ import ListItem from '../src/molecules/ListItem';
 
 <Preview>
   <Story name="Dropdown">
-    <Dropdown  hasArrow={boolean('Has arrow', true)} trigger={(
+    <Dropdown  
+    hasArrow={boolean('Has arrow', true)}
+    hasSoftShadow={boolean('Has Soft Shadow', false)}
+    isFullWidth={boolean('Is Full Width', false)}
+    trigger={(
        <p>abrir</p>
       )}>
-      <ListItem type="accentBold"  text="Tu Monedero:" price="40" currency="MXN" />
       <div>
         <NavLink small>
           <a href="#">Navigation Link</a>

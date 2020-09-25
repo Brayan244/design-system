@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.7.1
+## v0.7.2
 
-- New icons added (buses, puntuality, staff, starEmptyYellow, starFullYellow, plusAmenities, starFullBlue and ticketBlue)
+- Adds hasSoftShadow and isFullWidth to Dropdown component
