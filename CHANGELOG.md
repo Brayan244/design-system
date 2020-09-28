@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.7.2
+## v0.7.3
 
-- Adds hasSoftShadow and isFullWidth to Dropdown component
+- Makes `<Input>` label prop optional
+- Adds `<FieldGroup>` component

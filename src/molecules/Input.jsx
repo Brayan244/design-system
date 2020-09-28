@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import InputLabel from '../atoms/FieldLabel';
+import { css } from '@emotion/core';
+import FieldLabel from '../atoms/FieldLabel';
 import inputBaseStyles from '../base/input.styles';
 
 const Input = ({
   isDisabled,
   id,
   label,
+  placeholderOnly,
   type,
   value,
   onChange,
@@ -20,11 +21,13 @@ const Input = ({
   const [isFocused, setIsFocused] = useState(false);
 
   const container = css`
-    margin-top: 20px;
+    margin-top: ${placeholderOnly ? null : '20px'};
     position: relative;
   `;
 
   const inputStyles = inputBaseStyles(isDisabled, hasError);
+
+  const labelIsPlaceholder = !isDisabled && !value && !isFocused;
 
   const handleFocus = event => {
     setIsFocused(true);
@@ -52,11 +55,13 @@ const Input = ({
           name={name}
         />
 
-        <InputLabel
-          inputId={id}
-          isPlaceholder={!isDisabled && !value && !isFocused}
-          text={label}
-        />
+        {(!placeholderOnly || labelIsPlaceholder) && (
+          <FieldLabel
+            inputId={id}
+            isPlaceholder={labelIsPlaceholder}
+            text={label}
+          />
+        )}
       </div>
     </div>
   );
@@ -70,7 +75,9 @@ Input.propTypes = {
   /** Indicates the `<input>` field is disabled */
   isDisabled: PropTypes.bool,
   /** The label of the `<input>` */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  /** If true, the label will only be used as a placeholder */
+  placeholderOnly: PropTypes.bool,
   /** The name value of the `<input>` */
   name: PropTypes.string,
   /** Called with the new value */
@@ -93,6 +100,8 @@ Input.defaultProps = {
   type: 'text',
   maxLength: null,
   name: '',
+  label: null,
+  placeholderOnly: false,
   onFocus: () => {},
   onBlur: () => {},
 };

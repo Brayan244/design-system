@@ -1,0 +1,72 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { text } from '@storybook/addon-knobs';
+import Spacing from '../src/atoms/Spacing';
+import FieldGroup from '../src/molecules/FieldGroup';
+import Input from '../src/molecules/Input';
+
+<Meta title="Forms|FieldGroup" component={FieldGroup} />
+
+# FieldGroup
+
+<br />
+
+<Story name="FieldGroup">
+  <FieldGroup label={text('label', 'Field group label')}>
+    <Spacing isResponsive={false} size="XS">
+      <Input
+        placeholderOnly
+        label="Placeholder only"
+        id="input-example-2"
+        type="text"
+        value=""
+        onChange={() => {}}
+        hasError={false}
+        isDisabled={false}
+      />
+      
+      <Input
+        placeholderOnly
+        label="Placeholder only"
+        id="input-example-3"
+        type="text"
+        value=""
+        onChange={() => {}}
+        hasError={false}
+        isDisabled={false}
+      />
+    </Spacing>
+  </FieldGroup>
+</Story>
+
+<br />
+
+## Props
+
+<Props of={FieldGroup} />
+
+## Examples
+
+<Preview>
+  <Story name="Phone Example">
+    <FieldGroup label="Código de país y número de celular">
+      <Spacing isResponsive={false} size="XS">
+        <div style={{ width: '100px' }}>
+          <Input
+            placeholderOnly
+            id="field-group-example-1"
+            name="field-group-example-1"
+            value="+52"
+          />
+        </div>
+        
+        <Input
+          placeholderOnly
+          label="Número de celular"
+          id="field-group-example-2"
+          name="field-group-example-2"
+          value=""
+        />
+      </Spacing>
+    </FieldGroup>
+  </Story>
+</Preview>

@@ -1,35 +1,90 @@
 import { text, select, boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FieldLabel from '../src/atoms/FieldLabel';
+import Spacing from '../src/atoms/Spacing';
 import Input from '../src/molecules/Input';
 
 <Meta title="Forms|Input" component={Input} />
 
 ## Input component
 
-<Preview>
-  <Story name="Input">
-    <Input
-      label={text('Label', 'Correo electrónico')}
-      id={text('ID', 'name')}
-      type={select(
-        'type',
-        {
-          Text: 'text',
-          Phone: 'tel',
-          Email: 'email',
-        },
-        'text'
-      )}
-      value={text('Value', '')}
-      onChange={action('onChange')}
-      hasError={boolean('Has error?', false)}
-      isDisabled={boolean('Is disabled?', false)}
-      maxLength={number('Max length', null)}
-    />
-  </Story>
-</Preview>
+<Story name="Input">
+  <Input
+    label={text('label', 'Correo electrónico')}
+    showLabel={boolean('showLabel', true)}
+    id={text('id', 'name')}
+    type={select(
+      'type',
+      {
+        Text: 'text',
+        Phone: 'tel',
+        Email: 'email',
+      },
+      'text'
+    )}
+    value={text('value', '')}
+    onChange={action('onChange')}
+    hasError={boolean('hasError', false)}
+    isDisabled={boolean('isDisabled', false)}
+    maxLength={number('maxLength', null)}
+  />
+</Story>
 
 ## Props
 
 <Props of={Input} />
+
+## Examples
+
+Con error
+
+<Preview>
+  <Story name="With error">
+    <Input
+      label="Correo electrónico"
+      id="input-example-1"
+      type="email"
+      value=""
+      onChange={() => {}}
+      hasError={true}
+    />
+  </Story>
+</Preview>
+
+Usar la label solamente como placeholder. Útil para cuando se agrupan inputs
+y solo se quiere mostrar una label
+
+<Preview>
+  <Story name="Without label">
+    <Spacing vertical size="XS">
+      <FieldLabel
+        inputId={'input-example-2'}
+        isPlaceholder={false}
+        text={'Label para ambos'}
+      />
+      <Spacing isResponsive={false} flexGrow>
+        <Input
+          label="Placeholder only"
+          placeholderOnly
+          id="input-example-2"
+          type="text"
+          value=""
+          onChange={() => {}}
+          hasError={false}
+          isDisabled={false}
+        />
+        <Input
+          label="Placeholder only"
+          placeholderOnly
+          id="input-example-3"
+          type="text"
+          value=""
+          onChange={() => {}}
+          hasError={false}
+          isDisabled={false}
+        />
+      </Spacing>
+    </Spacing>
+  </Story>
+</Preview>
