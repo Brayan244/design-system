@@ -4,15 +4,27 @@ import { css } from '@emotion/core';
 import Icon from '../atoms/Icon';
 import Text from '../atoms/Text';
 
-function starType(value) {
-  if (value <= 0) return 'starEmpty';
-  if (value >= 1) return 'starFull';
-  return 'starHalf';
+function starType(value, color) {
+  let selectedTypes = '';
+
+  if (value <= 0) {
+    selectedTypes = 'starEmpty';
+  }
+
+  if (value >= 1) {
+    selectedTypes = 'starFull';
+  }
+
+  if (value > 0 && value < 1) {
+    selectedTypes = 'starHalf';
+  }
+
+  return `${selectedTypes}${color}`;
 }
 
 const starsTemplate = [0, 1, 2, 3, 4];
 
-const Rating = ({ compact, rating }) => {
+const Rating = ({ compact, rating, color, label }) => {
   const ratingContainer = css`
     display: flex;
     align-items: center;
@@ -21,19 +33,19 @@ const Rating = ({ compact, rating }) => {
   return (
     <div css={ratingContainer}>
       {compact ? (
-        <Icon size="S" type="starFull" hasMargin margin={5} />
+        <Icon size="S" type={`starFull${color}`} hasMargin margin={5} />
       ) : (
         starsTemplate.map(value => (
           <Icon
             key={value}
             size="S"
-            type={starType(rating - value)}
+            type={starType(rating - value, color)}
             hasMargin
             margin={5}
           />
         ))
       )}
-      <Text>{`(${rating})`}</Text>
+      <Text>{label || rating}</Text>
     </div>
   );
 };
@@ -44,10 +56,18 @@ Rating.propTypes = {
 
   /** Indica si mostrar una o 5 estrellas */
   compact: PropTypes.bool,
+
+  /** Indica el color del icono de estrellas */
+  color: PropTypes.oneOf(['Yellow']),
+
+  /** Label opcional que se muestra en lugar del numero de estrellas */
+  label: PropTypes.string,
 };
 
 Rating.defaultProps = {
   compact: false,
+  color: '',
+  label: '',
 };
 
 export default Rating;

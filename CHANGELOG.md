@@ -1,6 +1,5 @@
 # Changelog
 
-## v0.7.3
+## v0.7.4
 
-- Makes `<Input>` label prop optional
-- Adds `<FieldGroup>` component
+- Adds yellow variant and optional label to Rating component

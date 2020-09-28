@@ -1,4 +1,4 @@
-import { number, boolean } from '@storybook/addon-knobs';
+import { number, boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Rating from '../src/molecules/Rating';
@@ -12,6 +12,8 @@ import Rating from '../src/molecules/Rating';
     <Rating
       rating={number('Rating', '4.5')}
       compact={boolean('Compact', false)}
+      color={select('Color', ['', 'Yellow'])}
+      label={text('Label (optional)', '')}
     />
   </Story>
 </Preview>
