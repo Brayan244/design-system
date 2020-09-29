@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.7.4
+## v0.7.5
 
-- Adds yellow variant and optional label to Rating component
+- zIndex prop was added to modal

@@ -99,7 +99,7 @@ AlertMessage.propTypes = {
 AlertMessage.defaultProps = {
   title: '',
   type: 'info',
-  zIndex: zIndexes.secondLayer,
+  zIndex: zIndexes.thirdLayer,
 };
 
 export default AlertMessage;
