@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.7.5
+## v0.8.3
 
-- zIndex prop was added to modal
+- Added z Index property to Overlay and removed from modal

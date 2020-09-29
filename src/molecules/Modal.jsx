@@ -6,7 +6,6 @@ import Text from '../atoms/Text';
 import Overlay from '../atoms/Overlay';
 import Portal from '../atoms/Portal';
 import * as mq from '../globals/mediaqueries';
-import * as zIndexes from '../tokens/zIndexes';
 
 const modalHeights = {
   S: {
@@ -34,7 +33,6 @@ const Modal = ({
   overlayOpacity,
   topPosition,
   portalSelector,
-  zIndex,
 }) => {
   const [opened, setOpened] = useState(false);
 
@@ -62,7 +60,6 @@ const Modal = ({
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     height: fit-content;
     margin: 0 auto;
-    z-index: ${zIndex};
 
     ${mq.mediumAndUp} {
       max-width: ${expandedModal ? '900px' : null};
@@ -179,8 +176,6 @@ Modal.propTypes = {
   overlayOpacity: PropTypes.number,
   /** Changes the position for the content, adds a `padding:top: 10vh` */
   topPosition: PropTypes.bool,
-  /** `z-index` value - Default `901` */
-  zIndex: PropTypes.number,
 };
 
 Modal.defaultProps = {
@@ -192,7 +187,6 @@ Modal.defaultProps = {
   responsiveSize: 'M',
   overlayOpacity: 0.7,
   topPosition: false,
-  zIndex: zIndexes.secondLayer,
 };
 
 export default Modal;

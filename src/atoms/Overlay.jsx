@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
+import { secondLayer } from '../tokens/zIndexes';
 
 const Overlay = ({
   children,
@@ -33,7 +34,7 @@ const Overlay = ({
 
 Overlay.propTypes = {
   children: PropTypes.node.isRequired,
-  /** Value for `z-index` */
+  /** `z-index` value - Default `901` */
   zIndex: PropTypes.number,
   /** Value for `opacity` on Overlay  */
   overlayOpacity: PropTypes.number,
@@ -46,7 +47,7 @@ Overlay.propTypes = {
 Overlay.defaultProps = {
   onClick: () => {},
   overlayOpacity: 0.7,
-  zIndex: 1,
+  zIndex: secondLayer,
   topPosition: false,
 };
 
