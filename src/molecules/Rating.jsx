@@ -24,7 +24,7 @@ function starType(value, color) {
 
 const starsTemplate = [0, 1, 2, 3, 4];
 
-const Rating = ({ compact, rating, color, label }) => {
+const Rating = ({ compact, rating, color, label, fontSize }) => {
   const ratingContainer = css`
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ const Rating = ({ compact, rating, color, label }) => {
           />
         ))
       )}
-      <Text>{label || rating}</Text>
+      <Text size={fontSize}>{label || rating}</Text>
     </div>
   );
 };
@@ -62,12 +62,16 @@ Rating.propTypes = {
 
   /** Label opcional que se muestra en lugar del numero de estrellas */
   label: PropTypes.string,
+
+  /** Select font size `XS=11px`, `S=14px`, `M=16px`, `L=17px`, `XL=18px`, `XLL=20px` */
+  fontSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL']),
 };
 
 Rating.defaultProps = {
   compact: false,
   color: '',
   label: '',
+  fontSize: 'M',
 };
 
 export default Rating;

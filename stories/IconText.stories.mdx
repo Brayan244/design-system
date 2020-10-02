@@ -1,0 +1,29 @@
+import { text, select, boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import IconText from '../src/molecules/IconText';
+
+<Meta title="Molecules|Icon Text" component={IconText} />
+
+## Preview
+
+<Preview>
+  <Story name="Icon Text">
+    <IconText
+      iconSize={select('Icon Size', ['S', 'M', 'L'], 'M')}
+      iconType={text('Icon Type', 'bed')}
+      label={text('label', 'Bed')}
+      fontSize={select('Font Size', ['XS', 'S', 'M', 'L', 'XL', 'XXL'], 'M')}
+      isVertical={boolean('Is Vertical', false)}
+      mobileInline={boolean('Mobile Inline', false)}
+      fontWeight={select(
+        'Font Weight',
+        ['bold', 'semibold', 'regular'],
+        'regular'
+      )}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={IconText} />

@@ -27,11 +27,13 @@ import backgroundColors from '../.storybook/backgroundColors';
           Discount: 'discount',
           Default: 'default',
           Primary: 'primary',
+          InfoLight: 'infoLight',
         },
         'accent'
       )}
       isLoading={boolean('Is Loading', false)}
       fontSize={select('Font Size', ['XS', 'S', 'M', 'L', 'XL', 'XXL'], 'M')}
+      fontWeight={select('Font Weight', ['bold', 'semibold', 'regular'], 'bold')}
       padding={select('Padding', ['S', 'M', 'L'], 'L')}
       buttonType={select(
         'Button type',
@@ -43,6 +45,7 @@ import backgroundColors from '../.storybook/backgroundColors';
       )}
       isRounded={boolean('Is Rounded', false)}
       iconType={text('Icon Type', 'warning')}
+      disableMinHeight={boolean('Disable Min Height', false)}
     />
   </Story>
 </Preview>
@@ -125,6 +128,19 @@ import backgroundColors from '../.storybook/backgroundColors';
           variant="primary"
           iconType="checkmarkWhite"
           isDisabled
+        />
+      </Spacing>
+      <Spacing>
+        <Button text="infoLight" onClick={action('onClick')} variant="infoLight" disableMinHeight padding="S" fontSize="S" fontWeight="semibold"/>
+        <Button
+        text="infoLight"
+          onClick={action('onClick')}
+          variant="infoLight"
+          isDisabled
+          disableMinHeight
+          padding="S"
+          fontSize="S"
+          fontWeight="semibold"
         />
       </Spacing>
     </Spacing>

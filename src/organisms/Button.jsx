@@ -56,12 +56,20 @@ const variantStyles = {
     colorDisabled: '#ffffff',
     focus: colors.primaryStrong,
   },
+  infoLight: {
+    background: '#d2f2ff',
+    backgroundHover: '#a8dcf1',
+    backgroundDisabled: colors.gray400,
+    color: colors.gray600,
+    colorDisabled: '#ffffff',
+    focus: '#a8dcf1',
+  },
 };
 
 const paddingSizes = {
   L: '10px 25px',
   M: '5px 15px',
-  S: '0 5px',
+  S: '5px',
 };
 
 const Button = ({
@@ -77,6 +85,8 @@ const Button = ({
   withHeight,
   isRounded,
   iconType,
+  fontWeight,
+  disableMinHeight,
 }) => {
   if (isLoading)
     return (
@@ -93,16 +103,17 @@ const Button = ({
     color: ${variantStyle.color};
     display: flex;
     font-family: 'Open Sans', sans-serif;
-    font-weight: ${typography.semibold};
+    font-weight: ${typography[fontWeight]};
     font-size: ${typography[fontSize]};
     justify-content: center;
-    min-height: 35px;
+    min-height: ${disableMinHeight ? null : '35px'};
     min-width: 100px;
     padding: ${paddingSizes[padding]};
     line-height: 15px;
     transition: background-color 0.25s ease-out;
     cursor: ${isDisabled ? 'default' : null};
     height: ${withHeight ? '50px' : null};
+    position: relative;
 
     &:hover {
       background-color: ${variantStyle.backgroundHover};
@@ -148,6 +159,7 @@ Button.propTypes = {
     'discount',
     'default',
     'primary',
+    'infoLight',
   ]),
   /** Indicates that is disabled */
   isDisabled: PropTypes.bool,
@@ -157,9 +169,9 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   /** Indicates that is disabled */
   isLoading: PropTypes.bool,
-  /** Select font size: `S=11px`, `S=13px`, `M=15px`, `L=16px`, `XL=18px` `XXL=20px`, */
+  /** Select font size: `XS=11px`, `S=14px`, `M=16px`, `L=17px`, `XL=18px`, `XLL=20px` */
   fontSize: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
-  /** Select padding size: `S=11px`, `S=0 5px`, `M=5px 15px`, `L=10px 25px` */
+  /** Select padding size: `S=5px`, `M=5px 15px`, `L=10px 25px` */
   padding: PropTypes.oneOf(['S', 'M', 'L']),
   /** Indicates button type */
   buttonType: PropTypes.oneOf(['button', 'submit']),
@@ -171,6 +183,10 @@ Button.propTypes = {
   isRounded: PropTypes.bool,
   /** Indicates the icon's name to display on button */
   iconType: PropTypes.string,
+  /** Select font size: `bold`, `semibold`, `regular`, */
+  fontWeight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
+  /** Deshabilita la propiedad min-height */
+  disableMinHeight: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -185,6 +201,8 @@ Button.defaultProps = {
   withHeight: false,
   isRounded: false,
   iconType: '',
+  fontWeight: 'bold',
+  disableMinHeight: false,
 };
 
 export default Button;

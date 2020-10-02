@@ -53,3 +53,4 @@ export { default as RangePicker } from './organisms/RangePicker';
 export { default as RangePickerOption } from './molecules/RangePickerOption';
 export { default as Modal } from './molecules/Modal';
 export { default as FieldGroup } from './molecules/FieldGroup';
+export { default as IconText } from './molecules/IconText';

@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="49px" height="34px" viewBox="0 0 49 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>board-rating-spec puntuality</title>
     <g id="board-rating-spec-puntuality" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="puntuality-icon-b3fc97e275669542ed29f9ed17c708ab9cc31670c1cb5775efe097f01353c7de" transform="translate(0.000000, 2.000000)">
-            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" opacity="0.01" x="0" y="0" width="49" height="31"></rect>
-            <g id="Group-4-Copy-2" transform="translate(12.397590, 2.980769)">
-                <path d="M12.3975904,25.0384615 C19.2445904,25.0384615 24.7951807,19.433411 24.7951807,12.5192308 C24.7951807,5.60505053 19.2445904,0 12.3975904,0 C5.55059027,0 0,5.60505053 0,12.5192308 C0,19.433411 5.55059027,25.0384615 12.3975904,25.0384615 Z" id="Oval-13-Copy-6" stroke="#062944" stroke-width="1.1689156" fill="#7BD170" fill-rule="nonzero"></path>
-                <ellipse id="Oval-13-Copy-5" stroke="#062944" stroke-width="0.93513243" fill="#FFFFFF" fill-rule="nonzero" cx="12.3975904" cy="12.5192308" rx="9.87932982" ry="9.97626202"></ellipse>
-                <path d="M13.5598645,4.89032452 C17.1973332,4.89032452 20.1460843,7.86800764 20.1460843,11.5411659 L13.5598645,11.5411659 L13.5598645,4.89032452 Z" id="Oval-17-Copy-2" fill="#7BD170" fill-rule="nonzero"></path>
-                <line x1="12.3975904" y1="6.65084135" x2="12.3975904" y2="11.7367788" id="Line-Copy-27" stroke="#062944" stroke-width="0.779277067" stroke-linecap="round"></line>
-                <line x1="18.2089608" y1="12.7148437" x2="13.3661521" y2="12.7148437" id="Line-Copy-26" stroke="#062944" stroke-width="0.779277067" stroke-linecap="round"></line>
-                <line x1="12.5913027" y1="17.6051683" x2="12.5913027" y2="20.6254326" id="Line-Copy-25" stroke="#062944" stroke-width="0.584457802" stroke-linecap="round"></line>
-                <line x1="4.45538404" y1="12.5192308" x2="7.44436568" y2="12.5192308" id="Line-Copy-24" stroke="#062944" stroke-width="0.584457802" stroke-linecap="round"></line>
-                <ellipse id="Oval-16-Copy-2" stroke="#062944" stroke-width="0.584457802" cx="12.3975904" cy="12.7148437" rx="1" ry="1"></ellipse>
-                <g id="Line-+-Line-Copy-15" stroke-linecap="round" transform="translate(5.423946, 15.844651)" stroke="#062944" stroke-width="0.584457802">
-                    <line x1="3.72068837" y1="2.73858173" x2="2.90568524" y2="3.56158136" id="Line"></line>
-                    <line x1="1.10029936" y1="0.120525505" x2="0.102128463" y2="0.702474123" id="Line-Copy-7"></line>
-                </g>
-                <g id="Line-+-Line-Copy-14" stroke-linecap="round" transform="translate(7.683923, 7.405349) scale(-1, 1) rotate(-180.000000) translate(-7.683923, -7.405349) translate(5.617658, 5.616888)" stroke="#062944" stroke-width="0.584457802">
-                    <line x1="3.72068837" y1="2.73858173" x2="2.90568524" y2="3.56158136" id="Line"></line>
-                    <line x1="1.10029936" y1="0.120525505" x2="0.102128463" y2="0.702474123" id="Line-Copy-7"></line>
-                </g>
-                <g id="Line-+-Line-Copy-13" stroke-linecap="round" transform="translate(17.498682, 17.241887) scale(-1, 1) translate(-17.498682, -17.241887) translate(15.432417, 15.453425)" stroke="#062944" stroke-width="0.584457802">
-                    <line x1="3.72068837" y1="2.73858173" x2="2.90568524" y2="3.56158136" id="Line"></line>
-                    <line x1="1.10029936" y1="0.120525505" x2="0.102128463" y2="0.702474123" id="Line-Copy-7"></line>
-                </g>
+        <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" opacity="0.01" x="0" y="2" width="49" height="31"></rect>
+        <g id="Group-4-Copy-2" transform="translate(3.000000, 2.000000)">
+            <path d="M15,30.2943485 C23.2842712,30.2943485 30,23.5127276 30,15.1471743 C30,6.78162091 23.2842712,0 15,0 C6.71572875,0 0,6.78162091 0,15.1471743 C0,23.5127276 6.71572875,30.2943485 15,30.2943485 Z" id="Oval-13-Copy-6" stroke="#062944" stroke-width="1.41428564" fill="#7BD170" fill-rule="nonzero"></path>
+            <ellipse id="Oval-13-Copy-5" stroke="#062944" stroke-width="1.13142845" fill="#FFFFFF" fill-rule="nonzero" cx="15" cy="15.1471743" rx="11.953125" ry="12.0704045"></ellipse>
+            <path d="M16.40625,5.91686494 C20.8072691,5.91686494 24.375,9.51960108 24.375,13.9638013 L16.40625,13.9638013 L16.40625,5.91686494 Z" id="Oval-17-Copy-2" fill="#7BD170" fill-rule="nonzero"></path>
+            <line x1="15" y1="8.04693632" x2="15" y2="14.2004759" id="Line-Copy-27" stroke="#062944" stroke-width="0.942857093" stroke-linecap="round"></line>
+            <line x1="22.03125" y1="15.3838489" x2="16.171875" y2="15.3838489" id="Line-Copy-26" stroke="#062944" stroke-width="0.942857093" stroke-linecap="round"></line>
+            <line x1="15.234375" y1="21.3007138" x2="15.234375" y2="24.9549695" id="Line-Copy-25" stroke="#062944" stroke-width="0.707142821" stroke-linecap="round"></line>
+            <line x1="5.390625" y1="15.1471743" x2="9.00703136" y2="15.1471743" id="Line-Copy-24" stroke="#062944" stroke-width="0.707142821" stroke-linecap="round"></line>
+            <ellipse id="Oval-16-Copy-2" stroke="#062944" stroke-width="0.707142821" cx="15" cy="15.3838489" rx="1" ry="1"></ellipse>
+            <g id="Line-+-Line-Copy-15" stroke-linecap="round" transform="translate(6.562500, 19.170642)" stroke="#062944" stroke-width="0.707142821">
+                <line x1="4.5017075" y1="3.31344437" x2="3.515625" y2="4.30920193" id="Line"></line>
+                <line x1="1.33126599" y1="0.14582532" x2="0.123566507" y2="0.849932248" id="Line-Copy-7"></line>
+            </g>
+            <g id="Line-+-Line-Copy-14" stroke-linecap="round" transform="translate(9.296875, 8.623707) scale(-1, 1) rotate(-180.000000) translate(-9.296875, -8.623707) translate(6.796875, 6.123707)" stroke="#062944" stroke-width="0.707142821">
+                <line x1="4.5017075" y1="3.31344437" x2="3.515625" y2="4.30920193" id="Line"></line>
+                <line x1="1.33126599" y1="0.14582532" x2="0.123566507" y2="0.849932248" id="Line-Copy-7"></line>
+            </g>
+            <g id="Line-+-Line-Copy-13" stroke-linecap="round" transform="translate(21.171875, 21.197293) scale(-1, 1) translate(-21.171875, -21.197293) translate(18.671875, 18.697293)" stroke="#062944" stroke-width="0.707142821">
+                <line x1="4.5017075" y1="3.31344437" x2="3.515625" y2="4.30920193" id="Line"></line>
+                <line x1="1.33126599" y1="0.14582532" x2="0.123566507" y2="0.849932248" id="Line-Copy-7"></line>
             </g>
         </g>
     </g>
