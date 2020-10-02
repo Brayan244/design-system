@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Icon from '../atoms/Icon';
+import * as mq from '../globals/mediaqueries';
 import useOutsideClick from '../hooks/useOutsideClick';
 
 const Dropdown = ({
@@ -10,6 +11,8 @@ const Dropdown = ({
   hasArrow,
   hasSoftShadow,
   isFullWidth,
+  expandedBorderRadius,
+  hasPadding,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
@@ -24,7 +27,6 @@ const Dropdown = ({
 
   const content = css`
     background-color: #ffffff;
-    border-radius: 2px;
     box-shadow: ${hasSoftShadow
       ? '0 10px 15px rgba(0, 0, 0, 0.15)'
       : '0 2px 15px rgba(0, 0, 0, 0.5)'};
@@ -33,6 +35,12 @@ const Dropdown = ({
     min-width: ${isFullWidth ? '100%' : '300px'};
     visibility: hidden;
     z-index: 100;
+    border-radius: ${expandedBorderRadius ? '10px' : '2px'};
+    padding: ${hasPadding ? '20px' : 'null'};
+
+    ${mq.small} {
+      padding: ${hasPadding ? '10px' : 'null'};
+    }
   `;
 
   const expanded = css`
@@ -83,12 +91,18 @@ Dropdown.propTypes = {
   hasSoftShadow: PropTypes.bool,
   /** determina si el dropdwon abarca el width completo */
   isFullWidth: PropTypes.bool,
+  /** Determinar si el dropdown tendrá un border-radius de 10px */
+  expandedBorderRadius: PropTypes.bool,
+  /** determina si el dropdwon tiene padding de 20px y de 10px en responsive */
+  hasPadding: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
   hasArrow: true,
   hasSoftShadow: false,
   isFullWidth: false,
+  expandedBorderRadius: false,
+  hasPadding: false,
 };
 
 export default Dropdown;

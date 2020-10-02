@@ -10,9 +10,11 @@ import ListItem from '../src/molecules/ListItem';
 
 <Preview>
   <Story name="Dropdown">
-    <Dropdown  
+    <Dropdown
     hasArrow={boolean('Has arrow', true)}
     hasSoftShadow={boolean('Has Soft Shadow', false)}
+    expandedBorderRadius={boolean('Expanded Border Radius', false)}
+    hasPadding={boolean('has Padding', false)}
     isFullWidth={boolean('Is Full Width', false)}
     trigger={(
        <p>abrir</p>
@@ -26,8 +28,28 @@ import ListItem from '../src/molecules/ListItem';
         </NavLink>
         <NavLink small>
           <a href="#">Navigation Link</a>
-        </NavLink> 
-      </div>    
+        </NavLink>
+      </div>
+    </Dropdown>
+  </Story>
+</Preview>
+
+## Dropdown with text
+
+<Preview>
+  <Story name="Dropdown with text">
+    <Dropdown
+    hasArrow={boolean('Has arrow', true)}
+    hasSoftShadow={boolean('Has Soft Shadow', false)}
+    expandedBorderRadius={boolean('Expanded Border Radius', true)}
+    hasPadding={boolean('has Padding', true)}
+    isFullWidth={boolean('Is Full Width', false)}
+    trigger={(
+       <p>abrir</p>
+      )}>
+      <div>
+       <p> hola </p>
+      </div>
     </Dropdown>
   </Story>
 </Preview>
