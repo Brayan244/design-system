@@ -25,6 +25,8 @@ const Tabs = ({ children, active, onTabChange }) => {
     <div>
       <div css={tabHeader}>
         {children.map((tab, index) => {
+          if (!tab) return null;
+
           const generatedId = `tab-header-${index}`;
           return (
             <TabHeader
@@ -40,6 +42,8 @@ const Tabs = ({ children, active, onTabChange }) => {
 
       <div>
         {children.map((content, index) => {
+          if (!content) return null;
+
           const generatedId = `tab-${index}`;
           return activeTab === index && <div key={generatedId}>{content}</div>;
         })}
