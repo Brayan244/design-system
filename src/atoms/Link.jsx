@@ -5,6 +5,10 @@ import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
 const colorTypes = {
+  primary: {
+    color: colors.primary,
+    hover: colors.primaryStrong,
+  },
   accent: {
     color: colors.accent,
     hover: colors.accentStrong,
@@ -24,6 +28,26 @@ const colorTypes = {
   success: {
     color: colors.success,
     hover: colors.successStrong,
+  },
+  discount: {
+    color: colors.discount,
+    hover: colors.discountStrong,
+  },
+  grayStrong: {
+    color: colors.gray600,
+    hover: colors.gray500,
+  },
+  grayMedium: {
+    color: colors.gray500,
+    hover: colors.gray600,
+  },
+  grayLight: {
+    color: colors.gray400,
+    hover: colors.gray500,
+  },
+  white: {
+    color: colors.white,
+    hover: colors.gray200,
   },
 };
 
@@ -63,8 +87,19 @@ Link.propTypes = {
   /** URL del link */
   href: PropTypes.string.isRequired,
   /** Tipo de color del link */
-  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error', 'success'])
-    .isRequired,
+  type: PropTypes.oneOf([
+    'primary',
+    'accent',
+    'disabled',
+    'info',
+    'error',
+    'success',
+    'discount',
+    'grayStrong',
+    'grayMedium',
+    'grayLight',
+    'white',
+  ]).isRequired,
   /** Opens the linked document in the same windown or new tab */
   newTab: PropTypes.bool,
   /** Font size */

@@ -5,36 +5,50 @@ import Spacing from '../src/atoms/Spacing';
 
 <Meta title="Trigger|Link" component={Link} />
 
-## Preview
+# Link
 
-<Preview>
-  <Story name="Link">
-    <Link
-      large={boolean('Is Large', false)}
-      text={text('Text', 'Editar')}
-      href={text('href', 'https://www.reservamos.mx/')}
-      type={select(
-        'type',
-        ['accent', 'disabled', 'info', 'error', 'success'],
-        'accent'
-      )}
-      newTab={boolean('New Tab', false)}
-      size={select(
-        'Size',
-        {
-          XSmall: 'XS',
-          Small: 'S',
-          Medium: 'M',
-          Large: 'L',
-          XLarge: 'XL',
-          XXLarge: 'XXL',
-        },
-        'S'
-      )}
-      weight={select('Weight', ['regular', 'semibold', 'bold'], 'semibold')}
-    />
-  </Story>
-</Preview>
+<br />
+
+<Story name="Link">
+  <Link
+    large={boolean('Is Large', false)}
+    text={text('Text', 'Editar')}
+    href={text('href', 'https://www.reservamos.mx/')}
+    type={select(
+      'type',
+      [
+        'primary',
+        'accent',
+        'disabled',
+        'info',
+        'error',
+        'success',
+        'discount',
+        'grayStrong',
+        'grayMedium',
+        'grayLight',
+        'white',
+      ],
+      'primary'
+    )}
+    newTab={boolean('New Tab', false)}
+    size={select(
+      'Size',
+      {
+        XSmall: 'XS',
+        Small: 'S',
+        Medium: 'M',
+        Large: 'L',
+        XLarge: 'XL',
+        XXLarge: 'XXL',
+      },
+      'S'
+    )}
+    weight={select('Weight', ['regular', 'semibold', 'bold'], 'semibold')}
+  />
+</Story>
+
+<br />
 
 ## All variants
 
@@ -43,28 +57,76 @@ import Spacing from '../src/atoms/Spacing';
     <Spacing>
       <Link
         size="XL"
-        text="Accent"
+        text="primary"
+        href="https://www.reservamos.mx/"
+        type="primary"
+        newTab
+      />
+      <Link
+        size="XL"
+        text="accent"
         href="https://www.reservamos.mx/"
         type="accent"
+        newTab
       />
       <Link
         size="XL"
-        text="Disabled"
+        text="disabled"
         href="https://www.reservamos.mx/"
         type="disabled"
+        newTab
       />
       <Link
         size="XL"
-        text="Info"
+        text="info"
         href="https://www.reservamos.mx/"
         type="info"
+        newTab
       />
       <Link
         size="XL"
-        text="Error"
+        text="error"
         href="https://www.reservamos.mx/"
         type="error"
+        newTab
       />
+      <Link
+        size="XL"
+        text="discount"
+        href="https://www.reservamos.mx/"
+        type="discount"
+        newTab
+      />
+      <Link
+        size="XL"
+        text="grayStrong"
+        href="https://www.reservamos.mx/"
+        type="grayStrong"
+        newTab
+      />
+      <Link
+        size="XL"
+        text="grayMedium"
+        href="https://www.reservamos.mx/"
+        type="grayMedium"
+        newTab
+      />
+      <Link
+        size="XL"
+        text="grayLight"
+        href="https://www.reservamos.mx/"
+        type="grayLight"
+        newTab
+      />
+      <div style={{background: 'black'}}>
+        <Link
+          size="XL"
+          text="white"
+          href="https://www.reservamos.mx/"
+          type="white"
+          newTab
+        />
+      </div>
     </Spacing>
   </Story>
 </Preview>

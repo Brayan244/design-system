@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.9.1
+## v0.9.2
 
-- Fix conditional Tab rendering
+- Adds color variants to Link component
