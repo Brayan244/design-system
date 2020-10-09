@@ -792,6 +792,10 @@ Button.defaultProps = {
 };
 
 var colorTypes = {
+  primary: {
+    color: primary,
+    hover: primaryStrong
+  },
   accent: {
     color: accent,
     hover: accentStrong
@@ -811,6 +815,26 @@ var colorTypes = {
   success: {
     color: success,
     hover: successStrong
+  },
+  discount: {
+    color: discount,
+    hover: discountStrong
+  },
+  grayStrong: {
+    color: gray600,
+    hover: gray500
+  },
+  grayMedium: {
+    color: gray500,
+    hover: gray600
+  },
+  grayLight: {
+    color: gray400,
+    hover: gray500
+  },
+  white: {
+    color: white,
+    hover: gray200
   }
 };
 var Link = function Link(_ref) {
@@ -821,7 +845,7 @@ var Link = function Link(_ref) {
       size = _ref.size,
       weight = _ref.weight;
   var linkStyle =
-  core.css("color:", colorTypes[type].color, ";text-decoration:underline;font-family:'Open Sans',sans-serif;font-size:", typography[size], ";font-weight:", typography[weight], ";transition:color 0.25s ease-out;&:hover{color:", colorTypes[type].hover, ";}&:focus{outline:dashed 2px ", colorTypes[type].color, "30;};label:linkStyle;" + ("production" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkxpbmsuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQThCdUIiLCJmaWxlIjoiTGluay5qc3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJy4uL3Rva2Vucy9jb2xvcnMnO1xuaW1wb3J0ICogYXMgdHlwb2dyYXBoeSBmcm9tICcuLi90b2tlbnMvdHlwb2dyYXBoeSc7XG5cbmNvbnN0IGNvbG9yVHlwZXMgPSB7XG4gIGFjY2VudDoge1xuICAgIGNvbG9yOiBjb2xvcnMuYWNjZW50LFxuICAgIGhvdmVyOiBjb2xvcnMuYWNjZW50U3Ryb25nLFxuICB9LFxuICBkaXNhYmxlZDoge1xuICAgIGNvbG9yOiBjb2xvcnMuZ3JheTQwMCxcbiAgICBob3ZlcjogY29sb3JzLmdyYXk0MDAsXG4gIH0sXG4gIGluZm86IHtcbiAgICBjb2xvcjogY29sb3JzLmluZm8sXG4gICAgaG92ZXI6IGNvbG9ycy5pbmZvU3Ryb25nLFxuICB9LFxuICBlcnJvcjoge1xuICAgIGNvbG9yOiBjb2xvcnMuZXJyb3IsXG4gICAgaG92ZXI6IGNvbG9ycy5lcnJvclN0cm9uZyxcbiAgfSxcbiAgc3VjY2Vzczoge1xuICAgIGNvbG9yOiBjb2xvcnMuc3VjY2VzcyxcbiAgICBob3ZlcjogY29sb3JzLnN1Y2Nlc3NTdHJvbmcsXG4gIH0sXG59O1xuXG5jb25zdCBMaW5rID0gKHsgdGV4dCwgaHJlZiwgdHlwZSwgbmV3VGFiLCBzaXplLCB3ZWlnaHQgfSkgPT4ge1xuICBjb25zdCBsaW5rU3R5bGUgPSBjc3NgXG4gICAgY29sb3I6ICR7Y29sb3JUeXBlc1t0eXBlXS5jb2xvcn07XG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gICAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmO1xuICAgIGZvbnQtc2l6ZTogJHt0eXBvZ3JhcGh5W3NpemVdfTtcbiAgICBmb250LXdlaWdodDogJHt0eXBvZ3JhcGh5W3dlaWdodF19O1xuICAgIHRyYW5zaXRpb246IGNvbG9yIDAuMjVzIGVhc2Utb3V0O1xuXG4gICAgJjpob3ZlciB7XG4gICAgICBjb2xvcjogJHtjb2xvclR5cGVzW3R5cGVdLmhvdmVyfTtcbiAgICB9XG5cbiAgICAmOmZvY3VzIHtcbiAgICAgIG91dGxpbmU6IGRhc2hlZCAycHggJHtjb2xvclR5cGVzW3R5cGVdLmNvbG9yfTMwO1xuICAgIH1cbiAgYDtcblxuICByZXR1cm4gKFxuICAgIDxhXG4gICAgICBjc3M9e2xpbmtTdHlsZX1cbiAgICAgIGhyZWY9e2hyZWZ9XG4gICAgICB0YXJnZXQ9e25ld1RhYiA/ICdfYmxhbmsnIDogJ19zZWxmJ31cbiAgICAgIHJlbD1cIm5vb3BlbmVyIG5vcmVmZXJyZXJcIlxuICAgID5cbiAgICAgIHt0ZXh0fVxuICAgIDwvYT5cbiAgKTtcbn07XG5cbkxpbmsucHJvcFR5cGVzID0ge1xuICAvKiogVGV4dG8gcXVlIHRlbmRyw6EgZWwgbGluayAqL1xuICB0ZXh0OiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG4gIC8qKiBVUkwgZGVsIGxpbmsgKi9cbiAgaHJlZjogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxuICAvKiogVGlwbyBkZSBjb2xvciBkZWwgbGluayAqL1xuICB0eXBlOiBQcm9wVHlwZXMub25lT2YoWydhY2NlbnQnLCAnZGlzYWJsZWQnLCAnaW5mbycsICdlcnJvcicsICdzdWNjZXNzJ10pXG4gICAgLmlzUmVxdWlyZWQsXG4gIC8qKiBPcGVucyB0aGUgbGlua2VkIGRvY3VtZW50IGluIHRoZSBzYW1lIHdpbmRvd24gb3IgbmV3IHRhYiAqL1xuICBuZXdUYWI6IFByb3BUeXBlcy5ib29sLFxuICAvKiogRm9udCBzaXplICovXG4gIHNpemU6IFByb3BUeXBlcy5vbmVPZihbJ1hTJywgJ1MnLCAnTScsICdMJywgJ1hMJywgJ1hYTCddKSxcbiAgLyoqIEZvbnQgd2VpZ2h0ICovXG4gIHdlaWdodDogUHJvcFR5cGVzLm9uZU9mKFsnYm9sZCcsICdzZW1pYm9sZCcsICdyZWd1bGFyJ10pLFxufTtcblxuTGluay5kZWZhdWx0UHJvcHMgPSB7XG4gIG5ld1RhYjogZmFsc2UsXG4gIHNpemU6ICdTJyxcbiAgd2VpZ2h0OiAnc2VtaWJvbGQnLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgTGluaztcbiJdfQ== */"));
+  core.css("color:", colorTypes[type].color, ";text-decoration:underline;font-family:'Open Sans',sans-serif;font-size:", typography[size], ";font-weight:", typography[weight], ";transition:color 0.25s ease-out;&:hover{color:", colorTypes[type].hover, ";}&:focus{outline:dashed 2px ", colorTypes[type].color, "30;};label:linkStyle;" + ("production" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkxpbmsuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNEdUIiLCJmaWxlIjoiTGluay5qc3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJy4uL3Rva2Vucy9jb2xvcnMnO1xuaW1wb3J0ICogYXMgdHlwb2dyYXBoeSBmcm9tICcuLi90b2tlbnMvdHlwb2dyYXBoeSc7XG5cbmNvbnN0IGNvbG9yVHlwZXMgPSB7XG4gIHByaW1hcnk6IHtcbiAgICBjb2xvcjogY29sb3JzLnByaW1hcnksXG4gICAgaG92ZXI6IGNvbG9ycy5wcmltYXJ5U3Ryb25nLFxuICB9LFxuICBhY2NlbnQ6IHtcbiAgICBjb2xvcjogY29sb3JzLmFjY2VudCxcbiAgICBob3ZlcjogY29sb3JzLmFjY2VudFN0cm9uZyxcbiAgfSxcbiAgZGlzYWJsZWQ6IHtcbiAgICBjb2xvcjogY29sb3JzLmdyYXk0MDAsXG4gICAgaG92ZXI6IGNvbG9ycy5ncmF5NDAwLFxuICB9LFxuICBpbmZvOiB7XG4gICAgY29sb3I6IGNvbG9ycy5pbmZvLFxuICAgIGhvdmVyOiBjb2xvcnMuaW5mb1N0cm9uZyxcbiAgfSxcbiAgZXJyb3I6IHtcbiAgICBjb2xvcjogY29sb3JzLmVycm9yLFxuICAgIGhvdmVyOiBjb2xvcnMuZXJyb3JTdHJvbmcsXG4gIH0sXG4gIHN1Y2Nlc3M6IHtcbiAgICBjb2xvcjogY29sb3JzLnN1Y2Nlc3MsXG4gICAgaG92ZXI6IGNvbG9ycy5zdWNjZXNzU3Ryb25nLFxuICB9LFxuICBkaXNjb3VudDoge1xuICAgIGNvbG9yOiBjb2xvcnMuZGlzY291bnQsXG4gICAgaG92ZXI6IGNvbG9ycy5kaXNjb3VudFN0cm9uZyxcbiAgfSxcbiAgZ3JheVN0cm9uZzoge1xuICAgIGNvbG9yOiBjb2xvcnMuZ3JheTYwMCxcbiAgICBob3ZlcjogY29sb3JzLmdyYXk1MDAsXG4gIH0sXG4gIGdyYXlNZWRpdW06IHtcbiAgICBjb2xvcjogY29sb3JzLmdyYXk1MDAsXG4gICAgaG92ZXI6IGNvbG9ycy5ncmF5NjAwLFxuICB9LFxuICBncmF5TGlnaHQ6IHtcbiAgICBjb2xvcjogY29sb3JzLmdyYXk0MDAsXG4gICAgaG92ZXI6IGNvbG9ycy5ncmF5NTAwLFxuICB9LFxuICB3aGl0ZToge1xuICAgIGNvbG9yOiBjb2xvcnMud2hpdGUsXG4gICAgaG92ZXI6IGNvbG9ycy5ncmF5MjAwLFxuICB9LFxufTtcblxuY29uc3QgTGluayA9ICh7IHRleHQsIGhyZWYsIHR5cGUsIG5ld1RhYiwgc2l6ZSwgd2VpZ2h0IH0pID0+IHtcbiAgY29uc3QgbGlua1N0eWxlID0gY3NzYFxuICAgIGNvbG9yOiAke2NvbG9yVHlwZXNbdHlwZV0uY29sb3J9O1xuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjtcbiAgICBmb250LXNpemU6ICR7dHlwb2dyYXBoeVtzaXplXX07XG4gICAgZm9udC13ZWlnaHQ6ICR7dHlwb2dyYXBoeVt3ZWlnaHRdfTtcbiAgICB0cmFuc2l0aW9uOiBjb2xvciAwLjI1cyBlYXNlLW91dDtcblxuICAgICY6aG92ZXIge1xuICAgICAgY29sb3I6ICR7Y29sb3JUeXBlc1t0eXBlXS5ob3Zlcn07XG4gICAgfVxuXG4gICAgJjpmb2N1cyB7XG4gICAgICBvdXRsaW5lOiBkYXNoZWQgMnB4ICR7Y29sb3JUeXBlc1t0eXBlXS5jb2xvcn0zMDtcbiAgICB9XG4gIGA7XG5cbiAgcmV0dXJuIChcbiAgICA8YVxuICAgICAgY3NzPXtsaW5rU3R5bGV9XG4gICAgICBocmVmPXtocmVmfVxuICAgICAgdGFyZ2V0PXtuZXdUYWIgPyAnX2JsYW5rJyA6ICdfc2VsZid9XG4gICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICA+XG4gICAgICB7dGV4dH1cbiAgICA8L2E+XG4gICk7XG59O1xuXG5MaW5rLnByb3BUeXBlcyA9IHtcbiAgLyoqIFRleHRvIHF1ZSB0ZW5kcsOhIGVsIGxpbmsgKi9cbiAgdGV4dDogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxuICAvKiogVVJMIGRlbCBsaW5rICovXG4gIGhyZWY6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgLyoqIFRpcG8gZGUgY29sb3IgZGVsIGxpbmsgKi9cbiAgdHlwZTogUHJvcFR5cGVzLm9uZU9mKFtcbiAgICAncHJpbWFyeScsXG4gICAgJ2FjY2VudCcsXG4gICAgJ2Rpc2FibGVkJyxcbiAgICAnaW5mbycsXG4gICAgJ2Vycm9yJyxcbiAgICAnc3VjY2VzcycsXG4gICAgJ2Rpc2NvdW50JyxcbiAgICAnZ3JheVN0cm9uZycsXG4gICAgJ2dyYXlNZWRpdW0nLFxuICAgICdncmF5TGlnaHQnLFxuICAgICd3aGl0ZScsXG4gIF0pLmlzUmVxdWlyZWQsXG4gIC8qKiBPcGVucyB0aGUgbGlua2VkIGRvY3VtZW50IGluIHRoZSBzYW1lIHdpbmRvd24gb3IgbmV3IHRhYiAqL1xuICBuZXdUYWI6IFByb3BUeXBlcy5ib29sLFxuICAvKiogRm9udCBzaXplICovXG4gIHNpemU6IFByb3BUeXBlcy5vbmVPZihbJ1hTJywgJ1MnLCAnTScsICdMJywgJ1hMJywgJ1hYTCddKSxcbiAgLyoqIEZvbnQgd2VpZ2h0ICovXG4gIHdlaWdodDogUHJvcFR5cGVzLm9uZU9mKFsnYm9sZCcsICdzZW1pYm9sZCcsICdyZWd1bGFyJ10pLFxufTtcblxuTGluay5kZWZhdWx0UHJvcHMgPSB7XG4gIG5ld1RhYjogZmFsc2UsXG4gIHNpemU6ICdTJyxcbiAgd2VpZ2h0OiAnc2VtaWJvbGQnLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgTGluaztcbiJdfQ== */"));
   return core.jsx("a", {
     css: linkStyle,
     href: href,
@@ -832,7 +856,7 @@ var Link = function Link(_ref) {
 Link.propTypes = {
   text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['accent', 'disabled', 'info', 'error', 'success']).isRequired,
+  type: PropTypes.oneOf(['primary', 'accent', 'disabled', 'info', 'error', 'success', 'discount', 'grayStrong', 'grayMedium', 'grayLight', 'white']).isRequired,
   newTab: PropTypes.bool,
   size: PropTypes.oneOf(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular'])
