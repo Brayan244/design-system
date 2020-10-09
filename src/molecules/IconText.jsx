@@ -13,11 +13,14 @@ const IconText = ({
   isVertical,
   mobileInline,
   fontWeight,
+  maxWidth,
 }) => {
   const container = css`
     display: flex;
     flex-direction: ${isVertical ? 'column' : null};
     align-items: center;
+    max-width: ${maxWidth};
+    text-align: ${isVertical ? 'center' : null};
 
     div:first-child {
       margin-right: ${isVertical ? 'null' : '10px'};
@@ -59,6 +62,8 @@ IconText.propTypes = {
   mobileInline: PropTypes.bool,
   /** Select font weight `bold`, `semibold`, `regular` */
   fontWeight: PropTypes.oneOf(['bold', 'semibold', 'regular']),
+  /** Let all the flexible items be the same length adding `flex-grow: 1` or null  */
+  maxWidth: PropTypes.string,
 };
 
 IconText.defaultProps = {
@@ -67,6 +72,7 @@ IconText.defaultProps = {
   isVertical: false,
   mobileInline: false,
   fontWeight: 'regular',
+  maxWidth: '100%',
 };
 
 export default IconText;

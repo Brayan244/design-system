@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 import TabHeader from './TabHeader';
 
-const Tabs = ({ children, active, onTabChange }) => {
+const Tabs = ({ children, active, onTabChange, headerGrow }) => {
   const [activeTab, setActiveTab] = useState(active);
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const Tabs = ({ children, active, onTabChange }) => {
               key={generatedId}
               iconType={tab.props.iconType}
               label={tab.props.label}
+              flexGrow={headerGrow}
             />
           );
         })}
@@ -56,11 +57,13 @@ Tabs.propTypes = {
   children: PropTypes.node.isRequired,
   onTabChange: PropTypes.func,
   active: PropTypes.number,
+  headerGrow: PropTypes.bool,
 };
 
 Tabs.defaultProps = {
   active: 0,
   onTabChange: () => {},
+  headerGrow: false,
 };
 
 export default Tabs;

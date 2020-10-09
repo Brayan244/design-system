@@ -33,6 +33,8 @@ const Modal = ({
   overlayOpacity,
   topPosition,
   portalSelector,
+  fixedHieght,
+  removeContentPadding,
 }) => {
   const [opened, setOpened] = useState(false);
 
@@ -79,27 +81,28 @@ const Modal = ({
   `;
 
   const titleWrapper = css`
-    padding: 30px 30px 0;
+    padding: 20px 30px 10px;
     display: flex;
     justify-content: space-between;
 
     ${mq.small} {
-      padding: 30px 10px 0;
+      padding: 20px 10px 10px;
     }
   `;
 
   const contentWrapper = css`
-    padding: 30px;
+    padding: ${removeContentPadding ? null : '0 30px 20px'};
     overflow-y: ${showOverFlowContent ? null : 'scroll'};
     -webkit-overflow-scrolling: touch;
 
     ${mq.mediumAndUp} {
-      max-height: ${modalHeights[responsiveSize].large};
+      ${fixedHieght ? 'height' : 'max-height'}: ${modalHeights[responsiveSize]
+        .large};
     }
 
     ${mq.small} {
       height: ${modalHeights[responsiveSize].small};
-      padding: 20px 10px;
+      padding: ${removeContentPadding ? null : '0 10px 20px'};
     }
   `;
 
@@ -176,6 +179,10 @@ Modal.propTypes = {
   overlayOpacity: PropTypes.number,
   /** Changes the position for the content, adds a `padding:top: 10vh` */
   topPosition: PropTypes.bool,
+  /** Determines if modal has fixed height */
+  fixedHieght: PropTypes.bool,
+  /** Determina si el contenido del modal tiene padding */
+  removeContentPadding: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -187,6 +194,8 @@ Modal.defaultProps = {
   responsiveSize: 'M',
   overlayOpacity: 0.7,
   topPosition: false,
+  fixedHieght: false,
+  removeContentPadding: false,
 };
 
 export default Modal;

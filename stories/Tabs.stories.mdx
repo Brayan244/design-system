@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
-import { number } from '@storybook/addon-knobs';
+import { number, boolean } from '@storybook/addon-knobs';
 import Text from '../src/atoms/Text';
 import Tab from '../src/atoms/Tab';
 import Tabs from '../src/molecules/Tabs';
@@ -12,7 +12,7 @@ import Tabs from '../src/molecules/Tabs';
 
 <Preview>
   <Story name="Basic Tabs">
-    <Tabs active={number('active', 0)} onTabChange={action('onTabChange')}>
+    <Tabs active={number('active', 0)} onTabChange={action('onTabChange')} headerGrow={boolean('Header Grow', false)}>
       <Tab label="Tab 1" iconType="plusBlue">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim
@@ -30,7 +30,7 @@ import Tabs from '../src/molecules/Tabs';
 </Preview>
 
 
-## Example 
+## Example
 
 Quitamos condicionalmente la segunda tab
 
