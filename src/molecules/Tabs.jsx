@@ -2,8 +2,15 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 import TabHeader from './TabHeader';
+import * as mq from '../globals/mediaqueries';
 
-const Tabs = ({ children, active, onTabChange, headerGrow }) => {
+const Tabs = ({
+  children,
+  active,
+  onTabChange,
+  headerGrow,
+  removeContentPadding,
+}) => {
   const [activeTab, setActiveTab] = useState(active);
 
   useEffect(() => {
@@ -14,6 +21,14 @@ const Tabs = ({ children, active, onTabChange, headerGrow }) => {
     display: flex;
     margin-bottom: 20px;
     border-bottom: 1px solid #ebebeb;
+  `;
+
+  const tabContent = css`
+    padding: ${removeContentPadding ? null : `0 30px 10px`};
+
+    ${mq.small} {
+      padding: ${removeContentPadding ? null : `0 10px 10px`};
+    }
   `;
 
   function handleTabChange(index) {
@@ -41,7 +56,7 @@ const Tabs = ({ children, active, onTabChange, headerGrow }) => {
         })}
       </div>
 
-      <div>
+      <div css={tabContent}>
         {children.map((content, index) => {
           if (!content) return null;
 
@@ -54,16 +69,22 @@ const Tabs = ({ children, active, onTabChange, headerGrow }) => {
 };
 
 Tabs.propTypes = {
+  /** Content */
   children: PropTypes.node.isRequired,
   onTabChange: PropTypes.func,
+  /** Defines which tab is active */
   active: PropTypes.number,
+  /** Adds flexGrow to TabHeader  */
   headerGrow: PropTypes.bool,
+  /** Removes tab's content padding */
+  removeContentPadding: PropTypes.bool,
 };
 
 Tabs.defaultProps = {
   active: 0,
   onTabChange: () => {},
   headerGrow: false,
+  removeContentPadding: false,
 };
 
 export default Tabs;
