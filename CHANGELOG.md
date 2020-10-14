@@ -1,5 +1,5 @@
 # Changelog
 
-## v0.9.4
+## v0.9.5
 
-- Adds removeContentPadding prop on Tabs
+- Updates error styles for `<Input>` and `<Select>` componentes

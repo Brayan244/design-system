@@ -34,6 +34,44 @@ import Select from '../src/molecules/Select';
           onChange={e => setValue(e.target.value)}
           value={value}
           isDisabled={boolean('Is disabled?', false)}
+          errorMessage={text('Error Feedback', 'Error message goes here')}
+          hasError={boolean('hasError', false)}
+        />
+      );
+    }}
+  </Story>
+</Preview>
+
+## Select with error
+
+<Preview>
+  <Story name="Select with error">
+    {() => {
+      const [value, setValue] = useState('');
+      return (
+        <Select
+          label={text('Label', 'Label')}
+          id={text('ID', 'nacionalidad')}
+          placeholder={text('placeholder', 'Placeholder')}
+          options={[
+            {
+              value: '1',
+              label: 'Option 1',
+            },
+            {
+              value: '2',
+              label: 'Option 2',
+            },
+            {
+              value: '3',
+              label: 'Option 3',
+            },
+          ]}
+          onChange={e => setValue(e.target.value)}
+          value={value}
+          isDisabled={boolean('Is disabled?', false)}
+          errorMessage={text('Error Feedback', 'Error message goes here')}
+          hasError={boolean('hasError', true)}
         />
       );
     }}

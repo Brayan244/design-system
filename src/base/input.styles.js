@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
+import * as icons from '../icons/index';
 
 export default function inputStyles(isDisabled, hasError) {
   const errorColor = hasError ? colors.error : null;
@@ -8,6 +9,10 @@ export default function inputStyles(isDisabled, hasError) {
   return css`
     appearance: none;
     background-color: ${colors.gray100};
+    background-image: ${hasError ? `url(${icons.errorRed})` : null};
+    background-position: 95%;
+    background-repeat: no-repeat;
+    background-size: 20px;
     border: solid 1px transparent;
     border-bottom-color: ${hasError ? errorColor : colors.gray200};
     border-bottom-style: solid;

@@ -163,6 +163,7 @@ The first Spacing has a vertical direction, the inner Spacing have a horizontal 
         id="lastname"
         value="Winstead"
         onChange={action('onChange')}
+        hasError
       />
     </Spacing>
     <Spacing
@@ -187,6 +188,8 @@ The first Spacing has a vertical direction, the inner Spacing have a horizontal 
         value="mew@email.io"
         onChange={action('onChange')}
         type="email"
+        hasError
+        errorFeedback="Email invalid message goes here"
       />
     </Spacing>
     </Spacing>

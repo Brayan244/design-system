@@ -13,6 +13,7 @@ const tones = {
   info: colors.info,
   discount: colors.discount,
   white: colors.white,
+  error: colors.error,
 };
 
 const Text = ({ children, size, weight, color, elementType, lineThrough }) => {
@@ -43,6 +44,7 @@ Text.propTypes = {
     'info',
     'discount',
     'white',
+    'error',
   ]),
   /** Font weight */
   weight: PropTypes.oneOf(['bold', 'semibold', 'regular']),

@@ -12,6 +12,7 @@ import Input from '../src/molecules/Input';
 <Story name="Input">
   <Input
     label={text('label', 'Correo electrónico')}
+    errorMessage={text('Error Feedback', 'Error message goes here')}
     showLabel={boolean('showLabel', true)}
     id={text('id', 'name')}
     type={select(
@@ -47,7 +48,8 @@ Con error
       type="email"
       value=""
       onChange={() => {}}
-      hasError={true}
+      hasError={boolean('has error?', true)}
+      errorMessage={text('Error Feedback', 'Error message goes here')}
     />
   </Story>
 </Preview>

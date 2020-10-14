@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import inputBaseStyles from '../base/input.styles';
 import iconDropDown from '../../images/icons/arrows/select.svg';
 import FieldLabel from '../atoms/FieldLabel';
+import Text from '../atoms/Text';
 
 const Select = ({
   hasError,
@@ -17,12 +18,19 @@ const Select = ({
   name,
   onFocus,
   onBlur,
+  errorMessage,
 }) => {
   const inputStyles = inputBaseStyles(isDisabled, hasError);
 
   const selectWrapper = css`
     margin-top: ${label ? '20px' : null};
     position: relative;
+  `;
+
+  const feedbackMessage = css`
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
   `;
 
   const iconStyle = css`
@@ -66,7 +74,16 @@ const Select = ({
             </option>
           ))}
         </select>
-        {Boolean(label) && <FieldLabel inputId={id} text={label} />}
+        {Boolean(label) && (
+          <FieldLabel inputId={id} text={label} hasError={hasError} />
+        )}
+        {hasError && (
+          <div css={feedbackMessage}>
+            <Text size="XS" color="error">
+              {errorMessage}
+            </Text>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -100,6 +117,8 @@ Select.propTypes = {
   placeholder: PropTypes.string.isRequired,
   /** Current value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  /** Displays the error message */
+  errorMessage: PropTypes.string,
 };
 
 Select.defaultProps = {
@@ -109,6 +128,7 @@ Select.defaultProps = {
   label: '',
   onFocus: () => {},
   onBlur: () => {},
+  errorMessage: '',
 };
 
 export default Select;

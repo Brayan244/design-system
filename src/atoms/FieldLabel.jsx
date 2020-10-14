@@ -4,14 +4,14 @@ import { css } from '@emotion/core';
 import * as colors from '../tokens/colors';
 import * as typography from '../tokens/typography';
 
-const FieldLabel = ({ leftZero, inputId, isPlaceholder, text }) => {
+const FieldLabel = ({ leftZero, inputId, isPlaceholder, text, hasError }) => {
   const activeStyle = css`
     transform: translateY(-20px) scale(0.8);
     transform-origin: 0 0;
   `;
 
   const labelStyle = css`
-    color: ${colors.gray400};
+    color: ${hasError ? colors.error : colors.gray400};
     position: absolute;
     top: 0;
     left: ${leftZero ? '0' : '15px'};
@@ -37,12 +37,14 @@ FieldLabel.propTypes = {
   isPlaceholder: PropTypes.bool,
   leftZero: PropTypes.bool,
   text: PropTypes.string.isRequired,
+  hasError: PropTypes.bool,
 };
 
 FieldLabel.defaultProps = {
   isPlaceholder: false,
   leftZero: false,
   inputId: null,
+  hasError: false,
 };
 
 export default FieldLabel;
