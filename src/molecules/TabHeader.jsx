@@ -30,7 +30,7 @@ const TabHeader = ({ isActive, onSelect, iconType, label, flexGrow }) => {
       onClick={onSelect}
       role="presentation"
     >
-      <Spacing alignItems="center" size="XS">
+      <Spacing alignItems="center" size="XS" isResponsive textAlign="center">
         {Boolean(iconType) && <Icon type={iconType} size="S" />}
         <Text weight={isActive ? 'bold' : 'regular'} size="S">
           {label}

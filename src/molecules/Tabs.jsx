@@ -21,6 +21,13 @@ const Tabs = ({
     display: flex;
     margin-bottom: 20px;
     border-bottom: 1px solid #ebebeb;
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   `;
 
   const tabContent = css`
