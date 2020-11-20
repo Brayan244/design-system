@@ -81,12 +81,12 @@ const Modal = ({
   `;
 
   const titleWrapper = css`
-    padding: 20px 30px 10px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
 
     ${mq.small} {
-      padding: 20px 10px 10px;
+      padding: 20px 10px;
     }
   `;
 

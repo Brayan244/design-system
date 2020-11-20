@@ -1,5 +1,6 @@
 # Changelog
 
-## v0.9.6
+## v0.9.7
 
-- Fixes horizontal scroll for Tabs and changes flex-diretion for TabHeader on small screens
+- Adds new icons: bus, badgeCheckWhite, checkGreen
+- Modifies padding for Modal titleWrapper

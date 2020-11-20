@@ -83,3 +83,6 @@ export { default as plusBlue } from '../../images/icons/plusBlue.svg';
 export { default as starFullBlue } from '../../images/icons/stars/fullBlue.svg';
 export { default as ticketBlue } from '../../images/icons/ticketBlue.svg';
 export { default as starHalfYellow } from '../../images/icons/stars/halfYellow.svg';
+export { default as bus } from '../../images/amenities/common/bus.svg';
+export { default as badgeCheckWhite } from '../../images/icons/badgeCheckWhite.svg';
+export { default as checkGreen } from '../../images/icons/checkGreen.svg';
