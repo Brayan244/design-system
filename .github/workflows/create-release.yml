@@ -23,10 +23,8 @@ jobs:
 
       - name: Bump package.json patch
         run: echo "tag=$(npm version patch)" >> $GITHUB_ENV
-
       - name: Push changes
         run: git push origin master
-
       - name: Upload release notes
         if: env.tag
         uses: Roang-zero1/github-create-release-action@master
