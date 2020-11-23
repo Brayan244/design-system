@@ -22,7 +22,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Bump package.json patch
-        run: echo "tag=${npm version patch}" >> $GITHUB_ENV
+        run: echo "tag=$(npm version patch)" >> $GITHUB_ENV
 
       - name: Push changes
         run: git push origin master
