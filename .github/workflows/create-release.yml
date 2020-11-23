@@ -22,14 +22,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Bump package.json patch
-        if: contains(github.event.pull_request.labels.*.name, 'patch')
         run: echo "tag=${npm version patch}" >> $GITHUB_ENV
-      - name: Bump package.json minor
-        if: contains(github.event.pull_request.labels.*.name, 'minor')
-        run: echo "tag=${npm version minor}" >> $GITHUB_ENV
-      - name: Bump package.json major
-        if: contains(github.event.pull_request.labels.*.name, 'major')
-        run: echo "tag=${npm version major}" >> $GITHUB_ENV
 
       - name: Push changes
         run: git push origin master
