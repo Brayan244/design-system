@@ -1,20 +1,14 @@
 name: Create Release
 
 on:
-  pull_request:
+  push:
     branches:
       - master
-    types:
-      - closed
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    if: github.event.pull_request.merged && (
-      contains(github.event.pull_request.labels.*.name, 'patch') ||
-      contains(github.event.pull_request.labels.*.name, 'minor') ||
-      contains(github.event.pull_request.labels.*.name, 'major'))
     steps:
       - name: Use Node.js 12.14.1
         uses: actions/setup-node@v1
@@ -37,13 +31,13 @@ jobs:
 
       - name: Bump package.json patch
         if: contains(github.event.pull_request.labels.*.name, 'patch')
-        run: echo "tag=$(npm version patch)" >> $GITHUB_ENV
+        run: echo "tag=${npm version patch}" >> $GITHUB_ENV
       - name: Bump package.json minor
         if: contains(github.event.pull_request.labels.*.name, 'minor')
-        run: echo "tag=$(npm version minor)" >> $GITHUB_ENV
+        run: echo "tag=${npm version minor}" >> $GITHUB_ENV
       - name: Bump package.json major
         if: contains(github.event.pull_request.labels.*.name, 'major')
-        run: echo "tag=$(npm version major)" >> $GITHUB_ENV
+        run: echo "tag=${npm version major}" >> $GITHUB_ENV
 
       - name: Push changes
         run: git push origin master
@@ -53,6 +47,6 @@ jobs:
         uses: Roang-zero1/github-create-release-action@master
         with:
           update_existing: true
-          created_tag: ${{ $tag }}
+          created_tag: $tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
