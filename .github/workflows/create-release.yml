@@ -37,30 +37,22 @@ jobs:
 
       - name: Bump package.json patch
         if: contains(github.event.pull_request.labels.*.name, 'patch')
-        run: echo ::set-env name=tag::$(npm version patch)
+        run: echo "tag=$(npm version patch)" >> $GITHUB_ENV
       - name: Bump package.json minor
         if: contains(github.event.pull_request.labels.*.name, 'minor')
-        run: echo ::set-env name=tag::$(npm version minor)
+        run: echo "tag=$(npm version minor)" >> $GITHUB_ENV
       - name: Bump package.json major
         if: contains(github.event.pull_request.labels.*.name, 'major')
-        run: echo ::set-env name=tag::$(npm version major)
+        run: echo "tag=$(npm version major)" >> $GITHUB_ENV
 
       - name: Push changes
         run: git push origin master
-
-      - name: Deploy to npm
-        env:
-          CI: true
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
-          npm publish --access private
 
       - name: Upload release notes
         if: env.tag
         uses: Roang-zero1/github-create-release-action@master
         with:
           update_existing: true
-          created_tag: ${{ env.tag }}
+          created_tag: ${{ $tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
